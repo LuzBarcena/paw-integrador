@@ -39,4 +39,9 @@ class UsuarioDAO(){
 
 		return false;
 	}
+
+	public static function nuevoUsuario($usuario) {
+		$query = 
+	}
+
 }

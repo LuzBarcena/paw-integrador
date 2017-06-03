@@ -10,7 +10,9 @@ class UsuarioControlador(){
         return UsuarioDAO::login($obj_usuario);
     }
 
-    public static function registro_usuario($nombre, $apellido, $fecha_nacimiento, $nombre_usuario, $email, $contrasenia) {
+    public static function registroUsuario($nombre, $apellido, $fecha_nacimiento, $nombre_usuario, $email, $contrasenia) {
+    	$usuario = new Usuario($nombre, $apellido, $fecha_nacimiento, $nombre_usuario, $email, $contrasenia);
 
+    	return UsuarioDAO::nuevoUsuario($usuario);
     }
 }
