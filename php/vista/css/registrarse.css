@@ -1,0 +1,42 @@
+
+input[type=text], 
+input[type=password],
+input[type=email]  {
+    width: 100%;
+    padding: 1em 1.2em;
+    margin: 0.5em 0;
+    display: inline-block;
+    border: 0.1em solid #ccc;
+    box-sizing: border-box;
+}
+
+.botones {
+    text-align: center;
+}
+
+.registro {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em 1.2em;
+    margin: 0.5em 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+}
+
+.container {
+    padding: 1.4em;
+}
+
+.formulario {
+    background-color: #fefefe;
+    margin: 0 auto 15% auto;
+    border: 0.1em solid #888;
+    width: 70%;
+}
+
+@media screen and (max-width: 400px) {
+    .registro {
+       width: 100%;
+    }
+}
