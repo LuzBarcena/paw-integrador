@@ -7,59 +7,75 @@ class Usuario(){
 	protected $nombre_usuario;
 	protected $email;
 	protected $contrasenia;
+	protected $perfil;
+
+	public function __construct($nombre, $apellido, $fecha_nacimiento, $nombre_usuario, $email, $contrasenia) {
+		$this->nombre = $nombre;
+		$this->apellido = $apellido;
+		$this->fecha_nacimiento = $fecha_nacimiento;
+		$this->nombre_usuario = $nombre_usuario;
+		$this->email = $email;
+		$this->contrasenia = $contrasenia;
+	}
 
 //SETERs
 	public function setNombre($nombre){
-		$this->$nombre = $nombre;
+		$this->nombre = $nombre;
 	}
 
 	public function setApellido($apellido){
-		$this->$apellido = $apellido;
+		$this->apellido = $apellido;
 	}
 
 	public function setFechaNacimiento($fecha_nacimiento){
-		$this->$fecha_nacimiento = $fecha_nacimiento
+		$this->fecha_nacimiento = $fecha_nacimiento;
 	}
 
 	public function setNombreUsuario($nombre_usuario){
-		$this->$nombre_usuario = $nombre_usuario;
+		$this->nombre_usuario = $nombre_usuario;
 	}
 
 	public function setEmail($email){
-		$this->$email = $email;
+		$this->email = $email;
 	}
 
 	public function setContrasenia($contrasenia){
-		$this->$contrasenia = $contrasenia;
+		$this->contrasenia = $contrasenia;
 	}
+
+	public function setPerfil($perfil){
+		$this->perfil = $perfil;
+	}
+
 
 //GETTERs
 
 	public function getNombre(){
-		return $this->$nombre;
+		return $this->nombre;
 	}
 
 	public function getApellido(){
-		return $this->$apellido;
+		return $this->apellido;
 	}
 
 	public function getFechaNacimiento(){
-		return $this->$fecha_nacimiento;
+		return $this->fecha_nacimiento;
 	}
 
 	public function getNombreUsuario(){
-		return $this->$nombre_usuario;
+		return $this->nombre_usuario;
 	}
 
 	public function getEmail(){
-		return $this->$email;
+		return $this->email;
 	}
 
 	public function getContrasenia(){
-		return $this->$contrasenia;
+		return $this->contrasenia;
+	}
+
+	public function getPerfil(){
+		return $this->perfil;
 	}
 
 }
-
-
-?>

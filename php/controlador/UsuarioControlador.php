@@ -1,4 +1,3 @@
-
 <?php
 
 class UsuarioControlador(){
@@ -11,4 +10,7 @@ class UsuarioControlador(){
         return UsuarioDAO::login($obj_usuario);
     }
 
+    public static function registro_usuario($nombre, $apellido, $fecha_nacimiento, $nombre_usuario, $email, $contrasenia) {
+
+    }
 }
