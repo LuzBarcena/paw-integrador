@@ -6,8 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="css/registrarse.css">
 	<link rel="stylesheet" type="text/css" href="css/estilosgenerales.css">
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/validaciones.js"></script>
 	<script type="text/javascript" src="js/jsgenerales.js"></script>
-
 </head>
 <body>
 	<header>
@@ -25,7 +25,7 @@
 	</nav>
 	<section>
 		<!-- onsubmit="return validar();" -->
-		<form class="formulario_registro" method="post" action="../controlador/validarRegistro.php">
+		<form class="formulario_registro" method="post" action="../controlador/validarRegistro.php" onsubmit="return validar();">
 	    	<div class="container">
 	    		<label><b>Nombre de usuario</b></label>
 				<input type="text" min="3" max="30" placeholder="Ingrese nombre de usuario" name="nombre_usuario" required>
@@ -34,7 +34,7 @@
 				<label><b>Contraseña</b></label>
 				<input type="password" min="6" max="30" placeholder="Ingrese contraseña" name="contrasenia" onchange="" required>
 				<label><b>Repita contraseña</b></label>
-				<input type="password" min="6" max="30" placeholder="Ingrese contraseña" name="contrasenia" onchange="" required>
+				<input type="password" min="6" max="30" placeholder="Ingrese contraseña" name="contrasenia2" onchange="" required>
 				<label><b>Nombre</b></label>
 				<input type="text" min="3" max="50" placeholder="Ingrese su nombre" name="nombre" onchange="" required>
 				<label><b>Apellido</b></label>

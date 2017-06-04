@@ -9,20 +9,47 @@ include_once '../modelo/Usuario.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	//tienen que estar todos seteados
-	echo "antes de setear";
-    if (isset($_POST["nombre_usuario"]) && isset($_POST["email"]) && isset($_POST["contrasenia"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["fecha_nacimiento"])) {
-    	echo "esta todo ok";
-    	$nombreUsuario = Validador::validar_campo($_POST["nombre_usuario"]);
-    	$email = Validador::validar_campo($_POST["email"]);
-    	$contrasenia = Validador::validar_campo($_POST["contrasenia"]);
-    	$nombre = Validador::validar_campo($_POST["nombre"]);
-    	$apellido = Validador::validar_campo($_POST["apellido"]);
-    	$fechaNacimiento = Validador::validar_campo($_POST["fecha_nacimiento"]);
+    if (isset($_POST["nombre_usuario"]) && isset($_POST["email"]) && isset($_POST["contrasenia"]) && isset($_POST["contrasenia2"]) && isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["fecha_nacimiento"])) {
+    	$nombreUsuario = Validador::limpiarCampo($_POST["nombre_usuario"]);
+    	$email = Validador::limpiarCampo($_POST["email"]);
+    	$contrasenia = Validador::limpiarCampo($_POST["contrasenia"]);
+        $contrasenia2 = Validador::limpiarCampo($_POST["contrasenia2"]);
+    	$nombre = Validador::limpiarCampo($_POST["nombre"]);
+    	$apellido = Validador::limpiarCampo($_POST["apellido"]);
+        $fechaNacimiento = $_POST["fecha_nacimiento"];
 
-    	if ( UsuarioControlador::registroUsuario($nombreUsuario, $email, $contrasenia, $nombre, $apellido, $fechaNacimiento) ) {
-    		echo "listo";
-    	} else {
-    		echo "error";
-    	}
+        $todoOk = true;
+        $todoOk = Validador::validarLongitud($nombreUsuario, 30);
+        $todoOk = Validador::validarLongitud($contrasenia, 30);
+        $todoOk = Validador::validarLongitud($contrasenia, 30);
+        $todoOk = Validador::validarLongitud($nombre, 50);
+        $todoOk = Validador::validarLongitud($apellido, 50);
+
+        $todoOk = Validador::sinEspacios($nombreUsuario);
+        $todoOk = Validador::sinEspacios($email);
+        $todoOk = Validador::sinEspacios($contrasenia);
+        $todoOk = Validador::sinEspacios($contrasenia2);
+
+        $todoOk = Validador::contraseniasIguales($contrasenia, $contrasenia2);
+
+        $todoOk = Validador::esMail($email);
+
+        $todoOk = Validador::fechaValida($fechaNacimiento);
+
+        $todoOk = Validador::letrasNumeros($nombreUsuario, "letrasynumeros");
+        $todoOk = Validador::letrasNumeros($nombre, "letras");
+        $todoOk = Validador::letrasNumeros($apellido, "letras");
+
+        if ($todoOk) {
+        	if ( UsuarioControlador::registroUsuario($nombreUsuario, $email, $contrasenia, $nombre, $apellido, $fechaNacimiento) ) {
+        		header("location:../vista/index.php");
+        	} else {
+                //aca deberia mostrar el error de por qué no se pudo registrar
+        		header("location:../vista/registrarse.php");
+        	}
+        } else {
+            //aca deberia mostrar el error de por qué no se pudo registrar
+            header("location:../vista/registrarse.php");
+        }
     } 
 }
