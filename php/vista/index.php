@@ -12,8 +12,23 @@
 		<img src="img/logo.png" alt="Logo de la página">
 		<?php
 			session_start();
-			echo "Sesión de :" . $_SESSION['login'];
+			if (isset($_SESSION["login"])) {
+				//Si hay sesion muestro nombre
+				echo "Sesión de " . $_SESSION["login"];
+				echo '
+					<form class="sesiones" action="../controlador/handler.php" method="POST">
+						<input type="submit" name="cerrarSesion" value="Cerrar Sesión">
+					</form>
+				';
+			}else{
+				echo '
+					<form class="sesiones" action="../controlador/handler.php" method="POST">
+						<input type="submit" name="iniciarSesion" value="Iniciar Sesión">
+					</form>
+				';
+			}
 		?>
+		
 	</header>
 	<nav>
 		<ul class="topnav" id="myTopnav">

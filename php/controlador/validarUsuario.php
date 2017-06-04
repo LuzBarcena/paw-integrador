@@ -11,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     	if(UsuarioControlador::login($usuario,$contrasenia)){
             //A LA SESION LE PONGO EL NOMBRE DEL USUARIO
             $_SESSION['login'] = $_POST['usuario'];
-            echo "Sesion de :".$_SESSION['login'];
             header("location:../vista/index.php");
     	}else{
     		echo "error en los datos";

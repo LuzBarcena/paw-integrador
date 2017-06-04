@@ -11,13 +11,6 @@
 	</header>
 	
 	<section class="section-login">
-		<?php
-			session_start();
-			//VOY A VER SI HAY UNA SESION, SI YA HAY VOY AL INDEX 
-			if (isset($_SESSION["login"])) {
-				header("location:index.php");
-			}
-		?>
 		<h1>INICIAR SESIÓN</h1>
 		<form class="formulario-login" action="../controlador/validarUsuario.php" method="POST">
 			<label for="usuario"><b>Usuario</b></label>
