@@ -11,14 +11,19 @@
 	</header>
 	
 	<section class="section-login">
+		<?php
+			session_start();
+			//VOY A VER SI HAY UNA SESION, SI YA HAY VOY AL INDEX 
+			if (isset($_SESSION["login"])) {
+				header("location:index.php");
+			}
+		?>
 		<h1>INICIAR SESIÓN</h1>
-		<form class="formulario-login" action="" method="POST">
+		<form class="formulario-login" action="../controlador/validarUsuario.php" method="POST">
 			<label for="usuario"><b>Usuario</b></label>
 			<input type="text" id="usuario" name="usuario" placeholder="Ingrese usuario" required>
 			<label for="contrasenia"><b>Contraseña</b></label>
 			<input type="password"  id="contrasenia" placeholder="Ingrese password" name="contrasenia" required>
-			<label for="recordar">Recuérdame</label>
-        	<input id="recordar" type="checkbox" name="recordar">
 			<input type="submit" name="iniciarSesion" value="Iniciar Sesión">
 		</form>
 	</section>

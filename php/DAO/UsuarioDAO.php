@@ -22,8 +22,8 @@ class UsuarioDAO {
 
 		$resultado = self::$conexion->prepare($query);
 
-		$usu = $usuario->getUsuario();
-		$psw = $usuario->getContrasena();
+		$usu = $usuario->getNombreUsuario();
+		$psw = $usuario->getContrasenia();
 
 		$resultado->bindParam(":usuario", $usu);
 		$resultado->bindParam(":contrasena", $psw);
@@ -32,11 +32,12 @@ class UsuarioDAO {
 
 		if ($resultado->rowCount() > 0) {
 			$filas = $resultado->fetch();
-			if ($filas["nombre_usuario"]==$usuario->getUsuario() && $filas["contrasenia"]==$usuario->getContrasena()) {
+			if ($filas["nombre_usuario"]==$usuario->getNombreUsuario() && $filas["contrasenia"]==$usuario->getContrasenia()) {
+				self::desconectar();
 				return true;
 			}
 		}
-
+		self::desconectar();
 		return false;
 	}
 
