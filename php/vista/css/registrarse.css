@@ -1,7 +1,8 @@
 
 input[type=text], 
 input[type=password],
-input[type=email]  {
+input[type=email],
+input[type=date]  {
     width: 100%;
     padding: 1em 1.2em;
     margin: 0.5em 0;
@@ -28,7 +29,7 @@ input[type=email]  {
     padding: 1.4em;
 }
 
-.formulario {
+.formulario_registro {
     background-color: #fefefe;
     margin: 0 auto 15% auto;
     border: 0.1em solid #888;

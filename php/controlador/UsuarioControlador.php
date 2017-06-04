@@ -1,6 +1,9 @@
 <?php
 
-class UsuarioControlador(){
+include_once '../DAO/UsuarioDAO.php';
+include_once '../modelo/Usuario.php';
+
+class UsuarioControlador {
 
 	public static function login ($usuario, $contrasena) {
         $obj_usuario = new Usuario();
@@ -10,9 +13,10 @@ class UsuarioControlador(){
         return UsuarioDAO::login($obj_usuario);
     }
 
-    public static function registroUsuario($nombre, $apellido, $fecha_nacimiento, $nombre_usuario, $email, $contrasenia) {
-    	$usuario = new Usuario($nombre, $apellido, $fecha_nacimiento, $nombre_usuario, $email, $contrasenia);
-
+    public static function registroUsuario($nombreUsuario, $email, $contrasenia, $nombre, $apellido, $fechaNacimiento) {
+    	$usuario = new Usuario($nombreUsuario, $email, $contrasenia, $nombre, $apellido, $fechaNacimiento);
+    	$usuario->setPerfil("visitante"); // porque todo usuario que se registre por este metodo es un visitante
+    	
     	return UsuarioDAO::nuevoUsuario($usuario);
     }
 }

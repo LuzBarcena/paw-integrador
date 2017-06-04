@@ -1,6 +1,6 @@
 <?php
 
-class Usuario(){
+class Usuario {
 	protected $nombre;
 	protected $apellido;
 	protected $fecha_nacimiento;
@@ -9,11 +9,11 @@ class Usuario(){
 	protected $contrasenia;
 	protected $perfil;
 
-	public function __construct($nombre, $apellido, $fecha_nacimiento, $nombre_usuario, $email, $contrasenia) {
+	public function __construct($nombreUsuario, $email, $contrasenia, $nombre, $apellido, $fechaNacimiento) {
 		$this->nombre = $nombre;
 		$this->apellido = $apellido;
-		$this->fecha_nacimiento = $fecha_nacimiento;
-		$this->nombre_usuario = $nombre_usuario;
+		$this->fecha_nacimiento = $fechaNacimiento;
+		$this->nombre_usuario = $nombreUsuario;
 		$this->email = $email;
 		$this->contrasenia = $contrasenia;
 	}

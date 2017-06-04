@@ -5,7 +5,9 @@
 	<title>Registro</title>
 	<link rel="stylesheet" type="text/css" href="css/registrarse.css">
 	<link rel="stylesheet" type="text/css" href="css/estilosgenerales.css">
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/jsgenerales.js"></script>
+
 </head>
 <body>
 	<header>
@@ -22,16 +24,23 @@
 		</ul>
 	</nav>
 	<section>
-		<form class="formulario" action="">
+		<!-- onsubmit="return validar();" -->
+		<form class="formulario_registro" method="post" action="../controlador/validarRegistro.php">
 	    	<div class="container">
+	    		<label><b>Nombre de usuario</b></label>
+				<input type="text" min="3" max="30" placeholder="Ingrese nombre de usuario" name="nombre_usuario" required>
 				<label><b>Email</b></label>
-				<input type="email" placeholder="Ingrese email" name="email" required>
+				<input type="email" min="11" max="50" placeholder="Ingrese email" name="email" onchange="" required>
 				<label><b>Contraseña</b></label>
-				<input type="password" placeholder="Ingrese password" name="contrasenia" required>
+				<input type="password" min="6" max="30" placeholder="Ingrese contraseña" name="contrasenia" onchange="" required>
+				<label><b>Repita contraseña</b></label>
+				<input type="password" min="6" max="30" placeholder="Ingrese contraseña" name="contrasenia" onchange="" required>
 				<label><b>Nombre</b></label>
-				<input type="text" placeholder="Ingrese su nombre" name="nombre" required>
+				<input type="text" min="3" max="50" placeholder="Ingrese su nombre" name="nombre" onchange="" required>
 				<label><b>Apellido</b></label>
-				<input type="text" placeholder="Ingrese su apellido" name="apellido" required>
+				<input type="text" min="3" max="50" placeholder="Ingrese su apellido" name="apellido" onchange="" required>
+				<label><b>Fecha de nacimiento</b></label>
+				<input type="date" min="01-01-1930" max=""<?php echo date('Y-m-d'); ?>" placeholder="Fecha" name="fecha_nacimiento" onchange="" required>
 				<div class="botones">
 					<button type="submit" class="registro">Registrarse</button>
 				</div>
