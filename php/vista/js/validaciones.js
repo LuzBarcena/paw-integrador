@@ -11,6 +11,22 @@ function validar() {
 	return nombreUsuarioValido && mailValido && nombreValido && apellidoValido && contraseniaValida && fechaValida;
 }
 
+function validarIniciarSesion(){
+	var nombreUsuarioValido = validarNombreUsuario();
+	var contraseniaValida = validarContraseniaS();
+	return nombreUsuarioValido && contraseniaValida;
+}
+
+
+function validarContraseniaS() {
+	var contrasenia = $("input[name='contrasenia']").val();
+	if (campoVacio(contrasenia)) return false;
+	if (longitudExcedida(contrasenia, 30)) return false;
+	if (!esTextoyNumeros(contrasenia)) return false;
+	return true;
+}
+
+
 function campoVacio(campo) {
 	if (campo === "") {
 		alert("Hay por lo menos un campo vacío");

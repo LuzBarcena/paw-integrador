@@ -4,6 +4,9 @@
 	<meta charset="utf-8">
 	<title>Logueo</title>
 	<link rel="stylesheet" type="text/css" href="css/estilosgenerales.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/validaciones.js"></script>
 </head>
 <body>
 	<header>
@@ -11,13 +14,17 @@
 	</header>
 	
 	<section class="section-login">
-		<h1>INICIAR SESIÓN</h1>
-		<form class="formulario-login" action="../controlador/validarUsuario.php" method="POST">
-			<label for="usuario"><b>Usuario</b></label>
-			<input type="text" id="usuario" name="usuario" placeholder="Ingrese usuario" required>
-			<label for="contrasenia"><b>Contraseña</b></label>
-			<input type="password"  id="contrasenia" placeholder="Ingrese password" name="contrasenia" required>
-			<input type="submit" name="iniciarSesion" value="Iniciar Sesión">
+		<form class="formulario_login" action="../controlador/validarUsuario.php" method="POST" onsubmit="return validarIniciarSesion();">
+			<div class="container">
+				<h1>INICIAR SESIÓN</h1>
+				<label for="usuario"><b>Usuario</b></label>
+				<input type="text" id="usuario" name="nombre_usuario" placeholder="Ingrese usuario" required>
+				<label for="contrasenia"><b>Contraseña</b></label>
+				<input type="password"  id="contrasenia" placeholder="Ingrese password" name="contrasenia" required>
+				<div class="botones">
+					<input type="submit" id="iniciarSesion" name="iniciarSesion" value="Iniciar Sesión">
+				</div>
+			</div>
 		</form>
 	</section>
 
