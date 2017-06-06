@@ -1,23 +1,27 @@
-body{
+body {
 	background-color: #EAF2F8 ;
 }
 
-.btn-sesion{
-	background-color: #5499C7;
-    color: white;
-    padding: 0.5em 0.5em;
-    margin: 0.5em 0;
-    border-style: groove ;
-    cursor: pointer;
+.btn-sesion-registro {
+  background-color: #5499C7;
+  color: white;
+  border-style: groove ;
+  padding: 0.5em 1.5em;
+  background-color: #27ae60;
+  cursor: pointer;
+  /*border: none;*/
+  margin: 0.5em 1em;
+  border-radius: 5%;
+
 }
 
-.sesiones{
+.form-sesion-registro {
 	position: absolute;
 	left: 90%;
 	top: 8%;
 }
 
-#nombreSesion{
+#nombreSesion {
 	position: absolute;
 	left: 80%;
 	top: 8%;
@@ -29,7 +33,7 @@ body{
 		left: 45%;
 		top: 8%;
     }
-    .sesiones{
+    .form-sesion-registro {
 		position: absolute;
 		left: 70%;
 		top: 8%;
@@ -42,7 +46,7 @@ body{
 		left: 57%;
 		top: 8%;
     }
-    .sesiones{
+    .form-sesion-registro {
 		position: absolute;
 		left: 78%;
 		top: 8%;
@@ -55,7 +59,7 @@ body{
 		left: 65%;
 		top: 8%;
     }
-    .sesiones{
+    .form-sesion-registro {
 		position: absolute;
 		left: 82%;
 		top: 8%;
@@ -166,16 +170,4 @@ body{
 .descripcion p{
 	text-align: center;
 	font-size: 1.5em;
-}
-
-
-
-
-
-
-/*----------------------------------------------------------------------FOOTER----------------------------------------------------------------*/
-footer{
-	background-color: #2980b9;
-	padding-bottom: 1%; 
-	padding-top: 1%;
 }

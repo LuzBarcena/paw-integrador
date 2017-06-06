@@ -17,12 +17,15 @@
 		<img src="img/logo.png" alt="Logo de la página">
 		<?php if (SesionControlador::haySesion()): ?>
 			<p id="nombreSesion"> Usuario <?= SesionControlador::getSesion(); ?> </p>
-			<form class="sesiones" action="../controlador/handler.php" method="POST">
-				<input class="btn-sesion" type="submit" name="cerrarSesion" value="Cerrar Sesión">
+			<form class="form-sesion-registro" action="../controlador/handler.php" method="POST">
+				<input class="btn-sesion-registro" type="submit" name="cerrarSesion" value="Cerrar Sesión">
 			</form>
 		<?php else: ?>
-			<form class="sesiones" action="../controlador/handler.php" method="POST">
-				<input class="btn-sesion" type="submit" name="iniciarSesion" value="Iniciar Sesión">
+			<form class="form-sesion-registro" action="../controlador/handler.php" method="POST">
+				<input class="btn-sesion-registro" type="submit" name="iniciarSesion" value="Iniciar Sesión">
+			</form>
+			<form class="form-sesion-registro" action="../controlador/handler.php" method="POST">
+				<input class="btn-sesion-registro" type="submit" name="registrarse" value="Registrarse">
 			</form>
 		<?php endif ; ?>
 	</header>
@@ -37,35 +40,36 @@
 			<a class="icon" onclick="menu()">&#9776;</a>
 		</ul>
 	</nav>
-	
-	<div class="carrusel">
-		<div class="slideshow-container">
-  			<div class="mySlides fade">
-    			<div class="numbertext">1 / 3</div>
-    			<img class="img-carrusel" src="img/carrusel1.jpg" style="width:100%;">
-  			</div>
+	<section>
+		<div class="carrusel">
+			<div class="slideshow-container">
+	  			<div class="mySlides fade">
+	    			<div class="numbertext">1 / 3</div>
+	    			<img class="img-carrusel" src="img/carrusel1.jpg" style="width:100%;">
+	  			</div>
 
-  			<div class="mySlides fade">
-    			<div class="numbertext">2 / 3</div>
-    			<img class="img-carrusel" src="img/carrusel2.jpg" style="width:100%">
-  			</div>
+	  			<div class="mySlides fade">
+	    			<div class="numbertext">2 / 3</div>
+	    			<img class="img-carrusel" src="img/carrusel2.jpg" style="width:100%">
+	  			</div>
 
-	  		<div class="mySlides fade">
-    			<div class="numbertext">3 / 3</div>
-    			<img class="img-carrusel" src="img/carrusel3.jpg" style="width:100%">
-  			</div>
+		  		<div class="mySlides fade">
+	    			<div class="numbertext">3 / 3</div>
+	    			<img class="img-carrusel" src="img/carrusel3.jpg" style="width:100%">
+	  			</div>
 
-  			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	  			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	  			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+			<br>
+
+			<div style="text-align:center">
+	  			<span class="dot" onclick="currentSlide(1)"></span> 
+	  			<span class="dot" onclick="currentSlide(2)"></span> 
+	  			<span class="dot" onclick="currentSlide(3)"></span> 
+			</div>
 		</div>
-		<br>
-
-		<div style="text-align:center">
-  			<span class="dot" onclick="currentSlide(1)"></span> 
-  			<span class="dot" onclick="currentSlide(2)"></span> 
-  			<span class="dot" onclick="currentSlide(3)"></span> 
-		</div>
-	</div>
+	</section>
 
 	<section class="descripcion">
 		<p>

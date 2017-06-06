@@ -26,6 +26,11 @@ header img {
     font-size: 1.1em;
 }
 
+.topnav li a {
+    padding: 0;
+    margin-left: 0;
+}
+
 .topnav li:hover {
     background-color: #ddd;
     color: black;
@@ -59,4 +64,11 @@ header img {
         display: block;
         text-align: left;
     }
+}
+
+/*----------------------------------------------------------------------FOOTER----------------------------------------------------------------*/
+footer {
+    background-color: #2980b9;
+    padding-bottom: 1%; 
+    padding-top: 1%;
 }

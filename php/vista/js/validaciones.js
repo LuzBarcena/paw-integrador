@@ -45,10 +45,20 @@ function longitudInsuficiente(campo) {
 		return false;
 	}
 }
-
-function longitudExcedida(campo, longitud) {
+/**
+ * [longitudExcedida description]
+ * @param  campo es el campo al que se le verifica su longitud 
+ * @param  longitud es el valor maximo de caracteres que puede tener maximo
+ * @param  mostrar es un booleano que dice si muestro el campo o no, por ejemplo a la pass no mostrarla
+ * @return si la longitud esta excedidad es true, sino false
+ */
+function longitudExcedida(campo, longitud, mostrar) {
 	if (campo.length > longitud) {
-		alert("¡La longitud de " + campo + " no puede ser superior a " + longitud + " caracteres!")
+		if ( mostrar ) {
+			alert("¡La longitud de " + campo + " no puede ser superior a " + longitud + " caracteres!");
+		} else {
+			alert("¡La longitud de la contraseña no puede ser superior a " + longitud + " caracteres!");
+		}
 		return true;
 	}
 	else {
@@ -89,12 +99,16 @@ function esMail(campo) {
 	}
 }
 
-function esTextoyNumeros(campo) {
+function esTextoyNumeros(campo, mostrar) {
 	if (/^([a-zA-Z0-9\s])*$/.test(campo)) {
 		return true;
 	}
 	else {
-		alert("Solo se puede ingresar texto y números, y usted ingresó: " + campo);
+		if ( mostrar ) {
+			alert("Solo se puede ingresar texto y números, y usted ingresó: " + campo);
+		} else {
+			alert("Solo se puede ingresar texto y números en la contraseña.");
+		}
 		return false;
 	}
 }
@@ -136,8 +150,8 @@ function validarContrasenia() {
 	var contrasenia2 = $("input[name='contrasenia2']").val();
 	if (campoVacio(contrasenia)) return false;
 	if (campoVacio(contrasenia2)) return false;
-	if (longitudExcedida(contrasenia, 30)) return false;
-	if (longitudExcedida(contrasenia2, 30)) return false;
+	if (longitudExcedida(contrasenia, 30, true)) return false;
+	if (longitudExcedida(contrasenia2, 30, true)) return false;
 	if (contraseniasDistintas(contrasenia, contrasenia2)) return false;
 	if (!esTextoyNumeros(contrasenia)) return false;
 	return true;
@@ -145,7 +159,7 @@ function validarContrasenia() {
 
 function contraseniasDistintas(contrasena, contrasena2) {
 	if (contrasena !== contrasena2) {
-		alert("Las contraseñas no coincicen")
+		alert("Las contraseñas no coinciden.")
 		return true;
 	} else {
 		return false;
