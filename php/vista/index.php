@@ -23,8 +23,6 @@
 		<?php else: ?>
 			<form class="form-sesion-registro" action="../controlador/handler.php" method="POST">
 				<input class="btn-sesion-registro" type="submit" name="iniciarSesion" value="Iniciar Sesión">
-			</form>
-			<form class="form-sesion-registro" action="../controlador/handler.php" method="POST">
 				<input class="btn-sesion-registro" type="submit" name="registrarse" value="Registrarse">
 			</form>
 		<?php endif ; ?>

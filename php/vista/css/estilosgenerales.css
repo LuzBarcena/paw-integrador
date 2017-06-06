@@ -5,6 +5,21 @@ header {
     margin-bottom: 0;
 }
 
+
+
+.btn-sesion-registro {
+  background-color: #5499C7;
+  color: white;
+  border-style: groove ;
+  padding: 0.5em 1.5em;
+  background-color: #27ae60;
+  cursor: pointer;
+  /*border: none;*/
+  margin: 0.5em 1em;
+  border-radius: 5%;
+
+}
+
 header img {
     max-height: 150px;  
     margin-left: 5%;
@@ -40,6 +55,8 @@ header img {
     display: none;
 }
 
+
+
 @media screen and (max-width: 600px) {
     .topnav li:not(:first-child) {
         display: none;
@@ -65,6 +82,74 @@ header img {
         text-align: left;
     }
 }
+
+
+@media screen and (max-width: 400px) {
+    #nombreSesion {
+        position: absolute;
+        left: 45%;
+        top: 8%;
+    }
+    .form-sesion-registro {
+        position: absolute;
+        left: 35%;
+        top: 8%;
+    }
+}
+
+@media screen and (max-width: 700px) and (min-width: 401px) {
+    #nombreSesion {
+        position: absolute;
+        left: 57%;
+        top: 8%;
+    }
+    .form-sesion-registro {
+        position: absolute;
+        left: 45%;
+        top: 8%;
+    }
+}
+
+@media screen and (max-width: 822px) and (min-width: 701px) {
+      #nombreSesion {
+        position: absolute;
+        left: 45%;
+        top: 8%;
+    }
+    .form-sesion-registro {
+        position: absolute;
+        left: 55%;
+        top: 8%;
+    }
+}
+
+@media screen and (max-width: 1202px) and (min-width: 823px) {
+    #nombreSesion {
+        position: absolute;
+        left: 60%;
+        top: 8%;
+    }
+    .form-sesion-registro {
+        position: absolute;
+        left: 70%;
+        top: 8%;
+    }
+}
+
+@media screen and (max-width: 1500px) and (min-width: 1203px) {
+    .form-sesion-registro {
+        position: absolute;
+        left: 75%;
+        top: 8%;
+    }
+
+    #nombreSesion {
+        position: absolute;
+        left: 65%;
+        top: 8%;    
+    }
+}  
+
 
 /*----------------------------------------------------------------------FOOTER----------------------------------------------------------------*/
 footer {
