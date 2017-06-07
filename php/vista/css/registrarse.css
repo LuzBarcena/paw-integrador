@@ -30,8 +30,8 @@ input[type=date]  {
 }
 
 .formulario_registro {
-    background-color: #fefefe;
-    margin: 0 auto 15% auto;
+    background-color: rgba(251,251,251,0.8);
+    margin: 0 auto 0.5em auto;
     border: 0.1em solid #888;
     width: 70%;
 }

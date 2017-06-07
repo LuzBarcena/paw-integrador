@@ -1,7 +1,8 @@
 <?php
-include '../controlador/UsuarioControlador.php';
-include '../controlador/SesionControlador.php';
+include_once '../controlador/UsuarioControlador.php';
+include_once '../controlador/SesionControlador.php';
 include_once '../extras/Validador.php';
+include_once '../extras/variedades.php';
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -23,18 +24,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($todoOk) {
             //SI VALIDO BIEN EL USUARIO CREO LA SESION
-    	   if(UsuarioControlador::login($usuario,$contrasenia)){
+    	   if (UsuarioControlador::login($usuario, $contrasenia)) {
                 //A LA SESION LE PONGO EL NOMBRE DEL USUARIO
                 SesionControlador::setSesion($usuario);
                 header("location:../vista/index.php");
-    	   }else{
+    	   } else {
                 //mostrar el error de la bd
     		    header("location:../vista/login.php");
             }
-    	}else {
+    	} else {
             echo "error validaciones";
             //aca deberia mostrar el error de por qué no se pudo registrar
-            //header("location:../vista/login.php");
+            header("location:../vista/login.php");
         }
     }
  }

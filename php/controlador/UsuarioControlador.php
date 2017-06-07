@@ -6,8 +6,7 @@ include_once '../modelo/Usuario.php';
 class UsuarioControlador {
 
 	public static function login ($usuario, $contrasena) {
-        $obj_usuario = new Usuario($usuario,null,$contrasena,null,null,null);
-
+        $obj_usuario = new Usuario($usuario, null, $contrasena, null, null, null);
         return UsuarioDAO::login($obj_usuario);
     }
 

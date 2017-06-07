@@ -23,7 +23,7 @@
 			<a class="icon" onclick="menu()">&#9776;</a>
 		</ul>
 	</nav>
-	<section>
+	<section id="contenedor_registro">
 		<!-- onsubmit="return validar();" -->
 		<form class="formulario_registro" method="post" action="../controlador/validarRegistro.php" onsubmit="return validar();">
 	    	<div class="container">

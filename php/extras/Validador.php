@@ -20,14 +20,11 @@ class Validador {
 
 	public static function validarLongitud($campo, $maxLongitud) {
 		if (strlen($campo) < 3) {
-			echo "Muy corto <br>";
 			return false;
 		}
 		if (strlen($campo) > $maxLongitud) {
-			echo "Muy largo <br>";
 			return false;
 		}
-		echo "todo bien long <br>";
 		return true;
 	}
 
@@ -37,10 +34,8 @@ class Validador {
 
 	public static function esMail($mail) {
 		if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-			echo "es mail <br>";
 			return true;
 		} else {
-			echo "no es mail<br>";
 			return false;
 		}
 	}
@@ -50,11 +45,9 @@ class Validador {
 		//$fecha = "2004-02-29"; 
 		$fecha2 = strtotime ($fecha); 
 		if ($fecha2 < time() ) { 
-			echo "fecha correcta<br>";
 			return true; 
 		} 
 		else { 
-			echo "fecha incorrecta<br>";
 			return false; 
 		}  
 	}
@@ -75,11 +68,9 @@ class Validador {
 		}
 		for ($i = 0; $i < strlen($campo); $i++) { 
 			if (strpos($permitidos, substr($campo, $i, 1)) === false) { 
-				echo "hay un caracter no permitido<br>";
 				return false; 
 			} 
 		} 
-		echo "valido<br>";
 		return true;
 	}
 }

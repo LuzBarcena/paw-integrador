@@ -1,7 +1,7 @@
 <?php
 
 include_once 'Conexion.php';
-include '../modelo/Usuario.php';
+include_once '../modelo/Usuario.php';
 
 class UsuarioDAO {
 
@@ -16,8 +16,7 @@ class UsuarioDAO {
 	}
 
 	public static function login($usuario) {
-		$query = "SELECT * FROM USUARIO WHERE nombre_usuario = :usuario AND contrasenia = :contrasena";
-
+		$query = "SELECT * FROM USUARIO WHERE nombre_usuario = :usuario";
 		self::getConexion();
 
 		$resultado = self::$conexion->prepare($query);
@@ -26,13 +25,13 @@ class UsuarioDAO {
 		$psw = $usuario->getContrasenia();
 
 		$resultado->bindParam(":usuario", $usu);
-		$resultado->bindParam(":contrasena", $psw);
 
 		$resultado->execute();
 
 		if ($resultado->rowCount() > 0) {
 			$filas = $resultado->fetch();
-			if ($filas["nombre_usuario"]==$usuario->getNombreUsuario() && $filas["contrasenia"]==$usuario->getContrasenia()) {
+			$iguales = comprobarContrasena($psw, $filas["contrasenia"]);
+			if ($filas["nombre_usuario"]==$usuario->getNombreUsuario() && $iguales) {
 				self::desconectar();
 				return true;
 			}

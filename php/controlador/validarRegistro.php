@@ -6,6 +6,7 @@ ini_set('display_errors', 1);
 include_once '../extras/Validador.php';
 include_once 'UsuarioControlador.php';
 include_once '../modelo/Usuario.php';
+include_once '../extras/variedades.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	//tienen que estar todos seteados
@@ -41,7 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $todoOk = Validador::letrasNumeros($apellido, "letras");
 
         if ($todoOk) {
-        	if ( UsuarioControlador::registroUsuario($nombreUsuario, $email, $contrasenia, $nombre, $apellido, $fechaNacimiento) ) {
+            $contrasenaEncriptada = encriptarContrasena($contrasenia);
+        	if ( UsuarioControlador::registroUsuario($nombreUsuario, $email, $contrasenaEncriptada, $nombre, $apellido, $fechaNacimiento) ) {
         		header("location:../vista/index.php");
         	} else {
                 //aca deberia mostrar el error de por qué no se pudo registrar
