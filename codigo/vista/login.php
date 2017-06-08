@@ -1,44 +1,25 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="utf-8">
-	<title>Logueo</title>
-	<link rel="stylesheet" type="text/css" href="css/estilosgenerales.css">
-	<link rel="stylesheet" type="text/css" href="css/login.css">
-	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/validaciones.js"></script>
-</head>
-<body>
-	<header>
-		<img src="img/logo.png" alt="Logo de la página">
-	</header>
-	<nav>
-		<ul class="topnav" id="myTopnav">
-			<li><a href="index.php">Inicio</a></li>
-			<li><a href="">Perros</a></li>
-			<li><a href="">Perdidos</a></li>
-			<li><a href="">Noticias</a></li>
-			<li><a href="">Tienda</a></li>
-			<a class="icon" onclick="menu()">&#9776;</a>
-		</ul>
-	</nav>
-	<section class="section-login">
-		<form class="formulario_login" action="../controlador/validarUsuario.php" method="POST" onsubmit="return validarIniciarSesion();">
-			<div class="container">
-				<h1>INICIAR SESIÓN</h1>
-				<label for="usuario"><b>Usuario</b></label>
-				<input type="text" id="usuario" name="nombre_usuario" placeholder="Ingrese usuario" required>
-				<label for="contrasenia"><b>Contraseña</b></label>
-				<input type="password"  id="contrasenia" placeholder="Ingrese password" name="contrasenia" required>
-				<div class="botones">
-					<input type="submit" id="iniciarSesion" name="iniciarSesion" value="Iniciar Sesión">
-				</div>
-			</div>
-		</form>
-	</section>
+<?php 
+//esta linea necesito yo (jasmin)
+require('Smarty.class.php');
 
-	<footer>
-		
-	</footer>
-</body>
-</html>
+class login {
+
+	private $smarty;
+
+	function __construct() {
+		$this->smarty = new SmartyBC();
+		//esta linea necesito yo (jasmin)
+		$this->smarty->template_dir = 'C:/xampp/htdocs/Paw-Integrador/codigo/vista/templates';
+		//esta linea necesito yo (jasmin)
+		$this->smarty->compile_dir = 'C:/xampp/Smarty/templates_c';
+	}
+
+	function display() {
+		$this->smarty->display("login.tpl");
+	}
+
+
+}
+
+$tpl = new login();
+$tpl->display();

@@ -158,7 +158,9 @@ header img {
 
 /*----------------------------------------------------------------------FOOTER----------------------------------------------------------------*/
 footer {
-    background-color: #2980b9;
-    padding-bottom: 1%; 
-    padding-top: 1%;
+    background-color: #D32F2F;
+    color: white;
+    margin-top: 1%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%; 
 }
