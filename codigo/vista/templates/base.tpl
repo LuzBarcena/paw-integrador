@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-{block name=head}{/block}
+{include file="head.tpl"}
 <body>
 	<header>
 		<img src="img/logo.png" alt="Logo de la página">
 
-		{include_php file="../botonesSesion.php"}
+		{*include_php file="../botonesSesion.php"*}
+		{block name=sesion}{/block}
 	</header>
 	
 	<nav>
