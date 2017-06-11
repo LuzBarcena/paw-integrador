@@ -4,9 +4,7 @@
 <body>
 	<header>
 		<img src="img/logo.png" alt="Logo de la página">
-
-		{*include_php file="../botonesSesion.php"*}
-		{block name=sesion}{/block}
+		{include file="sesion.tpl"}
 	</header>
 	
 	<nav>

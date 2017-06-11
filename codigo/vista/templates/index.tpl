@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 {/block}
 
+
 {block name=section}
 	<section>
 		<div class="carrusel">
