@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-06-09 16:08:31
+/* Smarty version 3.1.31, created on 2017-06-10 20:57:59
   from "/var/www/html/paw-integrador/codigo/vista/templates/registrarse.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_593af22fd9be69_76868005',
+  'unifunc' => 'content_593c87873833a7_40632065',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bb395c577478d72a6ea618de24603d8a5ea83aa6' => 
     array (
       0 => '/var/www/html/paw-integrador/codigo/vista/templates/registrarse.tpl',
-      1 => 1497013673,
+      1 => 1497048378,
       2 => 'file',
     ),
   ),
@@ -20,61 +20,48 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_593af22fd9be69_76868005 (Smarty_Internal_Template $_smarty_tpl) {
+function content_593c87873833a7_40632065 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
-
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_802346641593af22fd8d362_85052815', 'head');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1343637717593c8787371064_17779710', 'head');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_236375738593af22fd92a58_47616527', 'section');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1705251591593c8787378239_08409472', 'section');
 ?>
 
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "base.tpl");
 }
 /* {block 'head'} */
-class Block_802346641593af22fd8d362_85052815 extends Smarty_Internal_Block
+class Block_1343637717593c8787371064_17779710 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'head' => 
   array (
-    0 => 'Block_802346641593af22fd8d362_85052815',
+    0 => 'Block_1343637717593c8787371064_17779710',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Registro</title>
 	<link rel="stylesheet" type="text/css" href="css/registrarse.css">
-	<link rel="stylesheet" type="text/css" href="css/estilosgenerales.css">
-	<?php echo '<script'; ?>
- type="text/javascript" src="js/jquery-3.2.1.min.js"><?php echo '</script'; ?>
->
-	<?php echo '<script'; ?>
- type="text/javascript" src="js/validaciones.js"><?php echo '</script'; ?>
->
-	<?php echo '<script'; ?>
- type="text/javascript" src="js/jsgenerales.js"><?php echo '</script'; ?>
->
 <?php
 }
 }
 /* {/block 'head'} */
 /* {block 'section'} */
-class Block_236375738593af22fd92a58_47616527 extends Smarty_Internal_Block
+class Block_1705251591593c8787378239_08409472 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'section' => 
   array (
-    0 => 'Block_236375738593af22fd92a58_47616527',
+    0 => 'Block_1705251591593c8787378239_08409472',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

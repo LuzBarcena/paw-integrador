@@ -1,6 +1,5 @@
 {extends file="base.tpl"}
 
-
 {block name=head}
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 {/block}

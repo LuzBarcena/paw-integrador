@@ -1,6 +1,3 @@
-# carpeta de vendor (por twig)
-/codigo/vista/vendor/*
+# configuracion
 
-# composer
-/codigo/vista/composer.json
-/codigo/vista/composer.lock
+codigo/vista/Configuracion.php
