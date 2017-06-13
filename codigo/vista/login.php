@@ -1,20 +1,21 @@
 <?php 
 include_once('../controlador/SesionControlador.php');
-include_once('Configuracion.php');
+include_once('../extras/Config.php');
 
 
-Configuracion::getSmarty();
+Config::getSmarty();
+
 
 class login {
 
 	private $smarty;
+	
 	function __construct() {
-		$this->smarty = new SmartyBC();
-		$this->smarty->addTemplateDir(Configuracion::getTemplatesDir());
-		$this->smarty->setCompileDir(Configuracion::getCompileDir());
+		$this->smarty = new Smarty();
+		$this->smarty->addTemplateDir(Config::getTemplatesDir());
+		$this->smarty->setCompileDir(Config::getCompileDir());
 		$this->smarty->assign('pageTitle', 'Login');
 	}
-
 
 	function display($templateFile) {
 		$this->smarty->display($templateFile);
@@ -23,7 +24,6 @@ class login {
 	function assign($name, $value) {
 		$this->smarty->assign($name, $value);
 	}
-
 
 }
 

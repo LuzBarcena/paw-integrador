@@ -1,9 +1,8 @@
 <?php 
 include_once('../controlador/SesionControlador.php');
-include_once('Configuracion.php');
+include_once('../extras/Config.php');
 
-
-Configuracion::getSmarty();
+Config::autoload();
 
 
 class index {
@@ -11,10 +10,10 @@ class index {
 	private $smarty;
 	
 	function __construct() {
-		$this->smarty = new SmartyBC();
-		$this->smarty->addTemplateDir(Configuracion::getTemplatesDir());
-		$this->smarty->setCompileDir(Configuracion::getCompileDir());
-		$this->smarty->assign('pageTitle', 'Home');
+		$this->smarty = new Smarty();
+		$this->smarty->addTemplateDir(Config::getTemplatesDir());
+		$this->smarty->setCompileDir(Config::getCompileDir());
+		$this->smarty->assign('pageTitle', 'Inicio');
 	}
 
 	function display($templateFile) {
@@ -24,7 +23,6 @@ class index {
 	function assign($name, $value) {
 		$this->smarty->assign($name, $value);
 	}
-
 
 }
 
