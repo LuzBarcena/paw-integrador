@@ -1,11 +1,10 @@
 <?php 
 include_once('../controlador/SesionControlador.php');
 include_once('../extras/Config.php');
+require_once('TemplateManager.php');
 
-
-Config::getSmarty();
-
-
+Config::autoload();
+/*
 class login {
 
 	private $smarty;
@@ -24,14 +23,14 @@ class login {
 	function assign($name, $value) {
 		$this->smarty->assign($name, $value);
 	}
-
 }
-
-$tpl = new login();
+*/
+$tpl = new TemplateManager();
 $haySesion = SesionControlador::haySesion();
 $tpl->assign('haySesion', $haySesion);
 if ($haySesion) {
 	$usuario = SesionControlador::getSesion();
 	$tpl->assign('usuario', $usuario);
 }
+$tpl->assign('pageTitle', 'Login');
 $tpl->display("login.tpl");
