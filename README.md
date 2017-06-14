@@ -1,4 +1,5 @@
-<h1>Trabajo Práctico Integrador de Programación en Ambiente Web</h1>
+<h1>Trabajo Práctico Integrador</h1>
+<h2>Programación en Ambiente Web</h2>
 <h3>Herramientas</h3>
 <ul>
 	<li>Smarty</li>
