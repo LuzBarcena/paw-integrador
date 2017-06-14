@@ -36,8 +36,11 @@ input[type=date]  {
     width: 70%;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     .registro {
        width: 100%;
+    }
+    .formulario_registro {
+        width: 90%;
     }
 }

@@ -35,3 +35,9 @@ input[type=password]  {
 .botones{
 	text-align: center;
 }
+
+@media screen and (max-width: 500px) {
+    .formulario_login {
+       width: 90%;
+    }
+}
