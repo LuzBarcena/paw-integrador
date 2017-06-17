@@ -107,7 +107,7 @@ function esTextoyNumeros(campo, mostrar) {
 		if ( mostrar ) {
 			alert("Solo se puede ingresar texto y números, y usted ingresó: " + campo);
 		} else {
-			alert("Solo se puede ingresar texto y números en la contraseña.");
+			alert("Solo se puede ingresar texto y números.");
 		}
 		return false;
 	}

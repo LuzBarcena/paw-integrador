@@ -37,6 +37,7 @@ class UsuarioDAO {
 			}
 		}
 		self::desconectar();
+		echo "<script>alert('Error al recuperar usuario, por favor chequee que sea correcto!');</script>";
 		return false;
 	}
 
@@ -67,6 +68,7 @@ class UsuarioDAO {
             return true;
         }
         self::desconectar();
+        echo "<script>alert('Error al dar de alta al usuario.');</script>";
         return false;
 	}
 

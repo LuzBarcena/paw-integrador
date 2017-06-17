@@ -46,12 +46,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         	if ( UsuarioControlador::registroUsuario($nombreUsuario, $email, $contrasenaEncriptada, $nombre, $apellido, $fechaNacimiento) ) {
         		header("location:../vista/index.php");
         	} else {
-                //aca deberia mostrar el error de por qué no se pudo registrar
-        		header("location:../vista/registrarse.php");
+                //error en la bd
+        		echo "<script language='javascript'>window.location='../vista/registrarse.php'</script>"; 
         	}
         } else {
-            //aca deberia mostrar el error de por qué no se pudo registrar
-            header("location:../vista/registrarse.php");
+            //error por validaciones
+            echo "<script language='javascript'>window.location='../vista/registrarse.php'</script>"; 
         }
     } 
 }

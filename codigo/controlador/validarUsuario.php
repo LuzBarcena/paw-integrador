@@ -29,13 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 SesionControlador::setSesion($usuario);
                 header("location:../vista/index.php");
     	   } else {
-                //mostrar el error de la bd
-    		    header("location:../vista/login.php");
+                //error en la bd
+                echo "<script language='javascript'>window.location='../vista/login.php'</script>"; 
             }
     	} else {
-            echo "error validaciones";
-            //aca deberia mostrar el error de por qué no se pudo registrar
-            header("location:../vista/login.php");
+            //error en alguna validacion
+            echo "<script language='javascript'>window.location='../vista/login.php'</script>"; 
         }
     }
  }
