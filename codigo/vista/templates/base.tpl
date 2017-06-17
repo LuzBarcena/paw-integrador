@@ -11,7 +11,7 @@
 		<ul class="topnav" id="myTopnav">
 			<li><a href="index.php">Inicio</a></li>
 			<li><a href="">Perros</a></li>
-			<li><a href="">Perdidos</a></li>
+			<li><a href="perdidos.php">Perdidos</a></li>
 			<li><a href="">Noticias</a></li>
 			<li><a href="">Tienda</a></li>
 			<a class="icon" onclick="menu()">&#9776;</a>

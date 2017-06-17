@@ -14,3 +14,16 @@ CREATE TABLE usuario (
 	CONSTRAINT unique_mail UNIQUE (email),
 	CONSTRAINT unique_nombre_usuario UNIQUE (nombre_usuario)
 )
+
+CREATE TABLE PERDIDO (
+	id_perdido SERIAL NOT NULL,
+	id_usuario INTEGER NOT NULL,
+	titulo VARCHAR(30) NOT NULL,
+	descripcion VARCHAR(140) NOT NULL,
+	foto VARCHAR(100) NOT NULL,
+	info_contacto VARCHAR(70) NOT NULL,
+	ultima_direccion VARCHAR(200) NOT NULL,
+ 
+	PRIMARY KEY(id_perdido),
+	CONSTRAINT FK_USUARIO FOREIGN KEY id_usuario REFERENCES USUARIO (id_usuario)
+);
