@@ -62,12 +62,24 @@ class UsuarioDAO {
 		$resultado->bindParam(":email", $email);
 		$resultado->bindParam(":contrasenia", $contrasenia);
 		$resultado->bindParam(":perfil", $perfil);
+
 		if ($resultado->execute()) {
+			//self::desconectar();
+			return true;
+		} else {
+			$error = $resultado->errorInfo();
 			self::desconectar();
-            return true;
-        }
-        self::desconectar();
-        return false;
+			//el formato es por ejemplo:
+			//Array ( [0] => 23505 [1] => 7 [2] => ERROR: llave duplicada viola restricción de unicidad «unique_mail» DETAIL: Ya existe la llave (email)=(luz@gmail.com). )
+			if ( strpos($error[2], "unique_nombre_usuario")) {
+				return "El nombre de usuario ya está siendo utilizado, elija otro.";
+			} else {
+				if ( strpos($error[2], "unique_mail")) {
+					return "El mail ya está siendo utilizado, elija otro.";
+				}					
+			}
+	        return $error[2];
+		}
 	}
 
 }

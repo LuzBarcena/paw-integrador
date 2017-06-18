@@ -29,7 +29,8 @@ function validarContraseniaS() {
 
 function campoVacio(campo) {
 	if (campo === "") {
-		alert("Hay por lo menos un campo vacío");
+		//alert("Hay por lo menos un campo vacío");
+		mostrarError("Hay por lo menos un campo vacío");
 		return true;
 	}
 	else {
@@ -55,9 +56,13 @@ function longitudInsuficiente(campo) {
 function longitudExcedida(campo, longitud, mostrar) {
 	if (campo.length > longitud) {
 		if ( mostrar ) {
-			alert("¡La longitud de " + campo + " no puede ser superior a " + longitud + " caracteres!");
+			var error = "¡La longitud de " + campo + " no puede ser superior a " + longitud + " caracteres!";
+			//alert(error);
+			mostrarError(error);
 		} else {
-			alert("¡La longitud de la contraseña no puede ser superior a " + longitud + " caracteres!");
+			var error = "¡La longitud de la contraseña no puede ser superior a " + longitud + " caracteres!";
+			//alert(error);
+			mostrarError(error);
 		}
 		return true;
 	}
@@ -73,7 +78,9 @@ function soloTexto(campo) {
 		return true; 
 	}
 	else {
-		alert("Solo se puede ingresar texto, y usted ingresó: " + campo);
+		var error = "Solo se puede ingresar texto, y usted ingresó: " + campo;
+		//alert(error);
+		mostrarError(error);
 		return false;
 	}
 }
@@ -83,7 +90,9 @@ function soloNumeros(campo) {
 		return true;
 	}
 	else {
-		alert("Solo se puede ingresar números, y usted ingresó: " + campo);
+		var error = "Solo se puede ingresar números, y usted ingresó: " + campo;
+		//alert(error);
+		mostrarError(error);
 		return false;
 	}
 }
@@ -94,7 +103,9 @@ function esMail(campo) {
 		return true;
 	}
 	else {
-		alert("El mail " + campo + " no tiene formato de mail.");
+		var error = "El mail " + campo + " no tiene formato de mail.";
+		//alert(error);
+		mostrarError(error);
 		return false;
 	}
 }
@@ -105,9 +116,13 @@ function esTextoyNumeros(campo, mostrar) {
 	}
 	else {
 		if ( mostrar ) {
-			alert("Solo se puede ingresar texto y números, y usted ingresó: " + campo);
+			var error = "Solo se puede ingresar texto y números, y usted ingresó: " + campo;
+			//alert(error);
+			mostrarError(error);
 		} else {
-			alert("Solo se puede ingresar texto y números.");
+			var error = "Solo se puede ingresar texto y números.";
+			//alert(error);
+			mostrarError(error);
 		}
 		return false;
 	}
@@ -159,7 +174,9 @@ function validarContrasenia() {
 
 function contraseniasDistintas(contrasena, contrasena2) {
 	if (contrasena !== contrasena2) {
-		alert("Las contraseñas no coinciden.")
+		var error = "Las contraseñas no coinciden.";
+		//alert(error);
+		mostrarError(error);
 		return true;
 	} else {
 		return false;
@@ -173,26 +190,10 @@ function validarFecha() {
 	var fechaFormulario = new Date(fecha);
 	hoy.setHours(0,0,0,0);
 	if (hoy <= fechaFormulario) {
-		alert("La fecha de nacimiento es posterior al día de hoy")
+		var error = "La fecha de nacimiento es posterior al día de hoy";
+		//alert(error);
+		mostrarError(error);
 		return false;
 	}
 	return true;
 }
-
-
-/*	
-registrarse = function() {
-	var data = $(".formulario_registro").serializeArray();
-	console.log(data);
-	$.ajax({
-		data: data,
-		url: '../controlador/validarRegistro.php',
-		type: 'POST',
-		success: function (response) {
-		    alert("Todo bien :)");
-		},
-		error: function(response) {
-        	alert("Ocurrió un error! :(");
-        }
-    });
-}*/

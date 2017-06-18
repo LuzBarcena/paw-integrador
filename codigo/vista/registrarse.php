@@ -8,9 +8,11 @@ Config::autoload();
 $tpl = new TemplateManager();
 $haySesion = SesionControlador::haySesion();
 $tpl->assign('haySesion', $haySesion);
+
 if ($haySesion) {
 	$usuario = SesionControlador::getSesion();
 	$tpl->assign('usuario', $usuario);
 }
+
 $tpl->assign('pageTitle', 'Registrarse');
 $tpl->display("registrarse.tpl");

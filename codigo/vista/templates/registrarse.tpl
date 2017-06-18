@@ -2,12 +2,16 @@
 
 {block name=head}
 	<link rel="stylesheet" type="text/css" href="css/registrarse.css">
+	<script type="text/javascript" src="js/registro.js"></script>
 {/block}
 
 {block name=section}
 	<section id="contenedor_registro">
-		<!-- onsubmit="return validar();" -->
-		<form class="formulario_registro" method="post" action="../controlador/validarRegistro.php" onsubmit="return validar();">
+		<!-- action="../controlador/validarRegistro.php" 
+			action="../interfaces/validarRegistro.php"
+			onsubmit="return validar();"
+		" -->
+		<form class="formulario_registro" method="post" >
 	    	<div class="container">
 	    		<h1>REGISTRARSE</h1>
 	    		<label><b>Nombre de usuario</b></label>
@@ -25,10 +29,9 @@
 				<label><b>Fecha de nacimiento</b></label>
 				<input type="date" min="01-01-1930" placeholder="Fecha" name="fecha_nacimiento" onchange="" required>
 				<div class="botones">
-					<button type="submit" class="registro">Registrarse</button>
+					<input type="button" class="registro" name="registro" value="Registrarse"></input>
 				</div>
 			</div>
 		</form>
 	</section>
 {/block}
-
