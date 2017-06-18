@@ -15,7 +15,7 @@ class PerdidoDAO {
 		self::$conexion = null;
 	}
 
-	public static function devolverPerdidos() {
+	public static function obtenerPerdidos() {
 		$query = "SELECT * FROM PERDIDO";
 		self::getConexion();
 
@@ -29,7 +29,6 @@ class PerdidoDAO {
 			return $filas;
 		}
 		self::desconectar();
-		echo "<script>alert('No hay perdidos para mostrar o hubo un error en la recuperación');</script>";
 		return false;
 	}
 }

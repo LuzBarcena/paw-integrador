@@ -16,10 +16,9 @@ if ($haySesion) {
 $tpl->assign('pageTitle', 'Perdidos');
 
 //Para mostrar todos los perdidos que haya
-if(PerdidoControlador::getPerdidos() != false){
-	$resultado = PerdidoControlador::getPerdidos();
-	$tpl->assign("resultados", $resultado);
+$resultado = PerdidoControlador::getPerdidos();
+if ($resultado != false) {
+	$tpl->assign("resultado", $resultado);
 }
-
 
 $tpl->display("perdidos.tpl");

@@ -9,7 +9,7 @@ class TemplateManager {
     private $smarty;
     
     function __construct() {
-       $this->smarty = new Smarty();
+        $this->smarty = new Smarty();
         $this->smarty->addTemplateDir(Config::getTemplatesDir());
         $this->smarty->setCompileDir(Config::getCompileDir());
     }

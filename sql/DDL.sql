@@ -18,12 +18,57 @@ CREATE TABLE usuario (
 CREATE TABLE PERDIDO (
 	id_perdido SERIAL NOT NULL,
 	id_usuario INTEGER NOT NULL,
-	titulo VARCHAR(30) NOT NULL,
-	descripcion VARCHAR(140) NOT NULL,
-	foto VARCHAR(100) NOT NULL,
-	info_contacto VARCHAR(70) NOT NULL,
+	titulo VARCHAR(50) NOT NULL,
+	descripcion VARCHAR(200) NOT NULL,
+	foto VARCHAR(150) NOT NULL,
+	info_contacto VARCHAR(100) NOT NULL,
 	ultima_direccion VARCHAR(200) NOT NULL,
  
 	PRIMARY KEY(id_perdido),
-	CONSTRAINT FK_USUARIO FOREIGN KEY id_usuario REFERENCES USUARIO (id_usuario)
+	CONSTRAINT FK_USUARIO_PERDIDO FOREIGN KEY (id_usuario) REFERENCES USUARIO (id_usuario)
+);
+
+CREATE TYPE TAMANIO_PERRO AS ENUM ('chico','mediano','grande');
+
+CREATE TABLE REFERENCIA (
+	id_referencia SERIAL NOT NULL PRIMARY KEY,
+	nombre VARCHAR(30),
+	descripcion VARCHAR(100)
+);
+
+CREATE TABLE RAZA (
+	id_raza SERIAL NOT NULL PRIMARY KEY,
+	nombre VARCHAR(30),
+	descripcion VARCHAR(100)
+);
+
+CREATE TABLE PERRO (
+	id_perro SERIAL NOT NULL PRIMARY KEY,
+	nombre VARCHAR(50) NOT NULL,
+	edad INTEGER,
+	particularidad VARCHAR(100),
+	tamanio TAMANIO_PERRO,
+	peso FLOAT,
+	id_raza INTEGER,
+	id_referencia INTEGER,
+	
+	CONSTRAINT FK_REFERENCIA_PERRO FOREIGN KEY (id_referencia) REFERENCES REFERENCIA (id_referencia),
+	CONSTRAINT FK_RAZA_PERRO FOREIGN KEY (id_raza) REFERENCES RAZA (id_raza)
+);
+
+CREATE TABLE PERRO_REFERENCIA (
+	id_perro INTEGER NOT NULL,
+	id_referencia INTEGER NOT NULL,
+	CONSTRAINT pk_perro_referencia PRIMARY KEY (id_perro, id_referencia),
+	CONSTRAINT FK_PERRO FOREIGN KEY (id_perro) REFERENCES perro (id_perro),
+	CONSTRAINT FK_REFERENCIA FOREIGN KEY (id_referencia) REFERENCES referencia (id_referencia)
+);
+
+
+CREATE TABLE PERRO_RAZA (
+	id_perro INTEGER NOT NULL,
+	id_raza INTEGER NOT NULL,
+	CONSTRAINT pk_perro_raza PRIMARY KEY (id_perro, id_raza),
+	CONSTRAINT FK_PERRO_RAZA FOREIGN KEY (id_perro) REFERENCES perro (id_perro),
+	CONSTRAINT FK_RAZA FOREIGN KEY (id_raza) REFERENCES RAZA (id_raza)
 );
