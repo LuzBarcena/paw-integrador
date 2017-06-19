@@ -23,7 +23,9 @@ function registrarUsuario(nombreUsuario, email, nombre, apellido, contrasenia, c
 			if (data.status === "ok") {
 				//alert(data.descripcion);
 				mostrarError(data.descripcion);
-				location.href ="index.php";
+				setTimeout(function(){
+					location.href ="index.php";
+				}, 3000);
 			} else {
 				//alert(data.descripcion);
 				mostrarError(data.descripcion);
