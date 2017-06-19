@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $valor = UsuarioControlador::registroUsuario($nombreUsuario, $email, $contrasenaEncriptada, $nombre, $apellido, $fechaNacimiento);
             	if ( $valor == 1 ) {
             		//header("location:../vista/index.php");
-                    echo '{"status": "ok", "descripcion": "Usuario Registrado.", "data":"' . $_POST["nombre_usuario"].'"}';
+                    echo '{"status": "ok", "descripcion": "Usuario Registrado. Redirigiendo al index...", "data":"' . $_POST["nombre_usuario"].'"}';
             	} else {
                     echo '{"status": "error", "descripcion":' .'"'. $valor .'"'. ', "data":"' . $_POST["nombre_usuario"].'"}';
                     //error en la bd

@@ -16,9 +16,9 @@ function setearModal() {
 	}
 }
 
-function mostrarError(error) {
+function mostrarModal(mensaje) {
 	var modal = document.getElementById('myModal');
-	var p = document.getElementById("mensajeError");
-	$('#mensajeError').text(error);
+	var p = document.getElementById("mensaje");
+	$('#mensaje').text(mensaje);
 	modal.style.display = "block";
 }

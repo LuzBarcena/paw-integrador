@@ -35,9 +35,12 @@ class UsuarioDAO {
 				self::desconectar();
 				return true;
 			}
+			self::desconectar();
+			return "La contraseña introducida no es válida, ingrésela nuevamente.";
 		}
 		self::desconectar();
-		return false;
+		return "El usuario no existe, ingréselo nuevamente.";
+		//return false;
 	}
 
 	public static function nuevoUsuario($usuario) {

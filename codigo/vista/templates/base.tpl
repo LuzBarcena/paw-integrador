@@ -24,7 +24,7 @@
 		<p>Soy footer</p>
 	</footer>
 
-	{include file="modalError.tpl"}	
+	{include file="modal.tpl"}	
 
 	{block name=script}{/block}
 </body>

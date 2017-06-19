@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 	$("input[name='registro']").click(obtenerDatos);
 });
@@ -21,14 +22,12 @@ function registrarUsuario(nombreUsuario, email, nombre, apellido, contrasenia, c
 			var data = JSON.parse(respuesta);
 			console.log(data);
 			if (data.status === "ok") {
-				//alert(data.descripcion);
-				mostrarError(data.descripcion);
+				mostrarModal(data.descripcion);
 				setTimeout(function(){
 					location.href ="index.php";
-				}, 3000);
+				}, 2500);
 			} else {
-				//alert(data.descripcion);
-				mostrarError(data.descripcion);
+				mostrarModal(data.descripcion);
 			}
 			
 		},
