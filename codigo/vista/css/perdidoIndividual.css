@@ -1,30 +1,24 @@
-.articulo_perdidos{
-	width: 40%;
-	margin: auto;
-	padding-left: 2%;
-	padding-right: 2%;
-	cursor: pointer;
-	margin-bottom: 2%;
-}
-
-.header_perdidos{
-	text-align: center;
-}
-
-.perdido {
+.card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+    width: 70%;
+    border-radius: 5px;
+    background-color: white;
+    text-align: center;
+    margin: auto;
+    margin-top: 1%;
+    padding-bottom: 1%; 
 }
 
-.perdido:hover {
+.card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.container_info {
-    background-color: #E5E7E9;
-    padding: 0.1%;
-    text-align: center;
+img {
+    border-radius: 8px 8px 0 0;
+    height: 500px;
 }
 
-
-
+.container {
+    padding: 2px 16px;
+}
