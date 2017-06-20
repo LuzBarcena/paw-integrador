@@ -31,4 +31,23 @@ class PerdidoDAO {
 		self::desconectar();
 		return false;
 	}
+
+	public static function obtenerUnPerdido($id){
+		$query = "SELECT * FROM PERDIDO WHERE id_perdido = :id";
+		self::getConexion();
+
+		$resultado = self::$conexion->prepare($query);
+
+		$resultado->bindParam(":id", $id);
+
+		$resultado->execute();
+
+		if ($resultado->rowCount() > 0) {
+			$fila = $resultado->fetch();
+			self::desconectar();
+			return $fila;
+		}
+		self::desconectar();
+		return false;
+	}
 }

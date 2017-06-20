@@ -21,4 +21,9 @@ class PerdidoControlador {
 		return $resultado;
 	}
 
+	public static function getPerdido($id){
+		$resultado = PerdidoDAO::obtenerUnPerdido($id);
+		return $resultado;
+	}
+
 }

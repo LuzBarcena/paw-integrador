@@ -1,5 +1,6 @@
 <?php 
 include_once('../controlador/SesionControlador.php');
+include_once('../controlador/PerdidoControlador.php');
 include_once('../extras/Config.php');
 require_once('TemplateManager.php');
 
@@ -14,18 +15,13 @@ if ($haySesion) {
 }
 $tpl->assign('pageTitle', 'Perdidos');
 
-/*echo $_GET['titulo'];
-echo $_GET['foto'];
-echo $_GET['descripcion'];
-echo $_GET['contacto'];
-echo $_GET['ultima_direccion'];
-*/
-
-
-$tpl->assign('titulo',$_GET['titulo']);
-$tpl->assign('foto',$_GET['foto']);
-$tpl->assign('descripcion',$_GET['descripcion']);
-$tpl->assign('info_contacto',$_GET['contacto']);
-$tpl->assign('ultima_direccion',$_GET['ultima_direccion']);
+$resultado = PerdidoControlador::getPerdido($_GET['id']);
+if ($resultado != false) {
+	$tpl->assign("titulo", $resultado['titulo']);
+	$tpl->assign('foto',$resultado['foto']);
+	$tpl->assign('descripcion',$resultado['descripcion']);
+	$tpl->assign('info_contacto',$resultado['info_contacto']);
+	$tpl->assign('ultima_direccion',$resultado['ultima_direccion']);
+}
 
 $tpl->display("perdidosIndividual.tpl");
