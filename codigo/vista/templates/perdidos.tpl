@@ -6,12 +6,14 @@
 
 {block name=section}
     {foreach $resultado as $fila}
-        <div class="perdidos">
-            <h3>{$fila['titulo']}</h3>
-            <img class="foto_perdidos" alt="Perro perdido" src="{$fila['foto']}">
-            <p class="descripcion_perdidos">{$fila['descripcion']}</p> 
-            <a href="perdidoIndividual.php?id={$fila['id_perdido']}">Leer más</a>
-        </div>
+        <div class="card">
+  			<img class="foto_perdidos" src="{$fila['foto']}" alt="Perro perdido" style="width:100%">
+ 			<div class="container">
+    			<h4><b>{$fila['titulo']}</b></h4> 
+    			<p>{$fila['descripcion']}</p> 
+  			</div>
+  			<a href="perdidoIndividual.php?id={$fila['id_perdido']}">Leer más</a>
+		</div>
     {/foreach}
 {/block}
 
