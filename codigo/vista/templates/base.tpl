@@ -4,6 +4,7 @@
 <body>
 	<header>
 		<img src="img/logo.png" alt="Logo de la página">
+		<h1><a href="index.php">Protectora</a></h1>
 		{include file="sesion.tpl"}
 	</header>
 	
@@ -17,15 +18,15 @@
 			<a class="icon" onclick="menu()">&#9776;</a>
 		</ul>
 	</nav>
-	
+	{block name=dosOpciones}{/block}
 	{block name=section}{/block}
-
+	{block name=paginado}{/block}
 	<footer>	
-		<p>Soy footer</p>
+		{*<p>Soy footer</p>*}
 	</footer>
 
 	{include file="modal.tpl"}	
 
-	{block name=script}{/block}
+	{block name=scriptCarrusel}{/block}
 </body>
 </html>

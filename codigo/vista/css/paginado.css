@@ -1,0 +1,35 @@
+#paginacion-centrada {
+	text-align: center;
+	margin: 0.5em auto;
+}
+
+#pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+#ul-paginacion li {
+	display: inline-block;
+}
+
+#ul-paginacion li a {
+    color: #fff;
+    float: left;
+    padding: 0.7em 1.2em;
+    text-decoration: none;
+    background-color: #04052e;
+    transition: background-color .3s;
+    border: 0.1em solid #ddd;
+}
+
+#ul-paginacion li a.active {
+    background-color: #007E33;
+    color: #fff;
+    border: 0.1em solid #007E33;
+}
+
+#ul-paginacion li a:hover:not(.active) {
+	background-color: #1a237e;
+}
+

@@ -49,6 +49,6 @@
 	</section>
 {/block}
 
-{block name=script}
+{block name=scriptCarrusel}
 	<script type="text/javascript" src="js/carrusel.js"></script>
 {/block}
