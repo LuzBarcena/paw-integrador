@@ -61,4 +61,22 @@
     padding: 0.1em 1.2em;
 }
 
+@media screen and (max-width: 822px) and (min-width: 700px) {
+    .dosOpciones{
+        margin-left: 18%;
+    }
+    .dosOpciones a {
+        width: 40%;
+    }
+}  
 
+
+
+@media screen and (max-width: 1279px) and (min-width: 823px) {
+    .dosOpciones{
+        margin-left: 28%;
+    }
+    .dosOpciones a {
+        width: 50%;
+    }
+}  

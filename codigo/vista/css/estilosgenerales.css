@@ -129,33 +129,63 @@ header img {
     }
 }
 
-@media screen and (max-width: 700px) and (min-width: 401px) {
+@media screen and (max-width: 783px) and (min-width: 401px) {
     #nombreSesion {
         position: absolute;
-        left: 57%;
+        left: 47%;
         top: 8%;
     }
     .form-sesion-registro {
         position: absolute;
-        left: 45%;
+        left: 60%;
         top: 8%;
     }
 }
 
-@media screen and (max-width: 822px) and (min-width: 701px) {
+
+@media screen and (max-width: 822px) and (min-width: 784px) {
       #nombreSesion {
         position: absolute;
-        left: 45%;
+        left: 53%;
         top: 8%;
     }
     .form-sesion-registro {
         position: absolute;
-        left: 55%;
+        left: 65%;
         top: 8%;
     }
 }
 
-@media screen and (max-width: 1202px) and (min-width: 823px) {
+@media screen and (max-width: 857px) and (min-width: 823px) {
+    .form-sesion-registro {
+        position: absolute;
+        left: 65%;
+        top: 8%;
+    }
+
+    #nombreSesion {
+        position: absolute;
+        left: 55%;
+        top: 8%;    
+    }
+}  
+
+
+@media screen and (max-width: 913px) and (min-width: 858px) {
+    .form-sesion-registro {
+        position: absolute;
+        left: 65%;
+        top: 8%;
+    }
+
+    #nombreSesion {
+        position: absolute;
+        left: 53%;
+        top: 8%;    
+    }
+}  
+
+@media screen and (max-width: 1400px) and (min-width: 914px) {
     #nombreSesion {
         position: absolute;
         left: 60%;
@@ -168,19 +198,7 @@ header img {
     }
 }
 
-@media screen and (max-width: 1500px) and (min-width: 1203px) {
-    .form-sesion-registro {
-        position: absolute;
-        left: 75%;
-        top: 8%;
-    }
 
-    #nombreSesion {
-        position: absolute;
-        left: 65%;
-        top: 8%;    
-    }
-}  
 
 
 /*----------------------------------------------------------------------FOOTER----------------------------------------------------------------*/
