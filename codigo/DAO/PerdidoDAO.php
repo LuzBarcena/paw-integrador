@@ -15,8 +15,29 @@ class PerdidoDAO {
 		self::$conexion = null;
 	}
 
-	public static function obtenerPerdidos() {
-		$query = "SELECT * FROM PERDIDO";
+	public static function obtenerPerdidos($indice, $elementosPorPagina) {
+		$query = "SELECT * FROM PERDIDO ORDER BY ID_PERDIDO DESC LIMIT :cantidad OFFSET :indice;";
+
+		self::getConexion();
+
+		$resultado = self::$conexion->prepare($query);
+
+		$resultado->bindParam(":cantidad", $elementosPorPagina);
+		$resultado->bindParam(":indice", $indice);
+
+		$resultado->execute();
+
+		if ($resultado->rowCount() > 0) {
+			$filas = $resultado->fetchAll();
+			self::desconectar();
+			return $filas;
+		}
+		self::desconectar();
+		return false;
+	}
+
+	public static function obtenerCantidadPerdidos() {
+		$query = "SELECT count(id_perdidos) FROM PERDIDO;";
 		self::getConexion();
 
 		$resultado = self::$conexion->prepare($query);

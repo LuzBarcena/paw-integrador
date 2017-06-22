@@ -17,6 +17,8 @@
 				<textarea name="descripcion" rows="5" cols="40" required></textarea>
 				Seleccione una imagen:
 				<input type="file" name="imagen" id="imagen">
+				<input type="text" name="direccion" required>
+				<div id="map"></div>
 				<div class="botones">
 					<input type="button" id="agregarPerdido" name="agregarPerdido" value="Agregar">
 				</div>

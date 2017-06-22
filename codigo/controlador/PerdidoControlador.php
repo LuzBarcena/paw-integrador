@@ -5,20 +5,19 @@ include_once '../extras/variedades.php';
 
 class PerdidoControlador {
 
-	public static function getPerdidos() {
-		$resultado = PerdidoDAO::obtenerPerdidos();
-		//LO QUE ESTA COMENTADO ES PARA QUE EN LA 
-		//BD QUEDE SOLO EL NOMBRE DE LA FOTO (CON LA EXTENSION)
-		//Y ACA SE LE AGREGUE EL RESTO DEL PATH CON ESTA FUNCION
-		/*foreach ($resultado as $fila) {
+	public static function getPerdidos($indice, $elementosPorPagina) {
+		$resultado = PerdidoDAO::obtenerPerdidos($indice, $elementosPorPagina);
+
+		foreach ($resultado as $key => $fila) {
 			$path = concatenarPath($fila['foto'], 'perdidos');
-			echo $path;
-			$fila['foto'] = $path;
+			$path = $path . ".jpg";
+			$resultado[$key]['foto'] = $path;
 		}
-		foreach ($resultado as $fila) {
-			echo $fila['foto'];
-		}*/
 		return $resultado;
+	}
+
+	public static function getCantidadPerdidos() {
+		return PerdidoDAO::obtenerCantidadPerdidos();
 	}
 
 	public static function getPerdido($id){

@@ -6,8 +6,8 @@
 {/block}
 {block name=dosOpciones}
     <div class="dosOpciones">
-        <a id="rojo" href="#formAltaPerdido">Perdí a mi perro</a>
-        <a id="verde" href="#formAltaPerdidoEncontrado">Encontré un perro</a>
+        <a id="rojo" href="altaPerdidoEncontrado.php">Perdí a mi perro</a>
+        <a id="verde" href="altaPerdidoEncontrado.php">Encontré un perro</a>
     </div>
 {/block}
 {block name=section}
@@ -22,6 +22,8 @@
   			<a href="perdidoIndividual.php?id={$fila['id_perdido']}">Leer más</a>
 		</div>
     {/foreach}
+        <a href="perdidos.php?pag={{$pag-1}}">Anterior</a>
+        <a href="perdidos.php?pag={{$pag+1}}">Siguiente</a>
     </section>
 {/block}
 
