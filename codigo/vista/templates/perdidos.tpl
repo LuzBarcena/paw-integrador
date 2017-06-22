@@ -22,8 +22,9 @@
   			<a href="perdidoIndividual.php?id={$fila['id_perdido']}">Leer más</a>
 		</div>
     {/foreach}
+        {*<p>{$pag}</p>
         <a href="perdidos.php?pag={{$pag-1}}">Anterior</a>
-        <a href="perdidos.php?pag={{$pag+1}}">Siguiente</a>
+        <a href="perdidos.php?pag={{$pag+1}}">Siguiente</a>*}
     </section>
 {/block}
 
