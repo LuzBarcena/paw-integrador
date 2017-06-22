@@ -40,6 +40,22 @@ input[type=text],input[type=file], textarea  {
   border: 1px solid blue;
 }
 
+
+@media screen and (max-width: 1090px) and (min-width: 800px) {
+  #map {
+  width: 350px;
+  height: 300px;
+  }
+}
+
+
+@media screen and (max-width: 799px) and (min-width: 600px) {
+  #map {
+  width: 250px;
+  height: 200px;
+  }
+}
+
 .controls {
   margin-top: 10px;
   border: 1px solid transparent;
