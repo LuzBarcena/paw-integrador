@@ -1,12 +1,16 @@
-google.load('maps', '2', {callback:initMap});
 var map;
 function initMap(){	
-	if (GBrowserIsCompatible()) { 
-		var map = new GMap2(document.getElementById("map"));
-		map.setCenter(new GLatLng(20.0972, -81.6503), 6);
-	}
+		var myLatLng = {lat: -34.6083, lng: -58.3712}; /*buenos aires*/
+		var map = new google.maps.Map(document.getElementById('map'), {
+          center: new google.maps.LatLng(myLatLng),
+          zoom: 13,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+      	});
+
+      	var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(myLatLng),
+            map: map
+      	});
 }
 
-window.onload=function(){
-	initMap();
-}
+google.maps.event.addDomListener(window, 'load', initMap);

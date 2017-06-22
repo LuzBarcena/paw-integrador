@@ -3,7 +3,7 @@
 {block name=head}
 	<link rel="stylesheet" type="text/css" href="css/perdidoIndividual.css">
     <link rel="stylesheet" type="text/css" href="css/perdidoIndividual2.css">
-    <script type="text/javascript" src="http://www.google.com/jsapi?key=AIzaSyD3TroLO9J7HZf-3xEdRMhl2V7LZfXTHgA"></script>
+    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyD3TroLO9J7HZf-3xEdRMhl2V7LZfXTHgA&sensor=false"></script>
     <script type="text/javascript" src="js/mapa.js"></script>
 {/block}
 
