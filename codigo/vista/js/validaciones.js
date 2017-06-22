@@ -30,7 +30,7 @@ function validarContraseniaS() {
 function campoVacio(campo) {
 	if (campo === "") {
 		//alert("Hay por lo menos un campo vacío");
-		mostrarError("Hay por lo menos un campo vacío");
+		mostrarModal("Hay por lo menos un campo vacío");
 		return true;
 	}
 	else {
@@ -58,11 +58,11 @@ function longitudExcedida(campo, longitud, mostrar) {
 		if ( mostrar ) {
 			var error = "¡La longitud de " + campo + " no puede ser superior a " + longitud + " caracteres!";
 			//alert(error);
-			mostrarError(error);
+			mostrarModal(error);
 		} else {
 			var error = "¡La longitud de la contraseña no puede ser superior a " + longitud + " caracteres!";
 			//alert(error);
-			mostrarError(error);
+			mostrarModal(error);
 		}
 		return true;
 	}
@@ -80,7 +80,7 @@ function soloTexto(campo) {
 	else {
 		var error = "Solo se puede ingresar texto, y usted ingresó: " + campo;
 		//alert(error);
-		mostrarError(error);
+		mostrarModal(error);
 		return false;
 	}
 }
@@ -92,7 +92,7 @@ function soloNumeros(campo) {
 	else {
 		var error = "Solo se puede ingresar números, y usted ingresó: " + campo;
 		//alert(error);
-		mostrarError(error);
+		mostrarModal(error);
 		return false;
 	}
 }
@@ -105,7 +105,7 @@ function esMail(campo) {
 	else {
 		var error = "El mail " + campo + " no tiene formato de mail.";
 		//alert(error);
-		mostrarError(error);
+		mostrarModal(error);
 		return false;
 	}
 }
@@ -118,11 +118,11 @@ function esTextoyNumeros(campo, mostrar) {
 		if ( mostrar ) {
 			var error = "Solo se puede ingresar texto y números, y usted ingresó: " + campo;
 			//alert(error);
-			mostrarError(error);
+			mostrarModal(error);
 		} else {
 			var error = "Solo se puede ingresar texto y números.";
 			//alert(error);
-			mostrarError(error);
+			mostrarModal(error);
 		}
 		return false;
 	}
@@ -176,7 +176,7 @@ function contraseniasDistintas(contrasena, contrasena2) {
 	if (contrasena !== contrasena2) {
 		var error = "Las contraseñas no coinciden.";
 		//alert(error);
-		mostrarError(error);
+		mostrarModal(error);
 		return true;
 	} else {
 		return false;
@@ -192,7 +192,7 @@ function validarFecha() {
 	if (hoy <= fechaFormulario) {
 		var error = "La fecha de nacimiento es posterior al día de hoy";
 		//alert(error);
-		mostrarError(error);
+		mostrarModal(error);
 		return false;
 	}
 	return true;
