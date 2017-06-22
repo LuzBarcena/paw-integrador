@@ -18,6 +18,13 @@ function validarIniciarSesion(){
 }
 
 
+function validarPerdido(){
+	var tituloPerdidoValido = esTextoyNumeros($("input[name='titulo']"));
+	var tituloDescripcionValido = esTextoyNumeros($("input[name='descripcion']"));
+	return tituloPerdidoValido && tituloDescripcionValido;
+}
+
+
 function validarContraseniaS() {
 	var contrasenia = $("input[name='contrasenia']").val();
 	if (campoVacio(contrasenia)) return false;
