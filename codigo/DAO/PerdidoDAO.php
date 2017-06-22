@@ -37,7 +37,7 @@ class PerdidoDAO {
 	}
 
 	public static function obtenerCantidadPerdidos() {
-		$query = "SELECT count(id_perdidos) FROM PERDIDO;";
+		$query = "SELECT count(*) as total FROM PERDIDO;";
 		self::getConexion();
 
 		$resultado = self::$conexion->prepare($query);
@@ -45,9 +45,9 @@ class PerdidoDAO {
 		$resultado->execute();
 
 		if ($resultado->rowCount() > 0) {
-			$filas = $resultado->fetchAll();
+			$fila = $resultado->fetch();
 			self::desconectar();
-			return $filas;
+			return $fila['total'];
 		}
 		self::desconectar();
 		return false;
