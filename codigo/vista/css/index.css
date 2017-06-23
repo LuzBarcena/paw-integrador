@@ -1,27 +1,3 @@
-body {
-	background-color: #EAF2F8 ;
-}
-
-header {
-    background-color: #04052e;
-    width: 100%;
-    top: 0;
-}
-header img {
-    height: 100px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 10em;
-}
-header h1 {
-    display: inline-block;
-    margin-left: 2em;
-}
-header h1 a {
-    text-decoration: none;
-    color: #FFF;
-}
-
 /*----------------------------------------------------------------------CARRUSEL---------------------------------------------------*/
 .carrusel {
     margin: 0 auto;
