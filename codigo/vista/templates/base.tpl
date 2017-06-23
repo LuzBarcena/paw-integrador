@@ -11,7 +11,7 @@
 		{include file="sesion.tpl"}
 	</header>
 	
-	<nav>
+	<!--<nav>
 		<ul class="topnav" id="myTopnav">
 			<li><a href="index.php">Inicio</a></li>
 			<li><a href="">Perros</a></li>
@@ -20,7 +20,17 @@
 			<li><a href="">Tienda</a></li>
 			<a class="icon" onclick="menu()">&#9776;</a>
 		</ul>
+	</nav>-->
+	<nav>
+		<div class="topnav" id="myTopnav">
+  			<a href="index.php">Inicio</a>
+  			<a href="">Perros</a>
+  			<a href="perdidos.php">Perdidos</a>
+  			<a href="">Tienda</a>
+  			<a class="icon" onclick="menu()">&#9776;</a>
+		</div>	
 	</nav>
+	
 	{block name=dosOpciones}{/block}
 	{block name=section}{/block}
 	{block name=paginado}{/block}
