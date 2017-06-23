@@ -3,7 +3,8 @@
 }
 
 body {
-    background: #212121 url(../img/fondo.jpg);
+    /*background: #212121 url(../img/fondo.jpg);*/
+    background-color: #ecf0f1;
     margin: 0;
     font-family: "Arial";
 }
