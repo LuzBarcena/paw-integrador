@@ -6,16 +6,19 @@ function obtenerDatos() {
 	var seguir = validarPerdido();
 	if (seguir) {
 		var titulo = $("input[name='titulo']").val();
-		var descripcion = $("input[name='descripcion']").val();
-		enviarPerdido(titulo, descripcion);
+		var descripcion = $("textarea[name='descripcion']").val();
+		console.log(titulo +" "+ descripcion +" "+ getLatitud() +" "+ getLongitud());
+		enviarPerdido(titulo, descripcion, getLatitud(), getLongitud());
 	}
 }
 
-function enviarPerdido(titulo, descripcion) {
+function enviarPerdido(titulo, descripcion, latitud, longitud) {
 	var parametros = {
 		"do": "enviar",
 		"titulo": titulo,
-		"descripcion": descripcion
+		"descripcion": descripcion,
+		"latitud": latitud,
+		"longitud": longitud
 	}
 	$.ajax({
 		data: parametros,

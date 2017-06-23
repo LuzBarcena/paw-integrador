@@ -8,19 +8,19 @@
 {/block}
 
 {block name=section}
-    <form id="formAltaPerdidoEncontrado" method="post">
+    <form id="formAltaPerdidoEncontrado" method="post" enctype="multipart/form-data">
         <div class="container">
             <label for="titulo">Título</label>
             <input id="titulo" type="text" name="titulo" required="">
             <label for="desripcion">Descripción</label>
-            <textarea id="desripcion" name="desripcion" rows="5" cols="30" required=""></textarea>
+            <textarea id="descripcion" name="descripcion" rows="5" cols="30" required=""></textarea>
             <label for="foto">Foto</label>
             <input type="file" id="foto" name="foto" required="">
             <label for="direccion">Dirección</label>
-            <input id="direccion" class="controls" type="text" placeholder="Calle, número, barrio , provincia, país">
+            <input id="direccion" name="direccion" class="controls" type="text" placeholder="Calle, número, barrio , provincia, país">
             <div id="map"></div>
             <div id="boton">
-                <input type="submit" id="enviar" name="enviar" value="Enviar">
+                <input type="button" id="enviar" name="enviar" value="Enviar">
             </div>
         </div>
     </form>

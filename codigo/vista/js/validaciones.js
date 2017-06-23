@@ -19,16 +19,23 @@ function validarIniciarSesion(){
 
 
 function validarPerdido(){
-	var tituloPerdidoValido = esTextoyNumeros($("input[name='titulo']"));
-	var tituloDescripcionValido = esTextoyNumeros($("input[name='descripcion']"));
-	return tituloPerdidoValido && tituloDescripcionValido;
+	var titulo = $("input[name='titulo']").val();
+	var descripcion = $("textarea[name='descripcion']").val();
+	var direccion = $("input[name='direccion']").val();
+	if (campoVacio(direccion)) return false;
+	if (campoVacio(titulo)) return false;
+	if (longitudExcedida(titulo, 30, true)) return false;
+	if ( ! esTextoyNumeros(titulo)) return false;
+	if (campoVacio(descripcion)) return false;
+	if (longitudExcedida(descripcion, 140, true)) return false;
+	if ( ! esTextoyNumeros(descripcion)) return false;
+	return true;
 }
-
 
 function validarContraseniaS() {
 	var contrasenia = $("input[name='contrasenia']").val();
 	if (campoVacio(contrasenia)) return false;
-	if (longitudExcedida(contrasenia, 30)) return false;
+	if (longitudExcedida(contrasenia, 30, false)) return false;
 	if (!esTextoyNumeros(contrasenia)) return false;
 	return true;
 }
@@ -138,7 +145,7 @@ function esTextoyNumeros(campo, mostrar) {
 function validarNombreUsuario() {
 	var nombreUsuario = $("input[name='nombre_usuario']").val();
 	if (campoVacio(nombreUsuario)) return false;
-	if (longitudExcedida(nombreUsuario, 30)) return false;
+	if (longitudExcedida(nombreUsuario, 30, true)) return false;
 	if (!esTextoyNumeros(nombreUsuario)) return false;
 	return true;
 }
@@ -146,7 +153,7 @@ function validarNombreUsuario() {
 function validarEmail() {
 	var email = $("input[name='email']").val();
 	if (campoVacio(email)) return false;
-	if (longitudExcedida(email, 50)) return false;
+	if (longitudExcedida(email, 50, true)) return false;
 	if (!esMail(email)) return false;
 	return true;
 }
@@ -154,7 +161,7 @@ function validarEmail() {
 function validarNombre() {
 	var nombre = $("input[name='nombre']").val();
 	if (campoVacio(nombre)) return false;
-	if (longitudExcedida(nombre, 50)) return false;
+	if (longitudExcedida(nombre, 50, true)) return false;
 	if (!soloTexto(nombre)) return false;
 	return true;
 }
@@ -162,7 +169,7 @@ function validarNombre() {
 function validarApellido() {
 	var apellido = $("input[name='apellido']").val();
 	if (campoVacio(apellido)) return false;
-	if (longitudExcedida(apellido, 50)) return false;
+	if (longitudExcedida(apellido, 50, true)) return false;
 	if (!soloTexto(apellido)) return false;
 	return true;
 }
@@ -172,8 +179,8 @@ function validarContrasenia() {
 	var contrasenia2 = $("input[name='contrasenia2']").val();
 	if (campoVacio(contrasenia)) return false;
 	if (campoVacio(contrasenia2)) return false;
-	if (longitudExcedida(contrasenia, 30, true)) return false;
-	if (longitudExcedida(contrasenia2, 30, true)) return false;
+	if (longitudExcedida(contrasenia, 30, false)) return false;
+	if (longitudExcedida(contrasenia2, 30, false)) return false;
 	if (contraseniasDistintas(contrasenia, contrasenia2)) return false;
 	if (!esTextoyNumeros(contrasenia)) return false;
 	return true;
