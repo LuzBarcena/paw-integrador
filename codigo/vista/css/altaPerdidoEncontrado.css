@@ -63,6 +63,10 @@ input[type=text],input[type=file], textarea  {
 }
 
 @media screen and (max-width: 599px) {
+    #map {
+        width: 250px;
+        height: 250px;
+    }
     #formAltaPerdidoEncontrado {
         width: 100%;
     }

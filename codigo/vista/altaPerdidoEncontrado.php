@@ -11,6 +11,8 @@ $tpl->assign('haySesion', $haySesion);
 if ($haySesion) {
 	$usuario = SesionControlador::getSesion();
 	$tpl->assign('usuario', $usuario);
+} else {
+	header("location:perdidos.php");
 }
 $tpl->assign('pageTitle', 'Perdidos');
 $tpl->display("altaPerdidoEncontrado.tpl");

@@ -10,6 +10,7 @@ $haySesion = SesionControlador::haySesion();
 $tpl->assign('haySesion', $haySesion);
 
 if ($haySesion) {
+	header("location:index.php");
 	$usuario = SesionControlador::getSesion();
 	$tpl->assign('usuario', $usuario);
 }

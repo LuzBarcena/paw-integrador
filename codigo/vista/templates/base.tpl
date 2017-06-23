@@ -2,6 +2,9 @@
 <html lang="es">
 {include file="head.tpl"}
 <body>
+	{if {$haySesion}}
+		
+	{/if}
 	<header>
 		<img src="img/logo.png" alt="Logo de la página">
 		<h1><a href="index.php">Protectora</a></h1>

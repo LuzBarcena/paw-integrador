@@ -7,10 +7,11 @@ Config::autoload();
 
 $tpl = new TemplateManager();
 $haySesion = SesionControlador::haySesion();
-$tpl->assign('haySesion', $haySesion);
 if ($haySesion) {
+	header("location:index.php");
 	$usuario = SesionControlador::getSesion();
 	$tpl->assign('usuario', $usuario);
 }
+$tpl->assign('haySesion', $haySesion);
 $tpl->assign('pageTitle', 'Login');
 $tpl->display("login.tpl");
