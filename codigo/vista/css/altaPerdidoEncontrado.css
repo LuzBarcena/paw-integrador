@@ -1,8 +1,8 @@
 #formAltaPerdidoEncontrado {
-  background-color: rgba(251,251,251,0.8);
-  margin: 3% auto 0.5em auto;
-  border: 0.1em solid #888;
-  width: 50%;
+    background-color: rgba(251,251,251,0.8);
+    margin: 3% auto 0.5em auto;
+    border: 0.1em solid #888;
+    width: 70%;
 }
 
 .container {
@@ -19,7 +19,7 @@ input[type=text],input[type=file], textarea  {
 }
 
 #boton{
-  text-align: center;
+    text-align: center;
 }
 
 #enviar {
@@ -34,66 +34,79 @@ input[type=text],input[type=file], textarea  {
 
 /*------------------------------------------------------------------------MAPA--------------------------------------------------------------*/
 #map {
-  margin: auto;
-  width: 500px;
-  height: 400px;
-  border: 1px solid blue;
+    margin: auto;
+    width: 400px;
+    height: 400px;
+    border: 1px solid blue;
 }
 
 
 @media screen and (max-width: 1090px) and (min-width: 800px) {
-  #map {
-  width: 350px;
-  height: 300px;
-  }
+    #map {
+        width: 400px;
+        height: 350px;
+    }
+    #formAltaPerdidoEncontrado { 
+        width: 75%;
+    }
 }
 
 
 @media screen and (max-width: 799px) and (min-width: 600px) {
-  #map {
-  width: 250px;
-  height: 200px;
-  }
+    #map {
+        width: 350px;
+        height: 300px;
+    }
+    #formAltaPerdidoEncontrado {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    #formAltaPerdidoEncontrado {
+        width: 100%;
+    }
+
 }
 
 .controls {
-  margin-top: 10px;
-  border: 1px solid transparent;
-  border-radius: 2px 0 0 2px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  height: 32px;
-  outline: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 #direccion {
-  background-color: #fff;
-  font-family: Roboto;
-  font-size: 15px;
-  font-weight: 300;
-  margin-left: 12px;
-  padding: 0 11px 0 13px;
-  text-overflow: ellipsis;
-  width: 300px;
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 300px;
 }
 
 #direccion:focus {
-  border-color: #4d90fe;
+    border-color: #4d90fe;
 }
 
 .pac-container {
-  font-family: Roboto;
+    font-family: Roboto;
 }
 
 #type-selector {
-  color: #fff;
-  background-color: #4d90fe;
-  padding: 5px 11px 0px 11px;
+    color: #fff;
+    background-color: #4d90fe;
+    padding: 5px 11px 0px 11px;
 }
 
 #type-selector label {
-  font-family: Roboto;
-  font-size: 13px;
-  font-weight: 300;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
 }
