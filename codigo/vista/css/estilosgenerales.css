@@ -123,7 +123,7 @@ header img {
 @media screen and (max-width: 783px) and (min-width: 401px) {
     #nombreSesion {
         position: absolute;
-        left: 47%;
+        left: 48%;
         top: 8%;
     }
     .form-sesion-registro {
@@ -137,12 +137,12 @@ header img {
 @media screen and (max-width: 822px) and (min-width: 784px) {
       #nombreSesion {
         position: absolute;
-        left: 53%;
+        left: 46%;
         top: 8%;
     }
     .form-sesion-registro {
         position: absolute;
-        left: 65%;
+        left: 58%;
         top: 8%;
     }
 }
@@ -165,7 +165,7 @@ header img {
 @media screen and (max-width: 913px) and (min-width: 858px) {
     .form-sesion-registro {
         position: absolute;
-        left: 65%;
+        left: 62%;
         top: 8%;
     }
 
@@ -184,7 +184,7 @@ header img {
     }
     .form-sesion-registro {
         position: absolute;
-        left: 70%;
+        left: 68%;
         top: 8%;
     }
 }
