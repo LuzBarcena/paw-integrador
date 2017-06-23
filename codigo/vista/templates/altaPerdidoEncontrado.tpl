@@ -10,12 +10,12 @@
 {block name=section}
     <form id="formAltaPerdidoEncontrado" method="post" enctype="multipart/form-data">
         <div class="container">
+            <label for="foto">Foto</label>
+            <input type="file" onchange="previewFile()" id="foto" name="foto" required=""><br
             <label for="titulo">Título</label>
             <input id="titulo" type="text" name="titulo" required="">
             <label for="desripcion">Descripción</label>
             <textarea id="descripcion" name="descripcion" rows="5" cols="30" required=""></textarea>
-            <label for="foto">Foto</label>
-            <input type="file" id="foto" name="foto" required="">
             <label for="direccion">Dirección</label>
             <input id="direccion" name="direccion" class="controls" type="text" placeholder="Calle, número, barrio , provincia, país">
             <div id="map"></div>

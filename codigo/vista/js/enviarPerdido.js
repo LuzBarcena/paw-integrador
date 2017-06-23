@@ -1,3 +1,5 @@
+var reader  = new FileReader();
+
 $(document).ready(function () {
 	$("input[name='enviar']").click(obtenerDatos);
 });
@@ -13,10 +15,18 @@ function obtenerDatos() {
 }
 
 function enviarPerdido(titulo, descripcion, latitud, longitud) {
+	if ( reader.readyState != 2) {
+		while (reader.readyState != 2) {
+
+		}
+	}
+	var foto = reader.result;
+	console.log(foto);
 	var parametros = {
 		"do": "enviar",
 		"titulo": titulo,
 		"descripcion": descripcion,
+		"foto": foto,
 		"latitud": latitud,
 		"longitud": longitud
 	}
@@ -42,4 +52,14 @@ function enviarPerdido(titulo, descripcion, latitud, longitud) {
         	alert("Ocurrió un error! :(");
         }
     });
+}
+
+function previewFile() {
+	var file    = document.querySelector('input[type=file]').files[0];
+
+	if (file) {
+    	reader.readAsDataURL(file);
+	} else {
+    	mostrarModal("Error, no hay imagen");
+	}
 }
