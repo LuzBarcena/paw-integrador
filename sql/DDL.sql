@@ -22,7 +22,9 @@ CREATE TABLE PERDIDO (
 	descripcion VARCHAR(200) NOT NULL,
 	foto VARCHAR(150) NOT NULL,
 	info_contacto VARCHAR(100) NOT NULL,
-	ultima_direccion VARCHAR(200) NOT NULL,
+	-- direccion VARCHAR(200), 
+	lat FLOAT NOT NULL,
+	lng FLOAT NOT NULL
  
 	PRIMARY KEY(id_perdido),
 	CONSTRAINT FK_USUARIO_PERDIDO FOREIGN KEY (id_usuario) REFERENCES USUARIO (id_usuario)
