@@ -4,13 +4,13 @@
 	<link rel="stylesheet" type="text/css" href="css/perdidos.css">
     <link rel="stylesheet" type="text/css" href="css/paginado.css">
 {/block}
-{block name=dosOpciones}
+
+{block name=section}
     <div class="dosOpciones">
         <a id="rojo" href="altaPerdidoEncontrado.php">Perdí a mi perro</a>
         <a id="verde" href="altaPerdidoEncontrado.php">Encontré un perro</a>
     </div>
-{/block}
-{block name=section}
+
     <section id="lista_perdidos">
     {foreach $resultado as $fila}
         <div class="card">
@@ -26,9 +26,9 @@
         <a href="perdidos.php?pag={{$pag-1}}">Anterior</a>
         <a href="perdidos.php?pag={{$pag+1}}">Siguiente</a>*}
     </section>
+    {include file="paginado.tpl"}
 {/block}
 
-{include file="paginado.tpl"}
 
 
 

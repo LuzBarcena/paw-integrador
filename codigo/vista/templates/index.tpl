@@ -47,8 +47,7 @@
 			</cite>
 		</p>	
 	</section>
-{/block}
 
-{block name=scriptCarrusel}
 	<script type="text/javascript" src="js/carrusel.js"></script>
 {/block}
+

@@ -31,15 +31,11 @@
 		</div>	
 	</nav>
 	
-	{block name=dosOpciones}{/block}
 	{block name=section}{/block}
-	{block name=paginado}{/block}
 	<footer>	
 		{*<p>Soy footer</p>*}
 	</footer>
 
 	{include file="modal.tpl"}	
-
-	{block name=scriptCarrusel}{/block}
 </body>
 </html>
