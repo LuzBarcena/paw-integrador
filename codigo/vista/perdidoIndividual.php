@@ -18,10 +18,10 @@ $tpl->assign('pageTitle', 'Perdidos');
 $resultado = PerdidoControlador::getPerdido($_GET['id']);
 if ($resultado != false) {
 	$tpl->assign("titulo", $resultado['titulo']);
-	$tpl->assign('foto',$resultado['foto']);
+	$tpl->assign('foto',"img_perdidos/" . $resultado['foto'] . ".jpg");
 	$tpl->assign('descripcion',$resultado['descripcion']);
-	$tpl->assign('info_contacto',$resultado['info_contacto']);
-	$tpl->assign('ultima_direccion',$resultado['ultima_direccion']);
+	$tpl->assign('latitud',$resultado['lat']);
+	$tpl->assign('longitud',$resultado['lng']);
 }
 
 $tpl->display("perdidosIndividual.tpl");
