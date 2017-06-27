@@ -74,7 +74,15 @@ class PerdidoDAO {
 	}
 
 
-	public static function guardarPerdido($id, $titulo, $descripcion, $foto, $latitud, $longitud){
+	public static function guardarPerdido($perdido){
+		$id = $perdido->getIdUsuario();
+		$titulo = $perdido->getTitulo();
+		$descripcion = $perdido->getDescripcion();
+		$foto = $perdido->getFoto();
+		$latitud = $perdido->getLatitud();
+		$longitud = $perdido->getLongitud();
+
+
 		$query = "INSERT INTO perdido(id_usuario, titulo, descripcion, foto, lat, lng) VALUES (:id_usuario, :titulo, :descripcion, :foto, :latitud, :longitud);";
 		self::getConexion();
 

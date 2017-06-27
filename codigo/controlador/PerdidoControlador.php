@@ -32,12 +32,14 @@ class PerdidoControlador {
 
 		$nombre = "perdido" . $numero;
 
+		$obj_perdido = new Perdido($id, $titulo, $descripcion, $nombre, $latitud, $longitud);
+
 
 		$filepath = "../vista/img_perdidos/" . $nombre . ".jpg";
 
 		//guardo en el servidor
 		if(file_put_contents($filepath, $foto)){
-			$resultado = PerdidoDAO::guardarPerdido($id, $titulo, $descripcion, $nombre, $latitud, $longitud);
+			$resultado = PerdidoDAO::guardarPerdido($obj_perdido);
 			return $resultado;
 		}
 	}
