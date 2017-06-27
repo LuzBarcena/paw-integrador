@@ -2,6 +2,7 @@
 
 include_once 'Conexion.php';
 include_once '../modelo/Usuario.php';
+include_once '../controlador/SesionControlador.php';
 
 class UsuarioDAO {
 
@@ -32,6 +33,7 @@ class UsuarioDAO {
 			$filas = $resultado->fetch();
 			$iguales = comprobarContrasena($psw, $filas["contrasenia"]);
 			if ($filas["nombre_usuario"]==$usuario->getNombreUsuario() && $iguales) {
+				SesionControlador::setId($filas["id_usuario"]);
 				self::desconectar();
 				return true;
 			}

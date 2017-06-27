@@ -1,4 +1,4 @@
---CREATE USER paobar PASSWORD 'jasluz';
+﻿--CREATE USER paobar PASSWORD 'jasluz';
 
 CREATE TABLE usuario (
 	id_usuario serial NOT NULL,
@@ -21,10 +21,10 @@ CREATE TABLE PERDIDO (
 	titulo VARCHAR(50) NOT NULL,
 	descripcion VARCHAR(200) NOT NULL,
 	foto VARCHAR(150) NOT NULL,
-	info_contacto VARCHAR(100) NOT NULL,
+	--info_contacto VARCHAR(100) NOT NULL,
 	-- direccion VARCHAR(200), 
 	lat FLOAT NOT NULL,
-	lng FLOAT NOT NULL
+	lng FLOAT NOT NULL,
  
 	PRIMARY KEY(id_perdido),
 	CONSTRAINT FK_USUARIO_PERDIDO FOREIGN KEY (id_usuario) REFERENCES USUARIO (id_usuario)

@@ -20,4 +20,11 @@ class SesionControlador {
 		return session_destroy();
 	}
 
+	public static function setId($id) {
+		$_SESSION['id'] = $id;
+	}
+
+	public static function getId() {
+		return $_SESSION['id'];
+	}
 }
