@@ -15,12 +15,20 @@ CREATE TABLE usuario (
 	CONSTRAINT unique_nombre_usuario UNIQUE (nombre_usuario)
 )
 
+CREATE TYPE ESTADO_PERDIDO AS ENUM ('perdido','encontrado');
+CREATE TYPE SEXO_PERRO AS ENUM ('Macho','Hembra');
+
 CREATE TABLE PERDIDO (
 	id_perdido SERIAL NOT NULL,
 	id_usuario INTEGER NOT NULL,
+	fecha_desaparicion DATE,
+	fecha_alta DATE NOT NULL, 
 	titulo VARCHAR(50) NOT NULL,
 	descripcion VARCHAR(250) NOT NULL,
 	foto VARCHAR(150) NOT NULL,
+	estado ESTADO_PERDIDO NOT NULL,
+	sexo SEXO_PERRO,
+	nombre varchar(50),
 	--info_contacto VARCHAR(100) NOT NULL,
 	direccion VARCHAR(200), 
 	lat NUMERIC NOT NULL,
@@ -41,7 +49,6 @@ CREATE TABLE REFERENCIA (
 CREATE TABLE RAZA (
 	id_raza SERIAL NOT NULL PRIMARY KEY,
 	nombre VARCHAR(30),
-	descripcion VARCHAR(100)
 );
 
 CREATE TABLE PERRO (
