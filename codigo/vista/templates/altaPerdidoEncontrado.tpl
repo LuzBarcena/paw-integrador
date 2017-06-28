@@ -5,6 +5,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3TroLO9J7HZf-3xEdRMhl2V7LZfXTHgA&libraries=places"></script>
     <script type="text/javascript" src="js/autocompletarMapa.js"></script>
     <script type="text/javascript" src="js/enviarPerdido.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
 {/block}
 
 {block name=section}
@@ -24,5 +25,4 @@
             </div>
         </div>
     </form>
-    
 {/block}

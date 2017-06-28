@@ -6,11 +6,16 @@
 {/block}
 
 {block name=section}
+    {if $haySesion}
     <div class="dosOpciones">
         <a id="rojo" href="altaPerdidoEncontrado.php">Perdí a mi perro</a>
         <a id="verde" href="altaPerdidoEncontrado.php">Encontré un perro</a>
     </div>
-
+    {else}
+    <div class="dosOpciones">
+        <h4>Nota: Para ingresar un perdido debe iniciar sesión</h4>
+    </div>
+    {/if}
     <section id="lista_perdidos">
     {if $resultado != false}    
         {foreach $resultado as $fila}

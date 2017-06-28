@@ -14,5 +14,6 @@ if ($haySesion) {
 } else {
 	header("location:perdidos.php");
 }
+$tpl->assign('haySesion', $haySesion);
 $tpl->assign('pageTitle', 'Perdidos');
 $tpl->display("altaPerdidoEncontrado.tpl");

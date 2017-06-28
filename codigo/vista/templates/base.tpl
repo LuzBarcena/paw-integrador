@@ -32,10 +32,11 @@
 	</nav>
 	
 	{block name=section}{/block}
+	
+	{include file="modal.tpl"}	
+	
 	<footer>	
 		{*<p>Soy footer</p>*}
 	</footer>
-
-	{include file="modal.tpl"}	
 </body>
 </html>
