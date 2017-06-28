@@ -15,8 +15,8 @@
                 <h4>{$titulo}</h4>
                 <p class="descripcion_perdidos">{$descripcion}</p>
 
-                <p id="latitud">{$latitud}</p>
-                <p id="longitud">{$longitud}</p>
+                <p id="latitud" style="display: none">{$latitud}</p>
+                <p id="longitud" style="display: none">{$longitud}</p>
             </div>
         </div>
         <div id="map"></div>

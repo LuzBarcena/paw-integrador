@@ -1,6 +1,9 @@
 function initMap() {
-	latitud = document.getElementById('latitud');
-	longitud = document.getElementById('longitud');
+	latitud = parseFloat($('#latitud').text());
+	longitud = parseFloat($('#longitud').text());
+
+	console.log(latitud);
+	console.log(longitud);
 
     //creo el mapa, lo posiciona en la latitud y longitud de bs as
     var map = new google.maps.Map(document.getElementById('map'), {
