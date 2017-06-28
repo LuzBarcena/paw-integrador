@@ -46,6 +46,8 @@ $tpl->assign("url", 'perdidos.php?'.'pag=');
 
 if ($resultado != false) {
 	$tpl->assign("resultado", $resultado);
+}else{
+	$tpl->assign("resultado", false);
 }
 
 $tpl->display("perdidos.tpl");
