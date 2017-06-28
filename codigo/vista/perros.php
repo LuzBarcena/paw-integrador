@@ -15,6 +15,10 @@ if ($haySesion) {
 }
 $tpl->assign('pageTitle', 'Perros');
 
+$raza = PerrosControlador::getRazas();
+
+$tpl->assign('raza', $raza);
+
 $tpl->assign('resultado', false);
 
 $tpl->display("perros.tpl");

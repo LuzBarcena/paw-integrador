@@ -24,9 +24,8 @@
 	<nav>
 		<div class="topnav" id="myTopnav">
   			<a href="index.php">Inicio</a>
-  			<a href="">Perros</a>
+  			<a href="perros.php">Perros</a>
   			<a href="perdidos.php">Perdidos</a>
-  			<a href="">Tienda</a>
   			<a class="icon" onclick="menu()">&#9776;</a>
 		</div>	
 	</nav>
