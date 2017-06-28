@@ -17,9 +17,9 @@ if ($_POST["do"] == "enviar") {
 
         $todoOk = true;
 
-        $todoOk = Validador::validarLongitud($titulo, 30);
-        $todoOk = Validador::validarLongitud($descripcion, 140);
-
+        $todoOk = Validador::validarLongitud($titulo, 50);
+        $todoOk = Validador::validarLongitud($descripcion, 250);
+        
         $todoOk = Validador::letrasNumeros($titulo, "letrasynumeros");
         $todoOk = Validador::letrasNumeros($descripcion, "letrasynumeros");
 
@@ -36,7 +36,7 @@ if ($_POST["do"] == "enviar") {
             }else {
                 echo '{"status": "error", "descripcion":' .'"'. $valor .'"'. ', "data":"' . $_POST["latitud"].'"}';
             }
-    	}else {
+    	} else {
             //error en alguna validacion
             echo '{"status": "error", "descripcion": "Error en una validacion", "data":"' . $_POST["titulo"].'"}';
         }

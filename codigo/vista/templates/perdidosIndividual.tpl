@@ -17,6 +17,7 @@
 
                 <p id="latitud" style="display: none">{$latitud}</p>
                 <p id="longitud" style="display: none">{$longitud}</p>
+                <p id="direccion">Dirección completa:</p>
             </div>
         </div>
         <div id="map"></div>

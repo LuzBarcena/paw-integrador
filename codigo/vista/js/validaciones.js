@@ -24,10 +24,10 @@ function validarPerdido(){
 	var direccion = $("input[name='direccion']").val();
 	if (campoVacio(direccion)) return false;
 	if (campoVacio(titulo)) return false;
-	if (longitudExcedida(titulo, 30, true)) return false;
+	if (longitudExcedida(titulo, 50, true)) return false;
 	if ( ! esTextoyNumeros(titulo)) return false;
 	if (campoVacio(descripcion)) return false;
-	if (longitudExcedida(descripcion, 140, true)) return false;
+	if (longitudExcedida(descripcion, 250, true)) return false;
 	if ( ! esTextoyNumeros(descripcion)) return false;
 	return true;
 }
@@ -86,7 +86,7 @@ function longitudExcedida(campo, longitud, mostrar) {
 }
 
 function soloTexto(campo) {
-	var expresion = /^[a-z áéíóúñüàè]+$/i;
+	var expresion = /^[a-zA-Z áéíóúñüàè]+$/i;
 	//var expresion = /^([a-zA-Z\s])*$/;
 	if (expresion.test(campo)) {
 		return true; 
@@ -125,7 +125,7 @@ function esMail(campo) {
 }
 
 function esTextoyNumeros(campo, mostrar) {
-	if (/^([a-zA-Z0-9\s])*$/.test(campo)) {
+	if (/^([ áéíóúñüàèa-zA-Z0-9\s])*$/.test(campo)) {
 		return true;
 	}
 	else {

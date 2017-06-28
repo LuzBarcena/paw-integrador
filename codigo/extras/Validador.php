@@ -60,10 +60,10 @@ class Validador {
 		//compruebo que los caracteres sean los permitidos
 		switch ($opcion) {
 			case 'letras':
-				$permitidos = "áéíóúabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+				$permitidos = " ÁÉÍÓÚáéíóúabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
 				break;
 			case 'letrasynumeros':
-				$permitidos = "áéíóúabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789";
+				$permitidos = " ÁÉÍÓÚáéíóúabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789";
 				break;
 		}
 		for ($i = 0; $i < strlen($campo); $i++) { 

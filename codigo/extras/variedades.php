@@ -8,7 +8,7 @@
 include_once 'PasswordHash.php';
 
 /**
- * Encripta contrasenas
+ * Encripta contrasenas-> es hashear
  */
 function encriptarContrasena($contrasena) {
 	#The first argument specifies the "base-2 logarithm of the iteration count used for password stretching" and the second argument specifies the use of portable hashes

@@ -19,12 +19,12 @@ CREATE TABLE PERDIDO (
 	id_perdido SERIAL NOT NULL,
 	id_usuario INTEGER NOT NULL,
 	titulo VARCHAR(50) NOT NULL,
-	descripcion VARCHAR(200) NOT NULL,
+	descripcion VARCHAR(250) NOT NULL,
 	foto VARCHAR(150) NOT NULL,
 	--info_contacto VARCHAR(100) NOT NULL,
-	-- direccion VARCHAR(200), 
-	lat FLOAT NOT NULL,
-	lng FLOAT NOT NULL,
+	direccion VARCHAR(200), 
+	lat NUMERIC NOT NULL,
+	lng NUMERIC NOT NULL,
  
 	PRIMARY KEY(id_perdido),
 	CONSTRAINT FK_USUARIO_PERDIDO FOREIGN KEY (id_usuario) REFERENCES USUARIO (id_usuario)

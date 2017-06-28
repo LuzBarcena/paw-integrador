@@ -95,10 +95,13 @@ class PerdidoDAO {
 		$resultado->bindParam(":latitud", $latitud);
 		$resultado->bindParam(":longitud", $longitud);
 
+		/**
+		 * HAY QUE VERIFICAR QUE PASA SI JUSTO CREO UN NUMERO ALEATORIO QUE YA ESTABA.
+		 */
 		if ($resultado->execute()) {
 			self::desconectar();
 			return true;
-		}else{
+		} else {
 			self::desconectar();
 			return "No se pudo dar de alta al perdido";
 		} 

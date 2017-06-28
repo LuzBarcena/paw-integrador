@@ -9,7 +9,6 @@ function obtenerDatos() {
 	if (seguir) {
 		var titulo = $("input[name='titulo']").val();
 		var descripcion = $("textarea[name='descripcion']").val();
-		console.log(titulo +" "+ descripcion +" "+ getLatitud() +" "+ getLongitud());
 		enviarPerdido(titulo, descripcion, getLatitud(), getLongitud());
 	}
 }
@@ -21,7 +20,6 @@ function enviarPerdido(titulo, descripcion, latitud, longitud) {
 		}
 	}
 	var foto = reader.result;
-	console.log(foto);
 	var parametros = {
 		"do": "enviar",
 		"titulo": titulo,
@@ -48,7 +46,6 @@ function enviarPerdido(titulo, descripcion, latitud, longitud) {
 		},
 		error: function(respuesta) {
 			var data = JSON.parse(respuesta);
-			console.log(data);
         	alert("Ocurrió un error! :(");
         }
     });
