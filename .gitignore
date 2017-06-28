@@ -3,3 +3,6 @@ codigo/extras/Config.php
 
 #templates_c
 codigo/vista/templates_c/
+
+#img_perdidos
+codigo/vista/img_perdidos/

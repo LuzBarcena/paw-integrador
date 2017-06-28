@@ -88,7 +88,7 @@ class PerdidoDAO {
         if ($perdido->getFechaDesaparicion() == 'null') {
         	$fechaDesaparicion = NULL;	
         } else {
-        	$fechaDesaparicion = "'" . $fechaDesaparicion . "'";	
+        	$fechaDesaparicion = "'" . $perdido->getFechaDesaparicion() . "'";	
         }		
 		$estado = "perdido";
 
