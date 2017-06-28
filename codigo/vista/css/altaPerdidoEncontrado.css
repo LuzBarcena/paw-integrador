@@ -9,7 +9,10 @@
     padding: 1.4em;
 }
 
-input[type=text],input[type=file], textarea  {
+input[type=text],
+input[type=file],
+input[type=date], 
+textarea  {
     width: 100%;
     padding: 1em 1.2em;
     margin: 0.5em 0;

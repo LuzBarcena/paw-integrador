@@ -12,14 +12,24 @@
     <form id="formAltaPerdidoEncontrado" method="post" enctype="multipart/form-data">
         <div class="container">
             <label for="foto">Foto</label>
-            <input type="file" onchange="previewFile()" id="foto" name="foto" required=""><br
+            <input type="file" onchange="cargarImagen();" id="foto" name="foto" required=""><br
             <label for="titulo">Título</label>
             <input id="titulo" type="text" name="titulo" required="">
-            <label for="desripcion">Descripción</label>
+            <label for="descripcion">Descripción</label>
             <textarea id="descripcion" name="descripcion" rows="5" cols="30" required=""></textarea>
             <label for="direccion">Dirección</label>
-            <input id="direccion" name="direccion" class="controls" type="text" placeholder="Calle, número, barrio , provincia, país">
+            <input id="direccion" name="direccion" class="controls" type="text" placeholder="Calle número ciudad provincia país">
             <div id="map"></div>
+            <label>Fecha de desaparición</label>
+            <input type="date" min="01-01-1930" placeholder="Fecha" name="fecha_desaparicion">
+            <label for="sexo">Sexo</label>
+            <div>
+                <input type="radio" name="sexo" value="macho"> Macho
+                <input type="radio" name="sexo" value="hembra"> Hembra
+                <input type="radio" name="sexo" value="desconocido"> Desconocido
+            </div>
+            <label for="nombre" id="nombre">Nombre</label>
+            <input type="text" name="nombre">
             <div id="boton">
                 <input type="button" id="enviar" name="enviar" value="Enviar">
             </div>

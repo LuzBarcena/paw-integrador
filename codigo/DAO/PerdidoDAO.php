@@ -74,16 +74,23 @@ class PerdidoDAO {
 	}
 
 
-	public static function guardarPerdido($perdido){
+	public static function guardarPerdido($perdido) {
 		$id = $perdido->getIdUsuario();
 		$titulo = $perdido->getTitulo();
 		$descripcion = $perdido->getDescripcion();
 		$foto = $perdido->getFoto();
 		$latitud = $perdido->getLatitud();
 		$longitud = $perdido->getLongitud();
+		$nombre = ($perdido->getNombre() == '' ? NULL : $perdido->getNombre());
+		$sexo = ($perdido->getSexo() == '' ? NULL : $perdido->getSexo());
+		$fechaAlta = $perdido->getFechaAlta();
+        $fechaAlta = "'" . $fechaAlta . "'";
+		$fechaDesaparicion = $perdido->getFechaDesaparicion();
+		$fechaDesaparicion = "'" . $fechaDesaparicion . "'";
+		$estado = "perdido";
 
-
-		$query = "INSERT INTO perdido(id_usuario, titulo, descripcion, foto, lat, lng) VALUES (:id_usuario, :titulo, :descripcion, :foto, :latitud, :longitud);";
+		$query = "INSERT INTO perdido(id_usuario, fecha_desaparicion, fecha_alta, titulo, descripcion, foto, estado, sexo, nombre, lat, lng) VALUES (:id_usuario, :fecha_desaparicion, :fecha_alta, :titulo, :descripcion, :foto, :estado, :sexo, :nombre, :latitud, :longitud);";
+		
 		self::getConexion();
 
 		$resultado = self::$conexion->prepare($query);
@@ -94,6 +101,11 @@ class PerdidoDAO {
 		$resultado->bindParam(":foto", $foto);
 		$resultado->bindParam(":latitud", $latitud);
 		$resultado->bindParam(":longitud", $longitud);
+		$resultado->bindParam(":estado", $estado);
+		$resultado->bindParam(":nombre", $nombre);
+		$resultado->bindParam(":sexo", $sexo);
+		$resultado->bindParam(":fecha_alta", $fechaAlta);
+		$resultado->bindParam(":fecha_desaparicion", $fechaDesaparicion);
 
 		/**
 		 * HAY QUE VERIFICAR QUE PASA SI JUSTO CREO UN NUMERO ALEATORIO QUE YA ESTABA.

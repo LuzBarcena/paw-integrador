@@ -10,11 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["titulo"]) && isset($_POST["descripcion"])) {
 */
 if ($_POST["do"] == "enviar") {
-    if ( ($_POST["titulo"] != '') && ($_POST["descripcion"] != '') && ($_POST["latitud"] != '') && ($_POST["longitud"] != '')) {
+    if ( ($_POST["titulo"] != '') && ($_POST["descripcion"] != '') && ($_POST["latitud"] != '') && ($_POST["longitud"] != '') && ($_POST["fechaDesaparicion"] != '') && ($_POST["sexo"] != '') && ($_POST["nombre"] != '') ) {
     	//valido las entradas
     	$titulo = Validador::limpiarCampo($_POST["titulo"]);
     	$descripcion = Validador::limpiarCampo($_POST["descripcion"]);
-
+        $sexo = Validador::limpiarCampo($_POST["sexo"]);
+        $nombre = Validador::limpiarCampo($_POST["nombre"]);
+        $fechaDesaparicion = $_POST["fechaDesaparicion"];
+        
         $todoOk = true;
 
         $todoOk = Validador::validarLongitud($titulo, 50);
@@ -27,9 +30,12 @@ if ($_POST["do"] == "enviar") {
             //le saco el encabezado que le agrega JS
             $imagen = explode(',', $_POST['foto']);
 
-            $data = base64_decode($imagen[1]);
+            $dataImagen = base64_decode($imagen[1]);
             
-            $valor = PerdidoControlador::setPerdido(SesionControlador::getId(), $_POST["titulo"], $_POST["descripcion"], $data, $_POST["latitud"], $_POST["longitud"]);
+            $fechaAlta = date("Y-m-d");
+
+            //mando los datos obligatorios para el constructor, y nos no obligatorios para el set
+            $valor = PerdidoControlador::setPerdido(SesionControlador::getId(), $_POST["titulo"], $_POST["descripcion"], $dataImagen, $_POST["latitud"], $_POST["longitud"], $fechaAlta, $fechaDesaparicion, $sexo, $nombre);
 
             if ($valor) {
                 echo '{"status": "ok", "descripcion": "Se agregó el perdido correctamente. Redirigiendo a perdidos...", "data":"' . $_POST["latitud"].'"}';

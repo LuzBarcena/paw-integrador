@@ -9,12 +9,16 @@ function obtenerDatos() {
 	if (seguir) {
 		var titulo = $("input[name='titulo']").val();
 		var descripcion = $("textarea[name='descripcion']").val();
-		enviarPerdido(titulo, descripcion, getLatitud(), getLongitud());
+		var fechaDesaparicion = $("input[name='fecha_desaparicion']").val();
+		var sexo = $("input:radio[name='sexo']:checked").val();
+		var nombre = $("input[name='nombre']").val();
+		console.log(titulo, descripcion, getLatitud(), getLongitud(), fechaDesaparicion, sexo, nombre);
+		enviarPerdido(titulo, descripcion, getLatitud(), getLongitud(), fechaDesaparicion, sexo, nombre);
 	}
 }
 
-function enviarPerdido(titulo, descripcion, latitud, longitud) {
-	if ( reader.readyState != 2) {
+function enviarPerdido(titulo, descripcion, latitud, longitud, fechaDesaparicion, sexo, nombre) {
+	if (reader.readyState != 2) {
 		while (reader.readyState != 2) {
 
 		}
@@ -26,7 +30,10 @@ function enviarPerdido(titulo, descripcion, latitud, longitud) {
 		"descripcion": descripcion,
 		"foto": foto,
 		"latitud": latitud,
-		"longitud": longitud
+		"longitud": longitud,
+		"fechaDesaparicion": fechaDesaparicion,
+		"sexo": sexo,
+		"nombre": nombre
 	}
 	$.ajax({
 		data: parametros,
@@ -38,7 +45,7 @@ function enviarPerdido(titulo, descripcion, latitud, longitud) {
 				mostrarModal(data.descripcion);
 				setTimeout(function(){
 					location.href ="perdidos.php";
-				}, 2500);
+				}, 1500);
 			} else {
 				mostrarModal(data.descripcion);
 			}
@@ -51,7 +58,7 @@ function enviarPerdido(titulo, descripcion, latitud, longitud) {
     });
 }
 
-function previewFile() {
+function cargarImagen() {
 	var file    = document.querySelector('input[type=file]').files[0];
 
 	if (file) {

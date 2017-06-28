@@ -23,25 +23,24 @@ class PerdidoControlador {
 	}
 
 	public static function getPerdido($id){
-		$resultado = PerdidoDAO::obtenerUnPerdido($id);
-		return $resultado;
+		return PerdidoDAO::obtenerUnPerdido($id);
 	}
 
-	public static function setPerdido($id, $titulo, $descripcion, $foto, $latitud, $longitud){
+	public static function setPerdido($id, $titulo, $descripcion, $foto, $latitud, $longitud, $fechaAlta, $fechaDesaparicion, $sexo, $nombre){
 		//genero un numero aleatorio para guardar el archivo
 		$numero = mt_rand();
+		$nombreFoto = "perdido" . $numero;
 
-		$nombre = "perdido" . $numero;
+		$perdido = new Perdido($id, $titulo, $descripcion, $nombreFoto, $latitud, $longitud);
+		$perdido->setNombre($nombre);
+		$perdido->setSexo($sexo);
+		$perdido->setFechaAlta($fechaAlta);
+		$perdido->setFechaDesaparicion($fechaDesaparicion);
 
-		$obj_perdido = new Perdido($id, $titulo, $descripcion, $nombre, $latitud, $longitud);
-
-
-		$filepath = "../vista/img_perdidos/" . $nombre . ".jpg";
-
+		$filepath = "../vista/img_perdidos/" . $nombreFoto . ".jpg";
 		//guardo en el servidor
-		if(file_put_contents($filepath, $foto)){
-			$resultado = PerdidoDAO::guardarPerdido($obj_perdido);
-			return $resultado;
+		if (file_put_contents($filepath, $foto)){
+			return PerdidoDAO::guardarPerdido($perdido);
 		}
 	}
 
