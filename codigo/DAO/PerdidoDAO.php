@@ -81,12 +81,15 @@ class PerdidoDAO {
 		$foto = $perdido->getFoto();
 		$latitud = $perdido->getLatitud();
 		$longitud = $perdido->getLongitud();
-		$nombre = ($perdido->getNombre() == '' ? NULL : $perdido->getNombre());
-		$sexo = ($perdido->getSexo() == '' ? NULL : $perdido->getSexo());
+		$nombre = ($perdido->getNombre() == 'null' ? NULL : $perdido->getNombre());
+		$sexo = ($perdido->getSexo() == 'null' ? NULL : $perdido->getSexo());
 		$fechaAlta = $perdido->getFechaAlta();
         $fechaAlta = "'" . $fechaAlta . "'";
-		$fechaDesaparicion = $perdido->getFechaDesaparicion();
-		$fechaDesaparicion = "'" . $fechaDesaparicion . "'";
+        if ($perdido->getFechaDesaparicion() == 'null') {
+        	$fechaDesaparicion = NULL;	
+        } else {
+        	$fechaDesaparicion = "'" . $fechaDesaparicion . "'";	
+        }		
 		$estado = "perdido";
 
 		$query = "INSERT INTO perdido(id_usuario, fecha_desaparicion, fecha_alta, titulo, descripcion, foto, estado, sexo, nombre, lat, lng) VALUES (:id_usuario, :fecha_desaparicion, :fecha_alta, :titulo, :descripcion, :foto, :estado, :sexo, :nombre, :latitud, :longitud);";

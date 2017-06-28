@@ -12,7 +12,6 @@ function obtenerDatos() {
 		var fechaDesaparicion = $("input[name='fecha_desaparicion']").val();
 		var sexo = $("input:radio[name='sexo']:checked").val();
 		var nombre = $("input[name='nombre']").val();
-		console.log(titulo, descripcion, getLatitud(), getLongitud(), fechaDesaparicion, sexo, nombre);
 		enviarPerdido(titulo, descripcion, getLatitud(), getLongitud(), fechaDesaparicion, sexo, nombre);
 	}
 }
@@ -23,6 +22,19 @@ function enviarPerdido(titulo, descripcion, latitud, longitud, fechaDesaparicion
 
 		}
 	}
+	if (sexo == null) {
+		console.log("sexo");
+		sexo = "null";	
+	}
+	if (fechaDesaparicion == "") {
+		console.log("fechaDesaparicion");
+		fechaDesaparicion = 'null';	
+	}
+	if (nombre == "") {
+		console.log("nombre");
+		nombre = 'null';
+	}
+
 	var foto = reader.result;
 	var parametros = {
 		"do": "enviar",
@@ -59,7 +71,7 @@ function enviarPerdido(titulo, descripcion, latitud, longitud, fechaDesaparicion
 }
 
 function cargarImagen() {
-	var file    = document.querySelector('input[type=file]').files[0];
+	var file = document.querySelector('input[type=file]').files[0];
 
 	if (file) {
     	reader.readAsDataURL(file);

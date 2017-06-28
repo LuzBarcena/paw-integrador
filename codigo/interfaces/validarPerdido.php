@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["titulo"]) && isset($_POST["descripcion"])) {
 */
 if ($_POST["do"] == "enviar") {
-    if ( ($_POST["titulo"] != '') && ($_POST["descripcion"] != '') && ($_POST["latitud"] != '') && ($_POST["longitud"] != '') && ($_POST["fechaDesaparicion"] != '') && ($_POST["sexo"] != '') && ($_POST["nombre"] != '') ) {
+    if ( ($_POST["titulo"] != '') && ($_POST["descripcion"] != '') && ($_POST["latitud"] != '') && ($_POST["longitud"] != '') ) {
     	//valido las entradas
     	$titulo = Validador::limpiarCampo($_POST["titulo"]);
     	$descripcion = Validador::limpiarCampo($_POST["descripcion"]);
@@ -46,7 +46,7 @@ if ($_POST["do"] == "enviar") {
             //error en alguna validacion
             echo '{"status": "error", "descripcion": "Error en una validacion", "data":"' . $_POST["titulo"].'"}';
         }
-    }else {
+    } else {
         $respuesta = array("status" => "ok", "descripcion"=> "error");
         echo json_encode($respuesta);
     };

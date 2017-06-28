@@ -20,8 +20,33 @@ if ($resultado != false) {
 	$tpl->assign("titulo", $resultado['titulo']);
 	$tpl->assign('foto',"img_perdidos/" . $resultado['foto'] . ".jpg");
 	$tpl->assign('descripcion',$resultado['descripcion']);
-	$tpl->assign('latitud',$resultado['lat']);
-	$tpl->assign('longitud',$resultado['lng']);
+	$tpl->assign('latitud', $resultado['lat']);
+	$tpl->assign('longitud', $resultado['lng']);
+	$tpl->assign('fechaAlta', $resultado['fecha_alta']);
+	/*estos son no obligatorios*/
+	$sexo = $resultado['sexo'];
+	if ($sexo != "") {
+		$tpl->assign('sexo', $sexo);
+	} else {
+		$sexo = "S/D";
+		$tpl->assign('sexo', $sexo);
+	}
+
+	$nombre = $resultado['nombre'];
+	if ($nombre != "") {
+		$tpl->assign('nombre', $nombre);
+	} else {
+		$nombre = "S/D";
+		$tpl->assign('nombre', $nombre);
+	}
+	
+	$fechaDesaparicion = $resultado['fecha_desaparicion'];
+	if ($sexo != "") {
+		$tpl->assign('fechaDesaparicion', $fechaDesaparicion);
+	} else {
+		$fechaDesaparicion = "S/D";
+		$tpl->assign('fechaDesaparicion', $fechaDesaparicion);
+	}
 }
 
 $tpl->display("perdidosIndividual.tpl");

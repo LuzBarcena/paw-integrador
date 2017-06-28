@@ -13,11 +13,14 @@
             <img class="foto_perdidos" src="{$foto}" alt="Perro perdido" style="width:100%">
             <div class="container">
                 <h4>{$titulo}</h4>
-                <p class="descripcion_perdidos">{$descripcion}</p>
-
+                <p>Fecha de desaparición: {$fechaDesaparicion}</p>
+                <p>Fecha de alta de artículo: {$fechaAlta}</p>
                 <p id="latitud" style="display: none">{$latitud}</p>
                 <p id="longitud" style="display: none">{$longitud}</p>
                 <p id="direccion">Dirección completa:</p>
+                <p>{$sexo}</p>
+                <p>{$nombre}</p>
+                <p class="descripcion_perdidos">{$descripcion}</p>
             </div>
         </div>
         <div id="map"></div>
