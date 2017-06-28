@@ -8,11 +8,12 @@ class PerdidoControlador {
 
 	public static function getPerdidos($indice, $elementosPorPagina) {
 		$resultado = PerdidoDAO::obtenerPerdidos($indice, $elementosPorPagina);
-
-		foreach ($resultado as $key => $fila) {
-			$path = concatenarPath($fila['foto'], 'perdidos');
-			$path = $path . ".jpg";
-			$resultado[$key]['foto'] = $path;
+		if($resultado != false){
+			foreach ($resultado as $key => $fila) {
+				$path = concatenarPath($fila['foto'], 'perdidos');
+				$path = $path . ".jpg";
+				$resultado[$key]['foto'] = $path;
+			}
 		}
 		return $resultado;
 	}

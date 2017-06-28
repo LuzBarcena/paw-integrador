@@ -38,13 +38,13 @@ $resultado = PerdidoControlador::getPerdidos($desde, $elementosPorPagina);
 $cantidad = $cantidadPerdidos/8;
 
 $tpl->assign('cantidad',round($cantidad));
+/*$tpl->assign('pagina', 'perdidos.php');
+$tpl->assign('var', 'pag');
+$tpl->assign('valor', $pag);*/
 $tpl->assign("url", 'perdidos.php?'.'pag=');
-
-
 if ($resultado != false) {
 	$tpl->assign("resultado", $resultado);
-} else {
-	$tpl->assign("resultado", null);
+}else{
+	$tpl->assign("resultado", false);
 }
-
 $tpl->display("perdidos.tpl");
