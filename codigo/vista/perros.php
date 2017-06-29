@@ -19,6 +19,8 @@ if ($haySesion) {
 	}
 	$tpl->assign('usuario', $usuario);
 	$tpl->assign('admin', $admin);
+}else{
+	$tpl->assign('admin', false);
 }
 $tpl->assign('pageTitle', 'Perros');
 
