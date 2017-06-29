@@ -34,6 +34,7 @@ class UsuarioDAO {
 			$iguales = comprobarContrasena($psw, $filas["contrasenia"]);
 			if ($filas["nombre_usuario"]==$usuario->getNombreUsuario() && $iguales) {
 				SesionControlador::setId($filas["id_usuario"]);
+				SesionControlador::setPerfil($filas["perfil"]);
 				self::desconectar();
 				return true;
 			}

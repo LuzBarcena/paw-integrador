@@ -27,4 +27,12 @@ class SesionControlador {
 	public static function getId() {
 		return $_SESSION['id'];
 	}
+
+	public static function setPerfil($perfil) {
+		$_SESSION['perfil'] = $perfil;
+	}
+
+	public static function getPerfil() {
+		return $_SESSION['perfil'];
+	}
 }

@@ -6,45 +6,50 @@
 {/block}
 
 {block name=section}
+    {if $admin != false}
+    <div class="opcionAlta">
+        <a id="altaPerro" href="altaPerro.php">Dar de alta un perro</a>
+    </div>
+    {/if}
     <form class="formulario_filtrado">
         <div class="container">
             <h3>Filtrar por...</h3>
             <fieldset>
                 <legend>Tamaño</legend>
                 <label for="tamaño">Pequeño
-                    <input type="checkbox" name="tamaño" id="" value="pequeño"/>
+                    <input type="radio" name="tamaño" id="" value="pequeño"/>
                 </label>
                 <label for="tamaño">Mediano
-                    <input type="checkbox" name="tamaño" id="" value="mediano"/>
+                    <input type="radio" name="tamaño" id="" value="mediano"/>
                 </label>
                 <label for="tamaño">Grande
-                    <input type="checkbox" name="tamaño" id="" value="grande"/>
+                    <input type="radio" name="tamaño" id="" value="grande"/>
                 </label>
             </fieldset>
 
             <fieldset>
                 <legend>Sexo</legend>
                 <label for="sexo">Hembra
-                    <input type="checkbox" name="sexo" id="" value="hembra"/>
+                    <input type="radio" name="sexo" id="" value="hembra"/>
                 </label>
                 <label for="sexo">Macho
-                    <input type="checkbox" name="sexo" id="" value="macho"/>
+                    <input type="radio" name="sexo" id="" value="macho"/>
                 </label>
             </fieldset>
 
             <fieldset>
                 <legend>Edad</legend>
                 <label for="edad">Cachorro (- 1 año)
-                    <input type="checkbox" name="edad" id="" value="cachorro"/>
+                    <input type="radio" name="edad" id="" value="cachorro"/>
                 </label>
                 <label for="edad">Adulto joven (2 a 4 años)
-                    <input type="checkbox" name="edad" id="" value="adulto joven"/>
+                    <input type="radio" name="edad" id="" value="adulto joven"/>
                 </label>
                 <label for="edad">Adulto (5 a 9 años)
-                    <input type="checkbox" name="edad" id="" value="adulto"/>
+                    <input type="radio" name="edad" id="" value="adulto"/>
                 </label>
                 <label for="edad">Viejito (+ 10 años)
-                    <input type="checkbox" name="edad" id="" value="viejito"/>
+                    <input type="radio" name="edad" id="" value="viejito"/>
                 </label>
             </fieldset>
 

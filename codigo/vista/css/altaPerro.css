@@ -1,0 +1,47 @@
+#formAltaPerro {
+    background-color: rgba(251,251,251,0.8);
+    margin: 3% auto 0.5em auto;
+    border: 0.1em solid #888;
+    width: 70%;
+}
+
+.container {
+    padding: 1.4em;
+}
+
+input[type=text],
+input[type=file], 
+textarea  {
+    width: 100%;
+    padding: 1em 1.2em;
+    margin: 0.5em 0;
+    display: inline-block;
+    border: 0.1em solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=radio],input[type=checkbox]{
+    display: inline-block;
+    border: 0.1em solid #ccc;
+    box-sizing: border-box;
+    margin-right: 2%;
+}
+
+fieldset{
+    width: 97%;
+    display: block;
+}
+
+#boton{
+    text-align: center;
+}
+
+#alta {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em 1.2em;
+    margin: 0.5em 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+}

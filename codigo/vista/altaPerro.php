@@ -11,21 +11,13 @@ $haySesion = SesionControlador::haySesion();
 $tpl->assign('haySesion', $haySesion);
 if ($haySesion) {
 	$usuario = SesionControlador::getSesion();
-	$perfil = SesionControlador::getPerfil();
-	if($perfil == "admin"){
-		$admin = true;
-	}else{
-		$admin = false;
-	}
 	$tpl->assign('usuario', $usuario);
-	$tpl->assign('admin', $admin);
+} else {
+	header("location:perros.php");
 }
-$tpl->assign('pageTitle', 'Perros');
-
 $raza = PerrosControlador::getRazas();
 
 $tpl->assign('raza', $raza);
-
-$tpl->assign('resultado', false);
-
-$tpl->display("perros.tpl");
+$tpl->assign('haySesion', $haySesion);
+$tpl->assign('pageTitle', 'Perros');
+$tpl->display("altaPerro.tpl");

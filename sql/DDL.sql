@@ -42,8 +42,7 @@ CREATE TYPE TAMANIO_PERRO AS ENUM ('chico','mediano','grande');
 
 CREATE TABLE REFERENCIA (
 	id_referencia SERIAL NOT NULL PRIMARY KEY,
-	nombre VARCHAR(30),
-	descripcion VARCHAR(100)
+	nombre VARCHAR(30)
 );
 
 CREATE TABLE RAZA (
@@ -53,10 +52,12 @@ CREATE TABLE RAZA (
 
 CREATE TABLE PERRO (
 	id_perro SERIAL NOT NULL PRIMARY KEY,
+	foto VARCHAR(150) NOT NULL,
 	nombre VARCHAR(50) NOT NULL,
 	edad INTEGER,
 	particularidad VARCHAR(100),
-	tamanio TAMANIO_PERRO,
+	referencia VARCHAR(100),
+	tamanio VARCHAR(15) NOT NULL,
 	peso FLOAT,
 	id_raza INTEGER,
 	id_referencia INTEGER,

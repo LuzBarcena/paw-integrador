@@ -8,8 +8,7 @@
 {block name=section}
     {if $haySesion}
     <div class="dosOpciones">
-        <a id="rojo" href="altaPerdidoEncontrado.php">Perdí a mi perro</a>
-        <a id="verde" href="altaPerdidoEncontrado.php">Encontré un perro</a>
+        <a id="rojo" href="altaPerdidoEncontrado.php">Perdí o encontre un perro</a>
     </div>
     {else}
     <div class="dosOpciones">
