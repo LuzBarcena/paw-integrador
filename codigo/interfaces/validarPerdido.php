@@ -22,9 +22,11 @@ if ($_POST["do"] == "enviar") {
 
         $todoOk = Validador::validarLongitud($titulo, 50);
         $todoOk = Validador::validarLongitud($descripcion, 250);
+        $todoOk = Validador::validarLongitud($nombre, 250);
         
         $todoOk = Validador::letrasNumeros($titulo, "letrasynumeros");
         $todoOk = Validador::letrasNumeros($descripcion, "letrasynumeros");
+        
 
         if ($todoOk) {
             //le saco el encabezado que le agrega JS

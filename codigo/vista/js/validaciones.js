@@ -19,17 +19,32 @@ function validarIniciarSesion(){
 
 
 function validarPerdido(){
-	console.log("vaalodar perdido");
+	//obligatorios
 	var titulo = $("input[name='titulo']").val();
 	var descripcion = $("textarea[name='descripcion']").val();
 	var direccion = $("input[name='direccion']").val();
-	if (campoVacio(direccion)) return false;
-	if (campoVacio(titulo)) return false;
-	if (longitudExcedida(titulo, 50, true)) return false;
-	if ( ! esTextoyNumeros(titulo)) return false;
+	//no obligatorios
+	var nombre = $("input[name='nombre']").val();
+	var fecha = $("input[name='fecha_desaparicion']").val();
+	var sexo = $("input[name='sexo']:checked").val();
+
 	if (campoVacio(descripcion)) return false;
 	if (longitudExcedida(descripcion, 250, true)) return false;
 	if ( ! esTextoyNumeros(descripcion)) return false;
+
+	if (campoVacio(direccion)) return false;
+
+	if (campoVacio(titulo)) return false;
+	if (longitudExcedida(titulo, 50, true)) return false;
+	if ( ! esTextoyNumeros(titulo)) return false;
+	
+	if( ! validarFechaDesaparacion(fecha)) return false;
+
+	if (nombre != ""){
+		if (longitudExcedida(nombre, 50, true)) return false;
+		if ( ! soloTexto(nombre)) return false;
+	}	
+
 	return true;
 }
 
@@ -48,6 +63,22 @@ function validarPerro(){
 	return true;
 }
 
+
+function validarRadio(radio){
+  	var p = 0;
+  	for (var i = 0; i < radio.length; i++) {
+   	 	 if(radio[i].checked) {
+      		p = p + 1; 
+    	}
+  	}
+  	if(p > 0){
+  		return true;
+  	}else{
+  		mostrarModal("Debe selecionar una opción");
+  		return false;
+  	}
+
+}
 
 function validarContraseniaS() {
 	var contrasenia = $("input[name='contrasenia']").val();
@@ -240,5 +271,22 @@ function validarFecha() {
 		mostrarModal(error);
 		return false;
 	}
+	return true;
+}
+
+function validarFechaDesaparacion() {
+	var fecha = $("input[name='fecha_desaparicion']").val();
+	if(fecha != ""){
+		var hoy = new Date();
+		var fechaFormulario = new Date(fecha);
+		hoy.setHours(0,0,0,0);
+		if (hoy <= fechaFormulario) {
+			var error = "La fecha de desaparición es posterior al día de hoy";
+			//alert(error);
+			mostrarModal(error);
+			return false;
+		}
+		return true;
+	}		
 	return true;
 }

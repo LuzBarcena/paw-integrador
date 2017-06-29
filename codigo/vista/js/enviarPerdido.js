@@ -9,6 +9,7 @@ function obtenerDatos() {
 	if (seguir) {
 		var titulo = $("input[name='titulo']").val();
 		var descripcion = $("textarea[name='descripcion']").val();
+		
 		var fechaDesaparicion = $("input[name='fecha_desaparicion']").val();
 		var sexo = $("input:radio[name='sexo']:checked").val();
 		var nombre = $("input[name='nombre']").val();
