@@ -19,6 +19,7 @@ function validarIniciarSesion(){
 
 
 function validarPerdido(){
+	console.log("vaalodar perdido");
 	var titulo = $("input[name='titulo']").val();
 	var descripcion = $("textarea[name='descripcion']").val();
 	var direccion = $("input[name='direccion']").val();

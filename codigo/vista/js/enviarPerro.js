@@ -12,20 +12,18 @@ function obtenerDatos() {
 		var peso = $("input[name='peso']").val();
 		var edad = $("input:radio[name='edad']:checked").val();
 		var sexo = $("input:radio[name='sexo']:checked").val();
-		var tamaño = $("input:radio[name='tamaño']:checked").val();
-		enviarPerro(nombre, edad, sexo, particularidad, tamaño, peso);
+		var tamanio = $("input:radio[name='tamanio']:checked").val();
+		enviarPerro(nombre, edad, sexo, particularidad, tamanio, peso);
 	}
 }
 
-function enviarPerro(nombre, edad, sexo, particularidad, tamaño, peso) {
+function enviarPerro(nombre, edad, sexo, particularidad, tamanio, peso) {
 	if (reader.readyState != 2) {
 		while (reader.readyState != 2) {
 
 		}
 	}
-
 	var foto = reader.result;
-	alert(nombre + " " + edad + " " + sexo + " " + " " + particularidad + " " + tamaño + " " + peso);
 	var parametros = {
 		"do": "enviar",
 		"foto": foto,
@@ -33,7 +31,7 @@ function enviarPerro(nombre, edad, sexo, particularidad, tamaño, peso) {
 		"edad": edad,
 		"sexo":sexo,
 		"particularidad": particularidad,
-		"tamaño": tamaño,
+		"tamaño": tamanio,
 		"peso": peso
 	}
 	$.ajax({

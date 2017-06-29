@@ -40,8 +40,8 @@ class PerroDAO {
 		$particularidad = $perro->getParticularidad();
 		$tamaño = $perro->getTamaño();
 		$peso = $perro->getPeso();
-
-       
+		$raza = 1;
+		$id_referencia = 1;
 
 		$query = "INSERT INTO perro(foto, nombre, edad, sexo, particularidad, tamanio, peso, id_raza, id_referencia) VALUES (:foto, :nombre, :edad, :sexo, :particularidad, :tamanio, :peso, :id_raza, :id_referencia);";
 		
@@ -56,9 +56,8 @@ class PerroDAO {
 		$resultado->bindParam(":particularidad", $particularidad);
 		$resultado->bindParam(":tamanio", $tamaño);
 		$resultado->bindParam(":peso", $peso);
-		$resultado->bindParam(":id_raza", 1);
-		$resultado->bindParam(":id_referencia", 1);
-
+		$resultado->bindParam(":id_raza", $raza);
+		$resultado->bindParam(":id_referencia", $id_referencia);
 	
 		if ($resultado->execute()) {
 			self::desconectar();

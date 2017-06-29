@@ -19,7 +19,7 @@
                     <input type="radio" name="edad" id="" value="cachorro"/>
                 </label>
                 <label for="edad">Adulto joven (2 a 4 años)
-                    <input type="radio" name="edad" id="" value="adulto joven"/>
+                    <input type="radio" name="edad" id="" value="adulto_joven"/>
                 </label>
                 <label for="edad">Adulto (5 a 9 años)
                     <input type="radio" name="edad" id="" value="adulto"/>
@@ -35,7 +35,7 @@
                     <input type="radio" name="sexo" id="" value="hembra"/>
                 </label>
                 <label for="sexo">Macho
-                    <input type="radio" name="sexo" id="" value="Macho"/>
+                    <input type="radio" name="sexo" id="" value="macho"/>
                 </label>
             </fieldset>
             <br>
@@ -62,14 +62,14 @@
             <br>*}
             <fieldset>
                 <legend>Tamaño</legend>
-                <label for="tamaño">Pequeño
-                    <input type="radio" name="tamaño" id="" value="pequeño"/>
+                <label for="tamanio">Pequeño
+                    <input type="radio" name="tamanio" id="" value="pequenio"/>
                 </label>
-                <label for="tamaño">Mediano
-                    <input type="radio" name="tamaño" id="" value="mediano"/>
+                <label for="tamanio">Mediano
+                    <input type="radio" name="tamanio" id="" value="mediano"/>
                 </label>
-                <label for="tamaño">Grande
-                    <input type="radio" name="tamaño" id="" value="grande"/>
+                <label for="tamanio">Grande
+                    <input type="radio" name="tamanio" id="" value="grande"/>
                 </label>
             </fieldset>
             <br>
