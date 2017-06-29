@@ -30,4 +30,43 @@ class PerroDAO {
 		self::desconectar();
 		return false;
 	}
+
+
+	public static function guardarPerro($perro) {
+		$foto = $perro->getFoto();
+		$nombre = $perro->getNombre();
+		$edad = $perro->getEdad();
+		$sexo = $perro->getSexo();
+		$particularidad = $perro->getParticularidad();
+		$tamaño = $perro->getTamaño();
+		$peso = $perro->getPeso();
+
+       
+
+		$query = "INSERT INTO perro(foto, nombre, edad, sexo, particularidad, tamanio, peso, id_raza, id_referencia) VALUES (:foto, :nombre, :edad, :sexo, :particularidad, :tamanio, :peso, :id_raza, :id_referencia);";
+		
+		self::getConexion();
+
+		$resultado = self::$conexion->prepare($query);
+
+		$resultado->bindParam(":foto", $foto);
+		$resultado->bindParam(":nombre", $nombre);
+		$resultado->bindParam(":edad", $edad);
+		$resultado->bindParam(":sexo", $sexo);
+		$resultado->bindParam(":particularidad", $particularidad);
+		$resultado->bindParam(":tamanio", $tamaño);
+		$resultado->bindParam(":peso", $peso);
+		$resultado->bindParam(":id_raza", 1);
+		$resultado->bindParam(":id_referencia", 1);
+
+	
+		if ($resultado->execute()) {
+			self::desconectar();
+			return true;
+		} else {
+			self::desconectar();
+			return "No se pudo dar de alta al perro";
+		} 
+		
+	}
 }

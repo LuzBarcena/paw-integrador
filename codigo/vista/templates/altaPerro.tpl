@@ -2,7 +2,7 @@
 
 {block name=head}
 	<link rel="stylesheet" type="text/css" href="css/altaPerro.css">
-    {*<script type="text/javascript" src="js/enviarPerro.js"></script>*}
+    <script type="text/javascript" src="js/enviarPerro.js"></script>
     <script type="text/javascript" src="js/modal.js"></script>
 {/block}
 
@@ -29,9 +29,19 @@
                 </label>
             </fieldset>
             <br>
+            <fieldset>
+                <legend>Sexo</legend>
+                <label for="sexo">Hembra
+                    <input type="radio" name="sexo" id="" value="hembra"/>
+                </label>
+                <label for="sexo">Macho
+                    <input type="radio" name="sexo" id="" value="Macho"/>
+                </label>
+            </fieldset>
+            <br>
             <label for="particularidad">Particularidad</label>
             <textarea id="particularidad" name="particularidad" rows="5" cols="30" required=""></textarea>
-            <fieldset>
+            {*<fieldset>
                 <legend>Referencias</legend>
                 <label for="referencias">Se lleva con niños
                     <input type="checkbox" name="referencias" id="" value="se lleva con niños"/>
@@ -49,7 +59,7 @@
                     <input type="checkbox" name="referencias" id="" value="caracter especial"/>
                 </label>
             </fieldset>
-            <br>
+            <br>*}
             <fieldset>
                 <legend>Tamaño</legend>
                 <label for="tamaño">Pequeño
@@ -65,13 +75,14 @@
             <br>
             <label for="peso">Peso</label>
             <input type="text" id="peso" name="peso" required="">
-            <label for="raza">Raza</label>
+            {*<label for="raza">Raza</label>
             <select id="raza" name="select_raza">
                     <option value="vacio">Selecione una raza...</option> 
                     {foreach $raza as $fila}
                         <option value="{$fila['nombre']}">{$fila['nombre']}</option> 
                     {/foreach}
-                </select>
+            </select>
+            *}
             <div id="boton">
                 <input type="button" id="alta" name="alta" value="Dar de alta">
             </div>

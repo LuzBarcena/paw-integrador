@@ -32,6 +32,22 @@ function validarPerdido(){
 	return true;
 }
 
+function validarPerro(){
+	var nombre = $("input[name='nombre']").val();
+	var particularidad = $("textarea[name='particularidad']").val();
+	var peso = $("input[name='peso']").val();
+	if (campoVacio(nombre)) return false;
+	if (campoVacio(particularidad)) return false;
+	if (campoVacio(peso)) return false;
+	if (longitudExcedida(nombre, 50, true)) return false;
+	if ( ! esTextoyNumeros(nombre)) return false;
+	if (longitudExcedida(particularidad, 100, true)) return false;
+	if ( ! esTextoyNumeros(particularidad)) return false;
+	if ( ! soloDecimales(peso)) return false;
+	return true;
+}
+
+
 function validarContraseniaS() {
 	var contrasenia = $("input[name='contrasenia']").val();
 	if (campoVacio(contrasenia)) return false;
@@ -110,6 +126,20 @@ function soloNumeros(campo) {
 		return false;
 	}
 }
+
+function soloDecimales(campo) {
+	var expresion = /^[0-9]+(\.[0-9]+)?$/;
+	if (expresion.test(campo)) {
+		return true;
+	}
+	else {
+		var error = "Solo se puede ingresar números, y usted ingresó: " + campo;
+		//alert(error);
+		mostrarModal(error);
+		return false;
+	}
+}
+
 
 function esMail(campo) {
 	var expresion = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
