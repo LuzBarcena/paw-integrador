@@ -51,3 +51,9 @@ INSERT INTO raza(nombre) VALUES ('Shar Pei');
 INSERT INTO raza(nombre) VALUES ('Terrier');
 INSERT INTO raza(nombre) VALUES ('Yorkshire Terrier');
 INSERT INTO raza(nombre) VALUES ('Otro');
+
+INSERT INTO referencia(nombre) VALUES ('Se lleva con niños');
+INSERT INTO referencia(nombre) VALUES ('Se lleva con perros');
+INSERT INTO referencia(nombre) VALUES ('Cuidados especiales');
+INSERT INTO referencia(nombre) VALUES ('Discapacitado');
+INSERT INTO referencia(nombre) VALUES ('Caracter especial');
