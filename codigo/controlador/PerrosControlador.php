@@ -10,21 +10,39 @@ class PerrosControlador {
 		return $resultado;
 	}
 
-	public static function setPerro($foto, $nombre, $edad, $sexo, $particularidad, $tamaño, $peso){
+	public static function setPerro($foto, $nombre, $edad, $sexo, $particularidad, $tamaño, $peso, $referencias, $raza){
 		//genero un numero aleatorio para guardar el archivo
 		$numero = mt_rand();
 		$nombreFoto = "perro" . $numero;
 
 		$filepath = "../vista/img_perros/" . $nombreFoto . ".jpg";
 
-		$perro = new Perro($nombreFoto, $nombre, $edad, $sexo, $particularidad, $tamaño, $peso);
+		$perro = new Perro($nombreFoto, $nombre, $edad, $sexo, $particularidad, $tamaño, $peso, $raza);
 
+		$idRaza = self::getRaza($raza);
+		if ($idRaza == false) {
+			return false;
+		} else {
+			$perro->setIdRaza($idRaza);
+		}
+
+		$arrayreferencia = self::getIdReferencias($referencias);		
+		$perro->setIdReferencia($arrayreferencia);
 		//guardo en el servidor LA FOTO ME LA GUARDA
-		if (file_put_contents($filepath, $foto)){
+		if (file_put_contents($filepath, $foto)) {
 			return PerroDAO::guardarPerro($perro);
-		}else{
+		} else {
 			return false;
 		}
+		
+	}
+
+	private static function getRaza($raza) {
+		return PerroDAO::getRaza($raza);
+	}
+
+	private static function getIdReferencias($referencias) {
+		return PerroDAO::getIdReferencias($referencias);
 	}
 
 }

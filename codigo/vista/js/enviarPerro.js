@@ -13,11 +13,16 @@ function obtenerDatos() {
 		var edad = $("input:radio[name='edad']:checked").val();
 		var sexo = $("input:radio[name='sexo']:checked").val();
 		var tamanio = $("input:radio[name='tamanio']:checked").val();
-		enviarPerro(nombre, edad, sexo, particularidad, tamanio, peso);
+		var raza = $("#raza_select option:selected").text();
+		var selected = new Array();
+		$("input[name='referencias']:checked").each(function() {
+			selected.push($(this).val());
+		});
+		enviarPerro(nombre, edad, sexo, particularidad, tamanio, peso, raza, selected);
 	}
 }
 
-function enviarPerro(nombre, edad, sexo, particularidad, tamanio, peso) {
+function enviarPerro(nombre, edad, sexo, particularidad, tamanio, peso, raza, referencias) {
 	if (reader.readyState != 2) {
 		while (reader.readyState != 2) {
 
@@ -31,8 +36,10 @@ function enviarPerro(nombre, edad, sexo, particularidad, tamanio, peso) {
 		"edad": edad,
 		"sexo":sexo,
 		"particularidad": particularidad,
-		"tamaño": tamanio,
-		"peso": peso
+		"tamanio": tamanio,
+		"peso": peso,
+		"raza": raza,
+		"referencias": referencias
 	}
 	$.ajax({
 		data: parametros,
@@ -40,15 +47,16 @@ function enviarPerro(nombre, edad, sexo, particularidad, tamanio, peso) {
 		type: 'POST',
 		success: function (respuesta) {
 			var data = JSON.parse(respuesta);
+
 			if (data.status === "ok") {
-				mostrarModal(data.descripcion);
+				mostrarModal(data.data);
 				setTimeout(function(){
 					location.href ="perros.php";
 				}, 1500);
 			} else {
 				mostrarModal(data.descripcion);
 			}
-			
+			mostrarModal(respuesta);
 		},
 		error: function(respuesta) {
 			var data = JSON.parse(respuesta);

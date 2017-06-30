@@ -10,14 +10,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["titulo"]) && isset($_POST["descripcion"])) {
 */
 if ($_POST["do"] == "enviar") {
-    if ( ($_POST["nombre"] != '') && ($_POST["edad"] != '') && ($_POST["particularidad"] != '') && ($_POST["tamaño"] != '') && ($_POST["peso"] != '') && ($_POST["sexo"] != '') ) {
+    if ( ($_POST["nombre"] != '') && ($_POST["edad"] != '') && ($_POST["particularidad"] != '') && ($_POST["tamanio"] != '') && ($_POST["peso"] != '') && ($_POST["sexo"] != '') && ($_POST["raza"] != '')) {
     	//valido las entradas
     	$nombre = Validador::limpiarCampo($_POST["nombre"]);
     	$edad = Validador::limpiarCampo($_POST["edad"]);
         $sexo = Validador::limpiarCampo($_POST["sexo"]);
         $particularidad = Validador::limpiarCampo($_POST["particularidad"]);
-        $tamaño = Validador::limpiarCampo($_POST["tamaño"]);
-        
+        $tamanio = Validador::limpiarCampo($_POST["tamanio"]);
+        $raza = Validador::limpiarCampo($_POST["raza"]);
+
         $todoOk = true;
 
         $todoOk = Validador::validarLongitud($nombre, 50);
@@ -26,22 +27,21 @@ if ($_POST["do"] == "enviar") {
         $todoOk = Validador::letrasNumeros($nombre, "letrasynumeros");
         $todoOk = Validador::letrasNumeros($particularidad, "letrasynumeros");
 
-
         if ($todoOk) {
             //le saco el encabezado que le agrega JS
             $imagen = explode(',', $_POST['foto']);
 
             $dataImagen = base64_decode($imagen[1]);
             
-
             //mando los datos obligatorios para el constructor, y nos no obligatorios para el set
-            $valor = PerrosControlador::setPerro($dataImagen, $_POST["nombre"],$_POST["edad"], $_POST["sexo"], $_POST["particularidad"], $_POST["tamaño"], $_POST["peso"]);
+            $valor = PerrosControlador::setPerro($dataImagen, $nombre, $edad, $sexo, $particularidad, $tamanio, $_POST["peso"], $_POST["referencias"], $raza);
 
-            if ($valor) {
+            if ($valor == 1) {
                 echo '{"status": "ok", "descripcion": "Se agregó el perro correctamente. Redirigiendo a perros...", "data":"' . $_POST["nombre"].'"}';
             }else {
                 echo '{"status": "error", "descripcion":' .'"'. $valor .'"'. ', "data":"' . $_POST["nombre"].'"}';
             }
+
     	} else {
             //error en alguna validacion
             echo '{"status": "error", "descripcion": "Error en una validacion", "data":"' . $_POST["nombre"].'"}';

@@ -9,25 +9,23 @@ Config::autoload();
 $tpl = new TemplateManager();
 $haySesion = SesionControlador::haySesion();
 $tpl->assign('haySesion', $haySesion);
+
 if ($haySesion) {
 	$usuario = SesionControlador::getSesion();
 	$perfil = SesionControlador::getPerfil();
-	if($perfil == "admin"){
+	if ($perfil == "admin") {
 		$admin = true;
-	}else{
+	} else {
 		$admin = false;
 	}
 	$tpl->assign('usuario', $usuario);
 	$tpl->assign('admin', $admin);
-}else{
+} else {
 	$tpl->assign('admin', false);
 }
+
 $tpl->assign('pageTitle', 'Perros');
-
 $raza = PerrosControlador::getRazas();
-
 $tpl->assign('raza', $raza);
-
 $tpl->assign('resultado', false);
-
 $tpl->display("perros.tpl");

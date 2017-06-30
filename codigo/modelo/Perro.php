@@ -50,6 +50,13 @@ class Perro {
 		$this->sexo = $sexo;
 	}
 
+	public function setIdReferencia($id_referencia) {
+		$this->id_referencia = $id_referencia;
+	}
+
+	public function setIdRaza($id_raza) {
+		$this->id_raza = $id_raza;
+	}
 
 	//GETTERs
 
@@ -81,4 +88,11 @@ class Perro {
 		return $this->peso;
 	}
 
+	public function getIdReferencia() {
+		return $this->id_referencia;
+	}
+
+	public function getIdRaza() {
+		return $this->id_raza;
+	}
 }

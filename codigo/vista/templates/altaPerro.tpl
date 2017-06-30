@@ -41,25 +41,25 @@
             <br>
             <label for="particularidad">Particularidad</label>
             <textarea id="particularidad" name="particularidad" rows="5" cols="30" required=""></textarea>
-            {*<fieldset>
+            <fieldset>
                 <legend>Referencias</legend>
                 <label for="referencias">Se lleva con niños
-                    <input type="checkbox" name="referencias" id="" value="se lleva con niños"/>
+                    <input type="checkbox" name="referencias" value="Se lleva con ninios"/>
                 </label>
                 <label for="referencias">Se lleva con perros
-                    <input type="checkbox" name="referencias" id="" value="se lleva con perros"/>
+                    <input type="checkbox" name="referencias" value="Se lleva con perros"/>
                 </label>
                 <label for="referencias">Cuidados especiales
-                    <input type="checkbox" name="referencias" id="" value="cuidados especiales"/>
+                    <input type="checkbox" name="referencias" value="Cuidados especiales"/>
                 </label>
                 <label for="referencias">Discapacitado
-                    <input type="checkbox" name="referencias" id="" value="Discapacitado"/>
+                    <input type="checkbox" name="referencias" value="Discapacitado"/>
                 </label>
                 <label for="referencias">Caracter especial
-                    <input type="checkbox" name="referencias" id="" value="caracter especial"/>
+                    <input type="checkbox" name="referencias" value="Caracter especial"/>
                 </label>
             </fieldset>
-            <br>*}
+            <br>
             <fieldset>
                 <legend>Tamaño</legend>
                 <label for="tamanio">Pequeño
@@ -75,14 +75,13 @@
             <br>
             <label for="peso">Peso</label>
             <input type="number" id="peso" name="peso" step="0.1" min="0" max="80" required="">
-            {*<label for="raza">Raza</label>
-            <select id="raza" name="select_raza">
+            <label for="raza">Raza</label>
+            <select id="raza_select" name="select_raza">
                     <option value="vacio">Selecione una raza...</option> 
                     {foreach $raza as $fila}
                         <option value="{$fila['nombre']}">{$fila['nombre']}</option> 
                     {/foreach}
             </select>
-            *}
             <div id="boton">
                 <input type="button" id="alta" name="alta" value="Dar de alta">
             </div>
