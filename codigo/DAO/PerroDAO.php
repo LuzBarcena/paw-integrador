@@ -34,11 +34,11 @@ class PerroDAO {
 	public static function guardarPerro($perro) {
 		$foto = $perro->getFoto();
 		$nombre = $perro->getNombre();
-		$edad = $perro->getEdad();
-		$sexo = $perro->getSexo();
+		$sexo = ($perro->getEdad() == 'null' ? NULL : $perro->getEdad());
+		$sexo = ($perro->getSexo() == 'null' ? NULL : $perro->getSexo());
+		$peso = ($perro->getPeso() == 'null' ? NULL : $perro->getPeso());
 		$particularidad = $perro->getParticularidad();
 		$tamaño = $perro->getTamaño();
-		$peso = $perro->getPeso();
 		$raza = $perro->getIdRaza();
 		$idsreferencias = $perro->getIdReferencia();
 
