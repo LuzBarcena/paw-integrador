@@ -23,7 +23,7 @@
 }
 
 
-input[type=radio]{
+input[type=checkbox]{
     display: inline-block;
     border: 0.1em solid #ccc;
     box-sizing: border-box;

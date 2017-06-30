@@ -28,4 +28,15 @@ $tpl->assign('pageTitle', 'Perros');
 $raza = PerrosControlador::getRazas();
 $tpl->assign('raza', $raza);
 $tpl->assign('resultado', false);
+
+//--------------------------FILTROS----------------------------------
+$tpl->assign('resultado', false);
+
+if ($_SERVER["REQUEST_METHOD"] == "GET" and isset($_GET["registros"])) {
+	$registros =json_decode ($_GET["registros"]);
+	$tpl->assign('resultado', $registros);
+}
+
+
+
 $tpl->display("perros.tpl");

@@ -2,7 +2,7 @@
 
 {block name=head}
 	<link rel="stylesheet" type="text/css" href="css/perros.css">
-    {*<script type="text/javascript" src="js/perros.js"></script>*}
+    <script type="text/javascript" src="js/enviarFiltros.js"></script>
 {/block}
 
 {block name=section}
@@ -11,57 +11,57 @@
         <a id="altaPerro" href="altaPerro.php">Dar de alta un perro</a>
     </div>
     {/if}
-    <form class="formulario_filtrado">
+	<form class="formulario_filtrado">
         <div class="container">
             <h3>Filtrar por...</h3>
             <fieldset>
                 <legend>Tamaño</legend>
-                <label for="tamaño">Pequeño
-                    <input type="radio" name="tamaño" id="" value="pequeño"/>
+                <label for="tamanio">Chico
+                    <input type="checkbox" name="tamanio" id="" value="chico"/>
                 </label>
                 <label for="tamaño">Mediano
-                    <input type="radio" name="tamaño" id="" value="mediano"/>
+                    <input type="checkbox" name="tamanio" id="" value="mediano"/>
                 </label>
                 <label for="tamaño">Grande
-                    <input type="radio" name="tamaño" id="" value="grande"/>
+                    <input type="checkbox" name="tamanio" id="" value="grande"/>
                 </label>
             </fieldset>
 
             <fieldset>
                 <legend>Sexo</legend>
                 <label for="sexo">Hembra
-                    <input type="radio" name="sexo" id="" value="hembra"/>
+                    <input type="checkbox" name="sexo" id="" value="hembra"/>
                 </label>
                 <label for="sexo">Macho
-                    <input type="radio" name="sexo" id="" value="macho"/>
+                    <input type="checkbox" name="sexo" id="" value="macho"/>
                 </label>
             </fieldset>
 
             <fieldset>
                 <legend>Edad</legend>
                 <label for="edad">Cachorro (- 1 año)
-                    <input type="radio" name="edad" id="" value="cachorro"/>
+                    <input type="checkbox" name="edad" id="" value="cachorro"/>
                 </label>
                 <label for="edad">Adulto joven (2 a 4 años)
-                    <input type="radio" name="edad" id="" value="adulto joven"/>
+                    <input type="checkbox" name="edad" id="" value="adulto_joven"/>
                 </label>
                 <label for="edad">Adulto (5 a 9 años)
-                    <input type="radio" name="edad" id="" value="adulto"/>
+                    <input type="checkbox" name="edad" id="" value="adulto"/>
                 </label>
                 <label for="edad">Viejito (+ 10 años)
-                    <input type="radio" name="edad" id="" value="viejito"/>
+                    <input type="checkbox" name="edad" id="" value="viejito"/>
                 </label>
             </fieldset>
 
-            <fieldset>
+            {*<fieldset>
                 <legend>Raza</legend>
                 <select name="select_raza">
-                    <option value="vacio">Selecione una raza...</option> 
+                    <option>Todas</option> 
                     {foreach $raza as $fila}
                         <option value="{$fila['nombre']}">{$fila['nombre']}</option> 
                     {/foreach}
                 </select>
-            </fieldset>
+            </fieldset>*}
 
             <div class="botones">
                 <input type="button" class="consultar" name="consultar" value="Consultar"></input>
@@ -72,16 +72,14 @@
     {if $resultado != false}
         {foreach $resultado as $fila}
             <article>
-                <header>
-                    <h3>{$fila['titulo']}</h3>
-                </header>
-                <img src="{$fila['foto']}">
-                <p>{$fila['descripcion']}</p>
-                <p>{$fila['info_contacto']}</p>
-                <p>{$fila['ultima_direccion']}</p>
+                <p>{$fila->nombre}</p>
+                <img src="{$fila->foto}">
+                <p>{$fila->edad}</p>
+                <p>{$fila->tamanio}</p>
+                <p>{$fila->sexo}</p>
             </article>
         {/foreach}
-        {include file="paginado.tpl"}
+        {*{include file="paginado.tpl"}*}
     {else}
         <h3 style="text-align: center">No hay resultados</h3>
     {/if}

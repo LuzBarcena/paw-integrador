@@ -113,4 +113,28 @@ class PerroDAO {
 		self::desconectar();
 		return false;
 	}
+	
+	public static function obtenerFiltrados($tamaño, $sexo, $edad/*, $raza*/) {
+		
+	    $query = "SELECT * FROM PERRO WHERE tamanio = :tamanio AND sexo = :sexo AND edad = :edad";
+		
+		self::getConexion();
+
+		$resultado = self::$conexion->prepare($query);
+
+		$resultado->bindParam(":tamanio", $tamaño[0]);
+		$resultado->bindParam(":sexo", $sexo[0]);
+		$resultado->bindParam(":edad", $edad[0]);
+
+		$resultado->execute();
+		
+		if ($resultado->rowCount() > 0) {
+			$filas = $resultado->fetchAll();
+			self::desconectar();
+			return $filas;
+		}
+		self::desconectar();
+		return false;
+		
+	}
 }

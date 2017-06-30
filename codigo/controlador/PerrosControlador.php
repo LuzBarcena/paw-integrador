@@ -44,5 +44,11 @@ class PerrosControlador {
 	private static function getIdReferencias($referencias) {
 		return PerroDAO::getIdReferencias($referencias);
 	}
+	
+	
+	public static function enviarFiltros($tamaño, $sexo, $edad/*, $raza*/){
+		$resultado = PerroDAO::obtenerFiltrados($tamaño, $sexo, $edad/*, $raza*/);
+		return $resultado;
+	}
 
 }
