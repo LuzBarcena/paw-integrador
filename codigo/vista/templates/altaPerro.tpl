@@ -63,7 +63,7 @@
             <fieldset>
                 <legend>Tamaño</legend>
                 <label for="tamanio">Pequeño
-                    <input type="radio" name="tamanio" id="" value="pequenio"/>
+                    <input type="radio" name="tamanio" id="" value="chico"/>
                 </label>
                 <label for="tamanio">Mediano
                     <input type="radio" name="tamanio" id="" value="mediano"/>
@@ -74,7 +74,7 @@
             </fieldset>
             <br>
             <label for="peso">Peso</label>
-            <input type="text" id="peso" name="peso" required="">
+            <input type="number" id="peso" name="peso" step="0.1" min="0" max="80" required="">
             {*<label for="raza">Raza</label>
             <select id="raza" name="select_raza">
                     <option value="vacio">Selecione una raza...</option> 
