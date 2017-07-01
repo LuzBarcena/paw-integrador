@@ -2,7 +2,6 @@
 
 {block name=head}
 	<link rel="stylesheet" type="text/css" href="css/perros.css">
-	<link rel="stylesheet" type="text/css" href="css/perros.css">
     <link rel="stylesheet" type="text/css" href="css/paginado.css">
     <script type="text/javascript" src="js/enviarFiltros.js"></script>
 {/block}
@@ -55,7 +54,7 @@
                 </label>
             </fieldset>
 
-            {*<fieldset>
+            <fieldset>
                 <legend>Raza</legend>
                 <select name="select_raza">
                     <option>Todas</option> 
@@ -63,7 +62,7 @@
                         <option value="{$fila['nombre']}">{$fila['nombre']}</option> 
                     {/foreach}
                 </select>
-            </fieldset>*}
+            </fieldset>
 
             <div class="botones">
                 <input type="button" class="consultar" name="consultar" value="Consultar"></input>
