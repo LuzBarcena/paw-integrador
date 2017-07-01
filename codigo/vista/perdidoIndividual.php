@@ -18,11 +18,19 @@ $tpl->assign('pageTitle', 'Perdidos');
 $resultado = PerdidoControlador::getPerdido($_GET['id']);
 if ($resultado != false) {
 	$tpl->assign("titulo", $resultado['titulo']);
-	$tpl->assign('foto',"img_perdidos/" . $resultado['foto'] . ".jpg");
 	$tpl->assign('descripcion',$resultado['descripcion']);
 	$tpl->assign('latitud', $resultado['lat']);
 	$tpl->assign('longitud', $resultado['lng']);
 	$tpl->assign('fechaAlta', $resultado['fecha_alta']);
+	$esSilueta = strpos($resultado['foto'], 'silueta');
+	if ($esSilueta === false) {
+		$path = concatenarPath($resultado['foto'], 'perdidos');
+		$path = $path . ".jpg";
+	} else {
+		$path = concatenarPath($resultado['foto'], 'siluetas');
+		$path = $path . ".png";
+	}
+	$tpl->assign('foto', $path);
 	/*estos son no obligatorios*/
 	$sexo = $resultado['sexo'];
 	if ($sexo != "") {

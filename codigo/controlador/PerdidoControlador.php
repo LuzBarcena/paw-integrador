@@ -10,8 +10,16 @@ class PerdidoControlador {
 		$resultado = PerdidoDAO::obtenerPerdidos($indice, $elementosPorPagina);
 		if($resultado != false){
 			foreach ($resultado as $key => $fila) {
-				$path = concatenarPath($fila['foto'], 'perdidos');
-				$path = $path . ".jpg";
+				$nombre = $fila['foto'];
+				$esSilueta = strpos($fila['foto'], 'silueta');
+				if ($esSilueta === false) {
+					$path = concatenarPath($fila['foto'], 'perdidos');
+					$path = $path . ".jpg";
+				} else {
+					$path = concatenarPath($fila['foto'], 'siluetas');
+					$path = $path . ".png";
+				}
+				
 				$resultado[$key]['foto'] = $path;
 			}
 		}
@@ -26,10 +34,14 @@ class PerdidoControlador {
 		return PerdidoDAO::obtenerUnPerdido($id);
 	}
 
-	public static function setPerdido($id, $titulo, $descripcion, $foto, $latitud, $longitud, $fechaAlta, $fechaDesaparicion, $sexo, $nombre){
-		//genero un numero aleatorio para guardar el archivo
-		$numero = mt_rand();
-		$nombreFoto = "perdido" . $numero;
+	public static function setPerdido($id, $titulo, $descripcion, $foto, $latitud, $longitud, $fechaAlta, $fechaDesaparicion, $sexo, $nombre, $tipoFoto) {
+		if ($tipoFoto == 'foto') {
+			//genero un numero aleatorio para guardar el archivo
+			$numero = mt_rand();
+			$nombreFoto = "perdido" . $numero;
+		} else {
+			$nombreFoto = $foto;
+		}
 
 		$perdido = new Perdido($id, $titulo, $descripcion, $nombreFoto, $latitud, $longitud);
 		$perdido->setNombre($nombre);
@@ -37,11 +49,20 @@ class PerdidoControlador {
 		$perdido->setFechaAlta($fechaAlta);
 		$perdido->setFechaDesaparicion($fechaDesaparicion);
 
-		$filepath = "../vista/img_perdidos/" . $nombreFoto . ".jpg";
-		//guardo en el servidor
-		if (file_put_contents($filepath, $foto)){
-			return PerdidoDAO::guardarPerdido($perdido);
+		if ($tipoFoto == 'foto') {
+			$filepath = "../vista/img_perdidos/" . $nombreFoto . ".jpg";
+			//guardo en el servidor
+			if (file_put_contents($filepath, $foto)){
+				return PerdidoDAO::guardarPerdido($perdido);
+			}
+		} else {
+			if ($tipoFoto == 'silueta') {
+				return PerdidoDAO::guardarPerdido($perdido);
+			}
 		}
+
+
+		
 	}
 
 }

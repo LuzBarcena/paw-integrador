@@ -74,3 +74,8 @@ function cargarImagen() {
     	mostrarModal("Error, no hay imagen");
 	}
 }
+
+function mostrarOcultarImg() {
+	console.log($("#btn-silueta").attr(estado));
+
+}

@@ -29,15 +29,21 @@ if ($_POST["do"] == "enviar") {
         
 
         if ($todoOk) {
-            //le saco el encabezado que le agrega JS
-            $imagen = explode(',', $_POST['foto']);
-
-            $dataImagen = base64_decode($imagen[1]);
+            if ($_POST["tipoFoto"] == 'foto') {
+                //le saco el encabezado que le agrega JS
+                $imagen = explode(',', $_POST['foto']);
+                $dataImagen = base64_decode($imagen[1]);
+            } else {
+                if ($_POST["tipoFoto"] == 'silueta') {
+                    $dataImagen = $_POST["foto"];
+                }
+            }
+            
             
             $fechaAlta = date("Y-m-d");
 
             //mando los datos obligatorios para el constructor, y nos no obligatorios para el set
-            $valor = PerdidoControlador::setPerdido(SesionControlador::getId(), $_POST["titulo"], $_POST["descripcion"], $dataImagen, $_POST["latitud"], $_POST["longitud"], $fechaAlta, $fechaDesaparicion, $sexo, $nombre);
+            $valor = PerdidoControlador::setPerdido(SesionControlador::getId(), $_POST["titulo"], $_POST["descripcion"], $dataImagen, $_POST["latitud"], $_POST["longitud"], $fechaAlta, $fechaDesaparicion, $sexo, $nombre, $_POST["tipoFoto"]);
 
             if ($valor) {
                 echo '{"status": "ok", "descripcion": "Se agregó el perdido correctamente. Redirigiendo a perdidos...", "data":"' . $_POST["latitud"].'"}';

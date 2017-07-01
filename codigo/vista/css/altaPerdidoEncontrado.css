@@ -117,3 +117,46 @@ textarea  {
     font-size: 13px;
     font-weight: 300;
 }
+
+/* Siluetas*/
+
+#btn-silueta {
+    background-color: #007E33;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 0.3em 1.2em;
+    text-decoration: none;
+    font-size: 0.9em;
+    width: 25%;
+    box-sizing: border-box; 
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+div#siluetas {
+    display: none;
+}
+/*
+div#siluetas figure img {
+    max-height: 150px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+div#siluetas figure:hover img {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+*/
+
+div#siluetas figure img {
+    max-height: 150px;
+    opacity: 1;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+div#siluetas  figure:hover img {
+    opacity: .5;
+}

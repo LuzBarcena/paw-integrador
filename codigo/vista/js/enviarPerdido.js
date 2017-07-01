@@ -1,5 +1,7 @@
 var reader  = new FileReader();
-
+var silueta = false;
+var foto = false;
+var siluetaElegida;
 $(document).ready(function () {
 	$("input[name='enviar']").click(obtenerDatos);
 });
@@ -9,7 +11,6 @@ function obtenerDatos() {
 	if (seguir) {
 		var titulo = $("input[name='titulo']").val();
 		var descripcion = $("textarea[name='descripcion']").val();
-		
 		var fechaDesaparicion = $("input[name='fecha_desaparicion']").val();
 		var sexo = $("input:radio[name='sexo']:checked").val();
 		var nombre = $("input[name='nombre']").val();
@@ -18,30 +19,34 @@ function obtenerDatos() {
 }
 
 function enviarPerdido(titulo, descripcion, latitud, longitud, fechaDesaparicion, sexo, nombre) {
-	if (reader.readyState != 2) {
+	if ( (reader.readyState != 2) && (silueta == false) ) {
 		while (reader.readyState != 2) {
 
 		}
+		silueta = false;
 	}
 	if (sexo == null) {
-		console.log("sexo");
 		sexo = "null";	
 	}
 	if (fechaDesaparicion == "") {
-		console.log("fechaDesaparicion");
 		fechaDesaparicion = 'null';	
 	}
 	if (nombre == "") {
-		console.log("nombre");
 		nombre = 'null';
 	}
-
-	var foto = reader.result;
+	if (silueta) {
+		var foto = siluetaElegida;
+		var tipoFoto = 'silueta';
+	} else {
+		var foto = reader.result;
+		var tipoFoto = 'foto';
+	}
 	var parametros = {
 		"do": "enviar",
 		"titulo": titulo,
 		"descripcion": descripcion,
 		"foto": foto,
+		"tipoFoto": tipoFoto,
 		"latitud": latitud,
 		"longitud": longitud,
 		"fechaDesaparicion": fechaDesaparicion,
@@ -76,7 +81,28 @@ function cargarImagen() {
 
 	if (file) {
     	reader.readAsDataURL(file);
+    	silueta = false;
+    	foto = true;
 	} else {
     	mostrarModal("Error, no hay imagen");
+	}
+}
+
+function cargarSilueta(img) {
+	if (foto != true) {
+		silueta = true;
+		siluetaElegida = img.id;
+	}
+}
+
+function mostrarOcultarImg() {
+	var estado = $("#btn-silueta").attr('estado');
+	var divSilueta = $("#siluetas");
+	if (estado == 'oculto') {
+		$("#btn-silueta").attr('estado', 'visible');
+		divSilueta.show();
+	} else if (estado == 'visible') {
+		$("#btn-silueta").attr('estado', 'oculto');
+		divSilueta.hide();
 	}
 }
