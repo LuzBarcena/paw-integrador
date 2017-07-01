@@ -9,7 +9,6 @@ function obtenerDatos() {
 	var edad = $("input[name='edad']");
 	var raza = $("select[name='select_raza']").val();
 
-	var filtroRaza = chequearSelect(raza);
 	var filtroTamanio = chequearSeleccionado(tamanio);
 	var filtroSexo = chequearSeleccionado(sexo);
 	var filtroEdad = chequearSeleccionado(edad);
@@ -18,7 +17,7 @@ function obtenerDatos() {
 	var vtamanio = "";
 	var vsexo = "";
 	var vedad = "";
-	var vraza = "";
+
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------------------------
 	//PARA PONER EL WHERE
@@ -30,10 +29,6 @@ function obtenerDatos() {
 		}else{
 			if(filtroEdad.length > 0){
 				datos = datos + "where";
-			}else{
-				if(filtroRaza.length > 0){
-					datos = datos + "where";
-				}
 			}
 		}
 	}
@@ -75,10 +70,6 @@ function obtenerDatos() {
 		vedad = vedad + ")";
 	}
 	
-	//raza
-	if(raza != "Todas"){
-		vraza = "(raza = " + "'" + raza + "'" + ")";
-	}
 	
 	var array = [];
 
@@ -91,9 +82,6 @@ function obtenerDatos() {
 	}
 	if(vedad != ""){
 		array.push(vedad);
-	}
-	if(vraza != ""){
-		array.push(vraza);
 	}
 
 
@@ -110,7 +98,7 @@ function obtenerDatos() {
 
 	//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-  	enviarFiltros(final);
+  	enviarFiltros(final,raza);
 }
 
 function chequearSeleccionado(dato){
@@ -123,20 +111,14 @@ function chequearSeleccionado(dato){
   	return p;
 }
 
-function chequearSelect(select){
-	var p = [];
-	if(select != "Todas"){
-		p.push(select);
-	}
 
-	return p;
-}
-
-function enviarFiltros(final) {
+function enviarFiltros(final,raza) {
 	console.log(final);
+	console.log(raza);
 	var parametros = {
 		"do": "enviar",
-		"final": JSON.stringify(final)
+		"final": JSON.stringify(final),
+		"raza": raza
 	}
 	$.ajax({
 		data: parametros,

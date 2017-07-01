@@ -77,10 +77,6 @@
                <img class="foto_perros" src="img_perros/{$fila->foto}.jpg" alt="Perro" style="width:100%">
                 <div class="container">
                     <h4><b>{$fila->nombre}</b></h4> 
-                    <p>{$fila->sexo}</p> 
-                    <p>{$fila->edad}</p>
-                    <p>{$fila->tamanio}</p>  
-                    <p>{$fila->id_raza}</p> 
                 </div>
                 <a href="">Leer más</a>
             </div>

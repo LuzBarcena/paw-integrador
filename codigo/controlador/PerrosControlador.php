@@ -48,8 +48,13 @@ class PerrosControlador {
 	}
 	
 	
-	public static function enviarFiltros($final){
-		$resultado = PerroDAO::obtenerFiltrados($final);
+	public static function enviarFiltros($final,$raza){
+		$resultado = PerroDAO::obtenerFiltrados($final,$raza);
+		return $resultado;
+	}
+
+	public static function getNombreRaza($raza){
+		$resultado = PerroDAO::obtenerNombreRaza($raza);
 		return $resultado;
 	}
 

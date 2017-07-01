@@ -12,24 +12,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if ($_POST["do"] == "enviar") {    
     $final = json_decode($_POST['final']);
+    $raza = $_POST['raza'];
   
-        $valor = PerrosControlador::enviarFiltros($final);
+    $valor = PerrosControlador::enviarFiltros($final,$raza);
 
-        if ($valor != false) {
-            header('Content-Type: application/json');
-            $datos = array(
-                "status" =>"ok",
-                "registros" =>$valor
-            );
-            echo json_encode($datos);
-        }else {
-            header('Content-Type: application/json');
-            $datos = array(
-                'status' => 'noResultado',
-                'descripcion' => 'no hay resultados'
-            );
-            echo json_encode($datos);
-        }
+    if ($valor != false) {
+        header('Content-Type: application/json');
+        $datos = array(
+            "status" =>"ok",
+            "registros" =>$valor
+        );
+        echo json_encode($datos);
+    }else {
+        header('Content-Type: application/json');
+        $datos = array(
+            'status' => 'noResultado',
+            'descripcion' => 'no hay resultados'
+        );
+        echo json_encode($datos);
+    }
 } else {
     $datos = array("status" => "error", "descripcion"=> "ocurrio un error");
     echo json_encode($respuesta);

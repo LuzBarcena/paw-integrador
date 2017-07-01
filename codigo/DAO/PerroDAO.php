@@ -116,24 +116,82 @@ class PerroDAO {
 		return false;
 	}
 	
-	public static function obtenerFiltrados($final) {
-		//para buscar el id raza;
-		
-	    $query = "SELECT * FROM PERRO " . $final . ";";
-		
+	public static function obtenerFiltrados($final,$raza) {
 		self::getConexion();
 
-		$resultado = self::$conexion->prepare($query); 
+		//para buscar el id raza;
+		if($raza != "Todas"){
+			$query = "SELECT id_raza FROM RAZA WHERE nombre = :raza;";
+			$resultado = self::$conexion->prepare($query); 
+			$resultado->bindParam(":raza", $raza);
+			$resultado->execute();
+		
+			if ($resultado->rowCount() > 0) {
+				$filas = $resultado->fetch();
+				$id_raza = $filas['id_raza'];
+				//SI TENGO EL ID_RAZA HAGO EL SELECT, SI LO DEMAS ES VACIO FILTRO POR RAZA SOLA
+				if($final == ""){
+					$query = "SELECT * FROM PERRO WHERE id_raza = :raza;";
+					$resultado = self::$conexion->prepare($query); 
+					$resultado->bindParam(":raza", $id_raza);
+					$resultado->execute();
+		
+					if ($resultado->rowCount() > 0) {
+						$filas = $resultado->fetchAll();
+						self::desconectar();
+						return $filas;
+					}
+					self::desconectar();
+					return false;
+				}else{
+					$query = "SELECT * FROM PERRO " . $final . " AND id_raza = " . $id_raza . ";";
+					$resultado = self::$conexion->prepare($query); 
 
+					$resultado->execute();
+		
+					if ($resultado->rowCount() > 0) {
+						$filas = $resultado->fetchAll();
+						self::desconectar();
+						return $filas;
+					}
+					self::desconectar();
+					return false;
+				}
+			}
+			self::desconectar();
+			return false;	
+		}else{
+			//SI RAZA ES VACIO, HAGO LA QUERY SIN ELLA
+	    	$query = "SELECT * FROM PERRO " . $final . ";";
+			$resultado = self::$conexion->prepare($query); 
+
+			$resultado->execute();
+		
+			if ($resultado->rowCount() > 0) {
+				$filas = $resultado->fetchAll();
+				self::desconectar();
+				return $filas;
+			}
+			self::desconectar();
+			return false;
+		}
+		
+	}
+
+	public static function obtenerNombreRaza($raza) {
+		self::getConexion();
+
+		$query = "SELECT nombre FROM RAZA WHERE id_raza = :raza;";
+		$resultado = self::$conexion->prepare($query); 
+		$resultado->bindParam(":raza", $raza);
 		$resultado->execute();
 		
 		if ($resultado->rowCount() > 0) {
-			$filas = $resultado->fetchAll();
+			$filas = $resultado->fetch();
 			self::desconectar();
-			return $filas;
-		}
+			return $filas['nombre'];
+		}	
 		self::desconectar();
 		return false;
 	}
-		
 }
