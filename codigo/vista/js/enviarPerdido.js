@@ -2,6 +2,7 @@ var reader  = new FileReader();
 var silueta = false;
 var foto = false;
 var siluetaElegida;
+
 $(document).ready(function () {
 	$("input[name='enviar']").click(obtenerDatos);
 });
@@ -67,7 +68,6 @@ function enviarPerdido(titulo, descripcion, latitud, longitud, fechaDesaparicion
 			} else {
 				mostrarModal(data.descripcion);
 			}
-			
 		},
 		error: function(respuesta) {
 			var data = JSON.parse(respuesta);
@@ -82,6 +82,9 @@ function cargarImagen() {
 	if (file) {
     	reader.readAsDataURL(file);
     	silueta = false;
+    	$('#img-ok').hide();
+		$('#btn-silueta').text("Ya se eligió una foto");
+		$('#btn-silueta').css("background-color", "#CC0000");
     	foto = true;
 	} else {
     	mostrarModal("Error, no hay imagen");
@@ -92,17 +95,26 @@ function cargarSilueta(img) {
 	if (foto != true) {
 		silueta = true;
 		siluetaElegida = img.id;
+		$('#img-ok').show();
+		$('#btn-silueta').css("background-color", "#007E33");
+		$('#btn-silueta').css("color", "#f2f2f2");
+		$("#btn-silueta").attr('estado', 'oculto');
+		setTimeout(function() {
+			$("#siluetas").hide();
+			$('#btn-silueta').text("Silueta elegida");
+		}, 1000);
 	}
 }
 
 function mostrarOcultarImg() {
 	var estado = $("#btn-silueta").attr('estado');
-	var divSilueta = $("#siluetas");
 	if (estado == 'oculto') {
-		$("#btn-silueta").attr('estado', 'visible');
-		divSilueta.show();
+		if (foto != true) {
+			$("#btn-silueta").attr('estado', 'visible');
+			$("#siluetas").show();
+		}
 	} else if (estado == 'visible') {
 		$("#btn-silueta").attr('estado', 'oculto');
-		divSilueta.hide();
+		$("#siluetas").hide();
 	}
 }

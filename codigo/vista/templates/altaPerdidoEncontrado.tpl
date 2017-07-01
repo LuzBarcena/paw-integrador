@@ -15,6 +15,7 @@
             <input type="file" onchange="cargarImagen();" id="foto" name="foto" required=""><br>
             <label>¿No tenes foto? Elegí una silueta: </label>
             <a id="btn-silueta" estado="oculto" onclick="mostrarOcultarImg();">Elegir silueta</a>
+            <img id="img-ok" src="img/tick.png" style="display: none;">
             <div id="siluetas">
                 <figure>
                     <img class="imgSiluetas" id="silueta1" src="img_siluetas/silueta1.png" onclick="cargarSilueta(this);">
