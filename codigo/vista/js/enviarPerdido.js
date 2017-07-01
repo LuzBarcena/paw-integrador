@@ -95,7 +95,7 @@ function cargarSilueta(img) {
 	if (foto != true) {
 		silueta = true;
 		siluetaElegida = img.id;
-		$('#img-ok').show();
+		$('#img-ok').css("display", "inline-block");
 		$('#btn-silueta').css("background-color", "#007E33");
 		$('#btn-silueta').css("color", "#f2f2f2");
 		$("#btn-silueta").attr('estado', 'oculto');

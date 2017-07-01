@@ -150,6 +150,10 @@ div#siluetas figure:hover img {
 }
 */
 
+div#siluetas figure {
+    display: inline-block;
+}
+
 div#siluetas figure img {
     max-height: 150px;
     opacity: 1;

@@ -17,9 +17,11 @@
             <a id="btn-silueta" estado="oculto" onclick="mostrarOcultarImg();">Elegir silueta</a>
             <img id="img-ok" src="img/tick.png" style="display: none;">
             <div id="siluetas">
-                <figure>
-                    <img class="imgSiluetas" id="silueta1" src="img_siluetas/silueta1.png" onclick="cargarSilueta(this);">
+            {foreach $siluetas as $silueta}
+                <figure class="figures">
+                    <img class="imgSiluetas" id="{$silueta['id']}" src="{$silueta['path']}" onclick="cargarSilueta(this);">
                 </figure>
+            {/foreach}
             </div>
             <label for="titulo">Título</label> (*)
             <input id="titulo" type="text" name="titulo" required="">

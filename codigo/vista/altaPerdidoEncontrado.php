@@ -16,4 +16,14 @@ if ($haySesion) {
 }
 $tpl->assign('haySesion', $haySesion);
 $tpl->assign('pageTitle', 'Perdidos');
+
+$cantidadSiluetas = 26;
+$siluetas = array();
+for ($i = 1; $i <= 26; $i++) {
+	$siluetas[] = array(
+		"id" => "silueta".$i,
+		"path" => "img_siluetas/silueta".$i.".png"
+	);
+}
+$tpl->assign('siluetas', $siluetas);
 $tpl->display("altaPerdidoEncontrado.tpl");
