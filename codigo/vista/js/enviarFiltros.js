@@ -147,6 +147,9 @@ function enviarFiltros(final) {
 				location.href="perros.php?registros="+escape(JSON.stringify(respuesta.registros));
 			} else {
 				mostrarModal(respuesta.descripcion);
+				setTimeout(function(){
+					location.href ="perros.php";
+				}, 1000);
 			}
 			
 		},

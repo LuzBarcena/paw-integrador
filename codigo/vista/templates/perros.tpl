@@ -85,8 +85,6 @@
                 <a href="">Leer más</a>
             </div>
         {/foreach}
-    {else}
-        <h2>No hay resultados</h2>
     {/if}
     </section>
 {/block}
