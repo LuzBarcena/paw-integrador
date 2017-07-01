@@ -60,6 +60,47 @@ fieldset{
     width: 70%;
 }
 
-h3{
+h3, h2{
     text-align: center;
 }
+
+/*------------------------------------card filtros--------------*/
+#lista_perdidos {
+    text-align: center;
+}
+
+.card {
+    box-shadow: 0 0.4em 0.8em 0 rgba(0,0,0,0.3);
+    transition: 0.3s;
+    width: 20%;
+    border-radius: 10%;
+    background-color: white;
+    text-align: center;
+    margin-right: 2%;
+    margin-left: 2.5%; 
+    margin-bottom: 1%;
+    margin-top: 1%;
+    padding-bottom: 1%; 
+    display: inline-block;
+}
+
+.card:hover {
+    box-shadow: 0 0.8em 1.2em 0 rgba(0,0,0,0.3);
+}
+
+.foto_perros {
+    border-radius: 0.6em 0.6em 0 0;
+    height: 150px;
+    /*min-height: 150px;*/
+    /*min-width: 150px;*/
+}
+
+.container {
+    padding: 0.1em 1.2em;
+}
+
+
+
+
+
+

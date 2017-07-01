@@ -9,28 +9,108 @@ function obtenerDatos() {
 	var edad = $("input[name='edad']");
 	var raza = $("select[name='select_raza']").val();
 
-	//var filtroRaza = chequearSelect(raza);
+	var filtroRaza = chequearSelect(raza);
 	var filtroTamanio = chequearSeleccionado(tamanio);
 	var filtroSexo = chequearSeleccionado(sexo);
 	var filtroEdad = chequearSeleccionado(edad);
 
+	var datos = "";
+	var vtamanio = "";
+	var vsexo = "";
+	var vedad = "";
+	var vraza = "";
 
-	//PARA CHEQUEAR LOS FILTROS
-	/*for(var i = 0; i < filtroRaza.length; i++){
-  		console.log(filtroRaza[i]);
-  	}*/
+	//---------------------------------------------------------------------------------------------------------------------------------------------------------------
+	//PARA PONER EL WHERE
+	if(filtroTamanio.length > 0){
+		datos = datos + "where ";
+	}else{
+		if(filtroSexo.length > 0){
+			datos = datos + "where";
+		}else{
+			if(filtroEdad.length > 0){
+				datos = datos + "where";
+			}else{
+				if(filtroRaza.length > 0){
+					datos = datos + "where";
+				}
+			}
+		}
+	}
 
-	for(var i = 0; i < filtroTamanio.length; i++){
-  		console.log(filtroTamanio[i]);
-  	}
-  	for(var i = 0; i < filtroSexo.length; i++){
-  		console.log(filtroSexo[i]);
-  	}
-  	for(var i = 0; i < filtroEdad.length; i++){
-  		console.log(filtroEdad[i]);
-  	}
+	//VOY ARMANDO LA QUERY
+	//tamanio
+	for (var i = 0; i < filtroTamanio.length; i++) {
+		if(i > 0){
+			vtamanio = vtamanio + " OR tamanio = " + "'" + filtroTamanio[i] + "'";
+		}else{
+			vtamanio = "(tamanio = " + "'" + filtroTamanio[i] + "'";
+		}
+	}
+	if (filtroTamanio.length > 0){
+		vtamanio = vtamanio + ")";
+	}
 
-  	enviarFiltros(filtroTamanio, filtroSexo, filtroEdad/*, filtroRaza*/);
+	//sexo
+	for (var i = 0; i < filtroSexo.length; i++) {
+		if(i > 0){
+			vsexo = vsexo + " OR sexo = " + "'" + filtroSexo[i] + "'";
+		}else{
+			vsexo ="(sexo = " + "'" + filtroSexo[i] + "'";
+		}
+	}
+	if (filtroSexo.length > 0){
+		vsexo = vsexo + ")";
+	}
+
+	//edad
+	for (var i = 0; i < filtroEdad.length; i++) {
+		if(i > 0){
+			vedad =  vedad + " OR edad = " + "'" + filtroEdad[i] + "'";
+		}else{
+			vedad = "(edad = " + "'" + filtroEdad[i] + "'";
+		}
+	}
+	if (filtroEdad.length > 0){
+		vedad = vedad + ")";
+	}
+	
+	//raza
+	if(raza != "Todas"){
+		vraza = "(raza = " + "'" + raza + "'" + ")";
+	}
+	
+	var array = [];
+
+	//PARA PONER EL AND
+	if(vtamanio != ""){
+		array.push(vtamanio);
+	}
+	if(vsexo != ""){
+		array.push(vsexo);
+	}
+	if(vedad != ""){
+		array.push(vedad);
+	}
+	if(vraza != ""){
+		array.push(vraza);
+	}
+
+
+	for(i = 0; i < array.length; i++){
+		if(i < array.length-1){
+			array[i] = array[i] + " AND ";
+		}
+	}
+
+	var final = datos;
+	for(i = 0; i < array.length; i++){
+		final = final + array[i];
+	}
+
+	//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  	enviarFiltros(final);
 }
 
 function chequearSeleccionado(dato){
@@ -52,26 +132,11 @@ function chequearSelect(select){
 	return p;
 }
 
-function enviarFiltros(tamanio, sexo, edad/*, raza*/) {
-	if(tamanio == ""){
-		console.log("todos los tamaños");
-	}
-	if(edad == ""){
-		console.log("todos las edades");
-	}
-	if(sexo == ""){
-		console.log("todos los sexos");
-	}
-	/*if(raza == ""){
-		console.log("todas las razas");
-	}*/
-
-
+function enviarFiltros(final) {
+	console.log(final);
 	var parametros = {
 		"do": "enviar",
-		"tamanio": JSON.stringify(tamanio),
-		"sexo": JSON.stringify(sexo),
-		"edad": JSON.stringify(edad)
+		"final": JSON.stringify(final)
 	}
 	$.ajax({
 		data: parametros,
@@ -79,17 +144,14 @@ function enviarFiltros(tamanio, sexo, edad/*, raza*/) {
 		type: 'POST',
 		success: function (respuesta) {
 			if (respuesta.status === "ok") {
-				for(i = 0 ; i <  respuesta.registros.length ; i++){
-					console.log(respuesta.registros[i].nombre);
-				}
 				location.href="perros.php?registros="+escape(JSON.stringify(respuesta.registros));
 			} else {
-				console.log(respuesta.descripcion);
+				mostrarModal(respuesta.descripcion);
 			}
 			
 		},
 		error: function(respuesta) {
-			console.log(respuesta.descripcion);
+			mostrarModal(respuesta.descripcion);
         }
     });
 }

@@ -11,11 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 */
 
 if ($_POST["do"] == "enviar") {    
-    $tamanio = json_decode($_POST['tamanio']);
-    $sexo = json_decode($_POST['sexo']);
-    $edad = json_decode($_POST['edad']);
+    $final = json_decode($_POST['final']);
   
-        $valor = PerrosControlador::enviarFiltros($tamanio, $sexo, $edad);
+        $valor = PerrosControlador::enviarFiltros($final);
 
         if ($valor != false) {
             header('Content-Type: application/json');

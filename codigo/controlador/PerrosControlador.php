@@ -48,8 +48,8 @@ class PerrosControlador {
 	}
 	
 	
-	public static function enviarFiltros($tamaño, $sexo, $edad/*, $raza*/){
-		$resultado = PerroDAO::obtenerFiltrados($tamaño, $sexo, $edad/*, $raza*/);
+	public static function enviarFiltros($final){
+		$resultado = PerroDAO::obtenerFiltrados($final);
 		return $resultado;
 	}
 
