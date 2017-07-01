@@ -25,8 +25,22 @@ function obtenerDatos() {
 function enviarPerro(nombre, edad, sexo, particularidad, tamanio, peso, raza, referencias) {
 	if (reader.readyState != 2) {
 		while (reader.readyState != 2) {
-
 		}
+	}
+	if (sexo == null) {
+		sexo = 'null';	
+	}
+	if (peso == '') {
+		peso = 'null';	
+	}
+	if (edad == null) {
+		edad = 'null';
+	}
+	if (particularidad == null) {
+		particularidad = 'null';
+	}
+	if (referencias.length == 0) {
+		referencias = 'null';
 	}
 	var foto = reader.result;
 	var parametros = {
@@ -47,16 +61,14 @@ function enviarPerro(nombre, edad, sexo, particularidad, tamanio, peso, raza, re
 		type: 'POST',
 		success: function (respuesta) {
 			var data = JSON.parse(respuesta);
-
 			if (data.status === "ok") {
-				mostrarModal(data.data);
+				mostrarModal(data.descripcion);
 				setTimeout(function(){
 					location.href ="perros.php";
 				}, 1500);
 			} else {
 				mostrarModal(data.descripcion);
 			}
-			mostrarModal(respuesta);
 		},
 		error: function(respuesta) {
 			var data = JSON.parse(respuesta);

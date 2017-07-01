@@ -16,7 +16,6 @@ class PerrosControlador {
 		$nombreFoto = "perro" . $numero;
 
 		$filepath = "../vista/img_perros/" . $nombreFoto . ".jpg";
-
 		$perro = new Perro($nombreFoto, $nombre, $edad, $sexo, $particularidad, $tamaño, $peso, $raza);
 
 		$idRaza = self::getRaza($raza);
@@ -25,9 +24,12 @@ class PerrosControlador {
 		} else {
 			$perro->setIdRaza($idRaza);
 		}
-
-		$arrayreferencia = self::getIdReferencias($referencias);		
-		$perro->setIdReferencia($arrayreferencia);
+		if ($referencias != 'null') {
+			$arrayreferencia = self::getIdReferencias($referencias);		
+			$perro->setIdReferencia($arrayreferencia);
+		} else {
+			$perro->setIdReferencia('null');
+		}
 		//guardo en el servidor LA FOTO ME LA GUARDA
 		if (file_put_contents($filepath, $foto)) {
 			return PerroDAO::guardarPerro($perro);

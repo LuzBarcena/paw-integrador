@@ -31,7 +31,7 @@
             <div id="map"></div>
             
             <label>Fecha de desaparición</label>
-            <input type="date" min="01-01-1930" placeholder="Fecha" name="fecha_desaparicion">
+            <input type="date" min="01-01-1930" placeholder="Formato: dd-mm-yyyy" name="fecha_desaparicion">
             
             <label for="sexo">Sexo</label>
             <div>

@@ -53,16 +53,17 @@ function validarPerro(){
 	var particularidad = $("textarea[name='particularidad']").val();
 	var peso = $("input[name='peso']").val();
 	if (campoVacio(nombre)) return false;
-	if (campoVacio(particularidad)) return false;
-	if (campoVacio(peso)) return false;
 	if (longitudExcedida(nombre, 50, true)) return false;
 	if ( ! esTextoyNumeros(nombre)) return false;
-	if (longitudExcedida(particularidad, 100, true)) return false;
-	if ( ! esTextoyNumeros(particularidad)) return false;
-	if ( ! soloDecimales(peso)) return false;
+	if (particularidad != null) {
+		if (longitudExcedida(particularidad, 200, true)) return false;
+		if ( ! esTextoyNumeros(particularidad)) return false;
+	}
+	if (peso != '') {
+		if ( ! soloDecimales(peso)) return false;
+	}	
 	return true;
 }
-
 
 function validarRadio(radio){
   	var p = 0;
@@ -92,7 +93,7 @@ function validarContraseniaS() {
 function campoVacio(campo) {
 	if (campo === "") {
 		//alert("Hay por lo menos un campo vacío");
-		mostrarModal("Hay por lo menos un campo vacío");
+		mostrarModal("Hay por lo menos un campo obligatorio vacío");
 		return true;
 	}
 	else {

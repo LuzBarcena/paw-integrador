@@ -34,7 +34,7 @@ class PerroDAO {
 	public static function guardarPerro($perro) {
 		$foto = $perro->getFoto();
 		$nombre = $perro->getNombre();
-		$sexo = ($perro->getEdad() == 'null' ? NULL : $perro->getEdad());
+		$edad = ($perro->getEdad() == 'null' ? NULL : $perro->getEdad());
 		$sexo = ($perro->getSexo() == 'null' ? NULL : $perro->getSexo());
 		$peso = ($perro->getPeso() == 'null' ? NULL : $perro->getPeso());
 		$particularidad = $perro->getParticularidad();
@@ -47,7 +47,7 @@ class PerroDAO {
 		self::getConexion();
 		
 		$resultado = self::$conexion->prepare($query);
-		
+
 		$resultado->bindParam(":foto", $foto);
 		$resultado->bindParam(":nombre", $nombre);
 		$resultado->bindParam(":edad", $edad);
@@ -58,17 +58,19 @@ class PerroDAO {
 		$resultado->bindParam(":id_raza", $raza);
 	
 		if ($resultado->execute()) {
-			$id_perro = $resultado->fetchColumn(); //obtengo el id del perro que se inserto
-			//si el perro se inserto bien entonces ahora ingreso sus referencias
-			$query = "INSERT INTO perro_referencia(id_perro, id_referencia) VALUES (:idPerro, :idReferencia);";
+			if ($idsreferencias != 'null') {
+				$id_perro = $resultado->fetchColumn(); //obtengo el id del perro que se inserto
+				//si el perro se inserto bien entonces ahora ingreso sus referencias
+				$query = "INSERT INTO perro_referencia(id_perro, id_referencia) VALUES (:idPerro, :idReferencia);";
 
-			foreach ($idsreferencias as $id) {
-				$resultado = self::$conexion->prepare($query);
-				$resultado->bindParam(":idPerro", $id_perro);
-				$resultado->bindParam(":idReferencia", $id);
+				foreach ($idsreferencias as $id) {
+					$resultado = self::$conexion->prepare($query);
+					$resultado->bindParam(":idPerro", $id_perro);
+					$resultado->bindParam(":idReferencia", $id);
 
-				if ( ! $resultado->execute() ) {
-					return "No se pudo dar de alta alguna referencia del perro.";
+					if ( ! $resultado->execute() ) {
+						return "No se pudo dar de alta alguna referencia del perro.";
+					}
 				}
 			}
 			self::desconectar();

@@ -10,7 +10,6 @@ class PerdidoControlador {
 		$resultado = PerdidoDAO::obtenerPerdidos($indice, $elementosPorPagina);
 		if($resultado != false){
 			foreach ($resultado as $key => $fila) {
-				$nombre = $fila['foto'];
 				$esSilueta = strpos($fila['foto'], 'silueta');
 				if ($esSilueta === false) {
 					$path = concatenarPath($fila['foto'], 'perdidos');

@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["titulo"]) && isset($_POST["descripcion"])) {
 */
 if ($_POST["do"] == "enviar") {
-    if ( ($_POST["nombre"] != '') && ($_POST["edad"] != '') && ($_POST["particularidad"] != '') && ($_POST["tamanio"] != '') && ($_POST["peso"] != '') && ($_POST["sexo"] != '') && ($_POST["raza"] != '')) {
+    if ( ($_POST["nombre"] != '') && ($_POST["tamanio"] != '') && ($_POST["raza"] != '')) {
     	//valido las entradas
     	$nombre = Validador::limpiarCampo($_POST["nombre"]);
     	$edad = Validador::limpiarCampo($_POST["edad"]);
@@ -18,6 +18,7 @@ if ($_POST["do"] == "enviar") {
         $particularidad = Validador::limpiarCampo($_POST["particularidad"]);
         $tamanio = Validador::limpiarCampo($_POST["tamanio"]);
         $raza = Validador::limpiarCampo($_POST["raza"]);
+        $peso = Validador::limpiarCampo($_POST["peso"]);
 
         $todoOk = true;
 
@@ -34,7 +35,7 @@ if ($_POST["do"] == "enviar") {
             $dataImagen = base64_decode($imagen[1]);
             
             //mando los datos obligatorios para el constructor, y nos no obligatorios para el set
-            $valor = PerrosControlador::setPerro($dataImagen, $nombre, $edad, $sexo, $particularidad, $tamanio, $_POST["peso"], $_POST["referencias"], $raza);
+            $valor = PerrosControlador::setPerro($dataImagen, $nombre, $edad, $sexo, $particularidad, $tamanio, $peso, $_POST["referencias"], $raza);
 
             if ($valor == 1) {
                 echo '{"status": "ok", "descripcion": "Se agregó el perro correctamente. Redirigiendo a perros...", "data":"' . $_POST["nombre"].'"}';

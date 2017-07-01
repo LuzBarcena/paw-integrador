@@ -9,9 +9,9 @@
 {block name=section}
     <form id="formAltaPerro" method="post" enctype="multipart/form-data">
         <div class="container">
-            <label for="foto">Foto</label>
+            <label for="foto">Foto (*)</label>
             <input type="file" onchange="cargarImagen();" id="foto" name="foto" required=""><br>
-            <label for="nombre">Nombre</label>
+            <label for="nombre">Nombre (*)</label>
             <input id="nombre" type="text" name="nombre" required="">
             <fieldset>
                 <legend>Edad</legend>
@@ -40,7 +40,7 @@
             </fieldset>
             <br>
             <label for="particularidad">Particularidad</label>
-            <textarea id="particularidad" name="particularidad" rows="5" cols="30" required=""></textarea>
+            <textarea id="particularidad" name="particularidad" rows="5" cols="30"></textarea>
             <fieldset>
                 <legend>Referencias</legend>
                 <label for="referencias">Se lleva con niños
@@ -61,7 +61,7 @@
             </fieldset>
             <br>
             <fieldset>
-                <legend>Tamaño</legend>
+                <legend>Tamaño (*)</legend>
                 <label for="tamanio">Pequeño
                     <input type="radio" name="tamanio" id="" value="chico"/>
                 </label>
@@ -74,8 +74,8 @@
             </fieldset>
             <br>
             <label for="peso">Peso</label>
-            <input type="number" id="peso" name="peso" step="0.1" min="0" max="80" required="">
-            <label for="raza">Raza</label>
+            <input type="number" id="peso" name="peso" step="0.1" min="0" max="80">
+            <label for="raza">Raza (*)</label>
             <select id="raza_select" name="select_raza">
                     <option value="vacio">Selecione una raza...</option> 
                     {foreach $raza as $fila}
@@ -85,6 +85,7 @@
             <div id="boton">
                 <input type="button" id="alta" name="alta" value="Dar de alta">
             </div>
+            <p>(*) Campos obligatorios </p>
         </div>
     </form>
 {/block}
