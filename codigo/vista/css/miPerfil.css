@@ -1,0 +1,30 @@
+#mi_info, #mis_perros{
+	text-align: center;
+}
+
+#mi_perfil{
+	background-color: rgba(251,251,251,0.8);
+    margin: 3% auto 0.5em auto;
+    border: 0.1em solid #888;
+    width: 95%;
+}
+
+button.accordion {
+    background-color: #95a5a6;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: 0.1em solid #888;
+    outline: none;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+}

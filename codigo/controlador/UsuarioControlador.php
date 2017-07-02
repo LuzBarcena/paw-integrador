@@ -16,4 +16,8 @@ class UsuarioControlador {
     	
     	return UsuarioDAO::nuevoUsuario($usuario);
     }
+
+    public static function getUsuario ($usuario) {
+        return UsuarioDAO::devolverUsuario($usuario);
+    }
 }

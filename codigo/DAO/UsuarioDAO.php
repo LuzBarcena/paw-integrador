@@ -88,4 +88,22 @@ class UsuarioDAO {
 		}
 	}
 
+	public static function devolverUsuario($usuario) {
+		$query = "SELECT * FROM USUARIO WHERE id_usuario = :usuario";
+		self::getConexion();
+
+		$resultado = self::$conexion->prepare($query);
+
+		$resultado->bindParam(":usuario", $usuario);
+
+		$resultado->execute();
+
+		if ($resultado->rowCount() > 0) {
+			$fila = $resultado->fetch();
+			self::desconectar();
+			return $fila;
+		}
+		self::desconectar();
+		return false;
+	}
 }
