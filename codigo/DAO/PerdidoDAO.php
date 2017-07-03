@@ -17,7 +17,7 @@ class PerdidoDAO {
 	}
 
 	public static function obtenerPerdidos($indice, $elementosPorPagina) {
-		$query = "SELECT * FROM PERDIDO ORDER BY ID_PERDIDO DESC LIMIT :cantidad OFFSET :indice;";
+		$query = "SELECT * FROM PERDIDO WHERE estado = 'perdido' ORDER BY ID_PERDIDO DESC LIMIT :cantidad OFFSET :indice;";
 
 		self::getConexion();
 
@@ -38,7 +38,7 @@ class PerdidoDAO {
 	}
 
 	public static function obtenerCantidadPerdidos() {
-		$query = "SELECT count(*) as total FROM PERDIDO;";
+		$query = "SELECT count(*) as total FROM PERDIDO WHERE estado = 'perdido';";
 		self::getConexion();
 
 		$resultado = self::$conexion->prepare($query);

@@ -9,6 +9,7 @@ Config::autoload();
 $tpl = new TemplateManager();
 $haySesion = SesionControlador::haySesion();
 $tpl->assign('haySesion', $haySesion);
+$tpl->assign("mismoUsuario", false);
 if ($haySesion) {
 	$usuario = SesionControlador::getSesion();
 	$id_usuario = SesionControlador::getId();
@@ -25,6 +26,7 @@ if ($resultado != false) {
 			$tpl->assign("id", $mismoUsuario['id_perdido']);
 		}
 	}
+	
 	$tpl->assign("titulo", $resultado['titulo']);
 	$tpl->assign('descripcion',$resultado['descripcion']);
 	$tpl->assign('latitud', $resultado['lat']);

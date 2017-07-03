@@ -59,7 +59,8 @@ class PerdidoControlador {
 				return PerdidoDAO::guardarPerdido($perdido);
 			}
 		}
-	
+	}
+
 	public static function chequearUsuario($idUsuario,$idPerro){
 		return PerdidoDAO::mismoUsuario($idUsuario, $idPerro);
 	}
@@ -68,7 +69,5 @@ class PerdidoControlador {
 		return PerdidoDAO::marcarEncontrado($id);
 	}
 
-		
-	}
 
 }
