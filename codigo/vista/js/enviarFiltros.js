@@ -126,7 +126,14 @@ function enviarFiltros(final,raza) {
 		type: 'POST',
 		success: function (respuesta) {
 			if (respuesta.status === "ok") {
-				location.href="perros.php?registros="+escape(JSON.stringify(respuesta.registros));
+				var resultado = JSON.stringify(respuesta.registros);
+				var parse = JSON.parse(resultado);
+				var array = [];
+				for (var i = 0; i < parse.length; i++) {
+					console.log(parse[i].id_perro);
+					array.push(parse[i].id_perro);
+				}
+				location.href="perros.php?registros="+JSON.stringify(array);
 			} else {
 				mostrarModal(respuesta.descripcion);
 				setTimeout(function(){

@@ -18,7 +18,7 @@
                 <label for="edad">Cachorro (- 1 año)
                     <input type="radio" name="edad" id="" value="cachorro"/>
                 </label>
-                <label for="edad">Adulto joven (2 a 4 años)
+                <label for="edad">Adulto joven (1 a 4 años)
                     <input type="radio" name="edad" id="" value="adulto_joven"/>
                 </label>
                 <label for="edad">Adulto (5 a 9 años)

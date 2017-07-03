@@ -27,7 +27,7 @@ if ($_POST["do"] == "enviar") {
         header('Content-Type: application/json');
         $datos = array(
             'status' => 'noResultado',
-            'descripcion' => 'no hay resultados'
+            'descripcion' => 'No hay resultados'
         );
         echo json_encode($datos);
     }

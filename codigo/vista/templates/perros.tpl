@@ -43,7 +43,7 @@
                 <label for="edad">Cachorro (- 1 año)
                     <input type="checkbox" name="edad" id="" value="cachorro"/>
                 </label>
-                <label for="edad">Adulto joven (2 a 4 años)
+                <label for="edad">Adulto joven (1 a 4 años)
                     <input type="checkbox" name="edad" id="" value="adulto_joven"/>
                 </label>
                 <label for="edad">Adulto (5 a 9 años)
@@ -71,16 +71,16 @@
     </form>
 
    <section id="lista_perdidos">
-    {if $resultado != false}    
-        {foreach $resultado as $fila}
-            <div class="card">
-               <img class="foto_perros" src="img_perros/{$fila->foto}.jpg" alt="Perro" style="width:100%">
-                <div class="container">
-                    <h4><b>{$fila->nombre}</b></h4> 
+        {if $resultado != false}    
+            {foreach $resultado as $fila}
+                <div class="card">
+                    <img class="foto_perros" src="img_perros/{$fila['foto']}.jpg" alt="Perro" style="width:100%">
+                    <div class="container">
+                        <h4><b>{$fila['nombre']}</b></h4> 
+                    </div>
+                    <a href="perroIndividual.php?id={$fila['id_perro']}">Leer más</a>
                 </div>
-                <a href="perroIndividual.php?id={$fila->id_perro}">Leer más</a>
-            </div>
-        {/foreach}
-    {/if}
+            {/foreach}
+        {/if}
     </section>
 {/block}

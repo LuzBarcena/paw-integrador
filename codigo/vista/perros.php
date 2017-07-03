@@ -31,10 +31,18 @@ $tpl->assign('resultado', false);
 
 //--------------------------FILTROS----------------------------------
 $tpl->assign('resultado', false);
+$tpl->assign('fila',false);
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" and isset($_GET["registros"])) {
-	$registros =json_decode ($_GET["registros"]);
-	$tpl->assign('resultado', $registros);
+	$registros = json_decode($_GET["registros"]);
+	$data[]=array();
+	for ($i = 0; $i < sizeof($registros) ; $i++) { 
+		$resultado = PerrosControlador::getPerro($registros[$i]);
+		if($resultado != false){
+			$data[$i] = $resultado;
+		}
+	}
+	$tpl->assign("resultado", $data);
 }
 
 
