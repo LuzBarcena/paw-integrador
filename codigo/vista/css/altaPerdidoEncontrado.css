@@ -152,6 +152,7 @@ div#siluetas figure:hover img {
 
 div#siluetas figure {
     display: inline-block;
+    margin: 0;
 }
 
 div#siluetas figure img {

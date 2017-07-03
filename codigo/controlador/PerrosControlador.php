@@ -58,4 +58,23 @@ class PerrosControlador {
 		return $resultado;
 	}
 
+	public static function getReferencias() {
+		$resultado = PerroDAO::obtenerReferencias();
+		return $resultado;
+	}
+
+	public static function getPerro($id) {
+		$resultado = PerroDAO::obtenerPerro($id);
+		return $resultado;
+	}
+
+	public static function getReferenciasByIdPerro($idPerro) {
+		$resultado = PerroDAO::getReferenciaByIdPerro($idPerro);
+		return $resultado;
+	}
+
+	public static function getReferenciasById($idReferencia) {
+		$resultado = PerroDAO::getReferenciaById($idReferencia);
+		return $resultado;
+	}
 }

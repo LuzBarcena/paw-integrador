@@ -78,7 +78,7 @@
                 <div class="container">
                     <h4><b>{$fila->nombre}</b></h4> 
                 </div>
-                <a href="">Leer más</a>
+                <a href="perroIndividual.php?id={$fila->id_perro}">Leer más</a>
             </div>
         {/foreach}
     {/if}

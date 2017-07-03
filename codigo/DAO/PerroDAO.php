@@ -194,4 +194,73 @@ class PerroDAO {
 		self::desconectar();
 		return false;
 	}
+
+	public static function obtenerReferencias() {
+		$query = "SELECT id_referencia, nombre, imagen FROM referencia;";
+
+		self::getConexion();
+
+		$resultado = self::$conexion->prepare($query); 
+		$resultado->execute();
+
+		if ($resultado->rowCount() > 0) {
+			$filas = $resultado->fetchAll();
+			self::desconectar();
+			return $filas;
+		}	
+		self::desconectar();
+		return false;
+	}
+
+	public static function obtenerPerro($id) {
+		$query = "SELECT * FROM PERRO WHERE id_perro = :id";
+		self::getConexion();
+
+		$resultado = self::$conexion->prepare($query);
+		$resultado->bindParam(":id", $id);
+		$resultado->execute();
+
+		if ($resultado->rowCount() > 0) {
+			$fila = $resultado->fetch();
+			self::desconectar();
+			return $fila;
+		}	
+		self::desconectar();
+		return false;
+	}
+
+	public static function getReferenciaByIdPerro($idPerro) {
+		$query = "SELECT id_referencia FROM perro_referencia WHERE id_perro = :idPerro";
+		self::getConexion();
+
+		$resultado = self::$conexion->prepare($query);
+		$resultado->bindParam(":idPerro", $idPerro);
+		$resultado->execute();
+
+		if ($resultado->rowCount() > 0) {
+			$filas = $resultado->fetchAll();
+			self::desconectar();
+			return $filas;
+		}	
+		self::desconectar();
+		return false;
+	}
+
+	public static function getReferenciaById($idReferencia) {
+		$query = "SELECT * FROM referencia WHERE id_referencia = :idReferencia";
+		self::getConexion();
+
+		$resultado = self::$conexion->prepare($query);
+		$resultado->bindParam(":idReferencia", $idReferencia);
+		$resultado->execute();
+
+		if ($resultado->rowCount() > 0) {
+			$fila = $resultado->fetch();
+			self::desconectar();
+			return $fila;
+		}	
+		self::desconectar();
+		return false;
+	}
+
 }
