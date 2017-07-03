@@ -52,8 +52,8 @@ INSERT INTO raza(nombre) VALUES ('Terrier');
 INSERT INTO raza(nombre) VALUES ('Yorkshire Terrier');
 INSERT INTO raza(nombre) VALUES ('Otro');
 
-INSERT INTO referencia(nombre, imagen) VALUES ('Se lleva con ninios', 'ref1.jpg');
-INSERT INTO referencia(nombre, imagen) VALUES ('Se lleva con perros', 'ref2.jpg');
+INSERT INTO referencia(nombre, imagen) VALUES ('Se lleva con ninios', 'ref2.jpg');
+INSERT INTO referencia(nombre, imagen) VALUES ('Se lleva con perros', 'ref1.jpg');
 INSERT INTO referencia(nombre, imagen) VALUES ('Cuidados especiales', 'ref3.jpg');
 INSERT INTO referencia(nombre, imagen) VALUES ('Discapacitado', 'ref4.jpg');
 INSERT INTO referencia(nombre, imagen) VALUES ('Caracter especial', 'ref5.jpg');
