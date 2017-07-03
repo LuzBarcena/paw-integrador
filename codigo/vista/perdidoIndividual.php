@@ -11,12 +11,20 @@ $haySesion = SesionControlador::haySesion();
 $tpl->assign('haySesion', $haySesion);
 if ($haySesion) {
 	$usuario = SesionControlador::getSesion();
+	$id_usuario = SesionControlador::getId();
 	$tpl->assign('usuario', $usuario);
 }
 $tpl->assign('pageTitle', 'Perdidos');
 
 $resultado = PerdidoControlador::getPerdido($_GET['id']);
 if ($resultado != false) {
+	if($haySesion){
+		$mismoUsuario = PerdidoControlador::chequearUsuario($id_usuario, $_GET['id']);
+		if($mismoUsuario != false){
+			$tpl->assign("mismoUsuario", true);
+			$tpl->assign("id", $mismoUsuario['id_perdido']);
+		}
+	}
 	$tpl->assign("titulo", $resultado['titulo']);
 	$tpl->assign('descripcion',$resultado['descripcion']);
 	$tpl->assign('latitud', $resultado['lat']);

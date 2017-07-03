@@ -122,5 +122,47 @@ class PerdidoDAO {
 		} 
 		
 	}
+	
+	public static function mismoUsuario($idUsuario,$idPerro){
+		$query = "SELECT * FROM PERDIDO WHERE id_usuario = :idUsuario AND id_perdido = :idPerdido;";
+		self::getConexion();
+
+		$resultado = self::$conexion->prepare($query);
+
+		$resultado->bindParam(":idUsuario", $idUsuario);
+		$resultado->bindParam(":idPerdido", $idPerro);
+		
+		$resultado->execute();
+
+		if ($resultado->rowCount() > 0) {
+			$fila = $resultado->fetch();
+			self::desconectar();
+			return $fila;
+		}
+		self::desconectar();
+		return false;
+	}
+
+	public static function marcarEncontrado($id){
+		$estado = 'encontrado';
+
+		$query = "UPDATE PERDIDO SET estado = 'encontrado' WHERE id_perdido = :id;";
+		self::getConexion();
+
+		$resultado = self::$conexion->prepare($query);
+
+		$resultado->bindParam(":id", $id);
+		//$resultado->bindParam(":estado", $estado);
+		
+
+		$resultado->execute();
+
+		if ($resultado->rowCount() > 0) {
+			self::desconectar();
+			return true;
+		}
+		self::desconectar();
+		return false;
+	}
 
 }

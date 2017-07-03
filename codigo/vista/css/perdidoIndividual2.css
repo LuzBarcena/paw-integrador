@@ -25,17 +25,16 @@
     padding: 0 16px;
 }
 
-button {
-    border: none;
-    outline: 0;
-    display: inline-block;
+#button {
+    margin-top: 1%;
     padding: 8px;
     color: white;
-    background-color: #000;
+    background-color: #27ae60;
+    width: 30%;
     text-align: center;
     cursor: pointer;
-    width: 100%;
     font-size: 18px;
+    margin-left: 35%;
 }
 
 a {
@@ -44,7 +43,7 @@ a {
     color: black;
 }
 
-button:hover, a:hover {
+#button:hover, a:hover {
     opacity: 0.7;
 }
 

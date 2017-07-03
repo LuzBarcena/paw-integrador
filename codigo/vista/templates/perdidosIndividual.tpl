@@ -5,9 +5,15 @@
     <link rel="stylesheet" type="text/css" href="css/perdidoIndividual2.css">
     <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyD3TroLO9J7HZf-3xEdRMhl2V7LZfXTHgA"></script>
     <script type="text/javascript" src="js/perdidosIndividual.js"></script>
+	<script type="text/javascript" src="js/marcarEncontrado.js"></script>
 {/block}
 
 {block name=section}
+	{if {$mismoUsuario} != false}
+        <div id="marcarEncontrado">
+            <input type="button" id="button" onclick="marcar({$id})" value="Marcar como encontrado">
+        </div>
+    {/if}
     <section id="infoCompletaPerdido">
        <div class="card">
             <img class="foto_perdidos" src="{$foto}" alt="Perro perdido" style="width:100%">
