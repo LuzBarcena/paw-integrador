@@ -198,4 +198,38 @@ class PerroDAO {
 		self::desconectar();
 		return false;
 	}
+
+	public static function devolverAdoptados($usuario) {
+		self::getConexion();
+
+		$query = "SELECT * FROM PERRO WHERE id_adoptante = :adoptante;";
+		$resultado = self::$conexion->prepare($query); 
+		$resultado->bindParam(":adoptante", $usuario);
+		$resultado->execute();
+		
+		if ($resultado->rowCount() > 0) {
+			$filas = $resultado->fetchAll();
+			self::desconectar();
+			return $filas;
+		}	
+		self::desconectar();
+		return false;
+	}
+
+	public static function devolverApradrinados($usuario) {
+		self::getConexion();
+
+		$query = "SELECT * FROM PERRO WHERE id_apadrinante = :apadrinante;";
+		$resultado = self::$conexion->prepare($query); 
+		$resultado->bindParam(":apadrinante", $usuario);
+		$resultado->execute();
+		
+		if ($resultado->rowCount() > 0) {
+			$filas = $resultado->fetchAll();
+			self::desconectar();
+			return $filas;
+		}	
+		self::desconectar();
+		return false;
+	}
 }

@@ -60,4 +60,12 @@ class PerrosControlador {
 		return $resultado;
 	}
 
+    public static function getAdoptados($usuario) {
+        return PerroDAO::devolverAdoptados($usuario);
+    }
+
+    public static function getApadrinados($usuario) {
+        return PerroDAO::devolverApradrinados($usuario);
+    }
+
 }

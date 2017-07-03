@@ -18,12 +18,40 @@
 
 		<button class="accordion">Adoptados</button>	
 		<div class="panel">
-  			<p>Lorem ipsum...</p>
+  			<div class="lista_perros">
+    			{if $adoptados != false}    
+        			{foreach $adoptados as $fila}
+            			<div class="card">
+  			   				<img class="foto_perro" src="img_perros/{$fila['foto']}.jpg" alt="Perro adoptado" style="width:100%">
+ 			   		 		<div class="container">
+    			    			<h4><b>{$fila['nombre']}</b></h4> 
+  			    			</div>
+  			    			<a href="perroIndividual.php?id={$fila['id_perro']}">Leer más</a>
+		   			 	</div>
+        			{/foreach}
+    			{else}
+        			<h5>No tiene perros adoptados</h5>
+    			{/if}
+        	</div>
 		</div>
 
 		<button class="accordion">Apadrinados</button>
 		<div class="panel">
-  			<p>Lorem ipsum...</p>
+  			<div class="lista_perros">
+    			{if $apadrinados != false}    
+        			{foreach $apadrinados as $fila}
+            			<div class="card">
+  			   				<img class="foto_perro" src="img_perros/{$fila['foto']}.jpg" alt="Perro apadrinado" style="width:100%">
+ 			   		 		<div class="container">
+    			    			<h4><b>{$fila['nombre']}</b></h4> 
+  			    			</div>
+  			    			<a href="perroIndividual.php?id={$fila['id_perro']}">Leer más</a>
+		   			 	</div>
+        			{/foreach}
+    			{else}
+        			<h5>No tiene perros apadrinados</h5>
+    			{/if}
+        	</div>
 		</div>
 	</section>
 
