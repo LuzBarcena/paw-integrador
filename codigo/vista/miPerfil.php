@@ -1,6 +1,7 @@
 <?php 
 include_once('../controlador/SesionControlador.php');
 include_once('../controlador/UsuarioControlador.php');
+include_once('../controlador/PerrosControlador.php');
 include_once('../extras/Config.php');
 require_once('TemplateManager.php');
 
@@ -19,6 +20,22 @@ if ($haySesion) {
 
 	if($resultado != false){
 		$tpl->assign("resultado", $resultado);
+	}
+
+	//BUSCO LOS ADOPTADOS
+	$adoptados = PerrosControlador::getAdoptados($id_usuario);
+	if($adoptados != false){
+		$tpl->assign("adoptados", $adoptados);
+	}else{
+		$tpl->assign("adoptados", false);
+	}
+
+	//BUSCO LOS APADRINADOS
+	$apadrinados = PerrosControlador::getApadrinados($id_usuario);
+	if($apadrinados != false){
+		$tpl->assign("apadrinados", $apadrinados);
+	}else{
+		$tpl->assign("apadrinados", false);
 	}
 }
 

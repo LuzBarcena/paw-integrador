@@ -17,6 +17,8 @@ class PerrosControlador {
 
 		$filepath = "../vista/img_perros/" . $nombreFoto . ".jpg";
 		$perro = new Perro($nombreFoto, $nombre, $edad, $sexo, $particularidad, $tamaño, $peso, $raza);
+		$perro->setApadrinante(NULL);
+		$perro->setAdoptante(NULL);
 
 		$idRaza = self::getRaza($raza);
 		if ($idRaza == false) {
@@ -77,4 +79,12 @@ class PerrosControlador {
 		$resultado = PerroDAO::getReferenciaById($idReferencia);
 		return $resultado;
 	}
+
+    public static function getAdoptados($usuario) {
+        return PerroDAO::devolverAdoptados($usuario);
+    }
+
+    public static function getApadrinados($usuario) {
+        return PerroDAO::devolverApradrinados($usuario);
+    }
 }

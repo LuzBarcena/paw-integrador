@@ -10,6 +10,8 @@ class Perro {
 	private $peso;
 	private $id_referencia;
 	private $id_raza;
+	private $id_adoptante;
+	private $id_apadrinante;
 
 	public function __construct($foto, $nombre, $edad,$sexo, $particularidad, $tamaño, $peso) {
 		$this->foto = $foto;
@@ -58,6 +60,14 @@ class Perro {
 		$this->id_raza = $id_raza;
 	}
 
+	public function setAdoptante($adoptante) {
+		$this->id_adoptante = $adoptante;
+	}
+
+	public function setApadrinante($apadrinante) {
+		$this->id_apadrinante = $apadrinante;
+	}
+
 	//GETTERs
 
 	public function getFoto() {
@@ -94,5 +104,13 @@ class Perro {
 
 	public function getIdRaza() {
 		return $this->id_raza;
+	}
+
+	public function getAdoptante() {
+		return $this->id_adoptante;
+	}
+
+	public function getApadrinante() {
+		return $this->id_apadrinante;
 	}
 }
