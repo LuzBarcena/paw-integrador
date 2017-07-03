@@ -37,12 +37,14 @@ class PerroDAO {
 		$edad = ($perro->getEdad() == 'null' ? NULL : $perro->getEdad());
 		$sexo = ($perro->getSexo() == 'null' ? NULL : $perro->getSexo());
 		$peso = ($perro->getPeso() == 'null' ? NULL : $perro->getPeso());
+		$adoptante = $perro->getAdoptante();
+		$apadrinante = $perro->getApadrinante();
 		$particularidad = $perro->getParticularidad();
 		$tamaño = $perro->getTamaño();
 		$raza = $perro->getIdRaza();
 		$idsreferencias = $perro->getIdReferencia();
 
-		$query = "INSERT INTO perro(foto, nombre, edad, sexo, particularidad, tamanio, peso, id_raza) VALUES (:foto, :nombre, :edad, :sexo, :particularidad, :tamanio, :peso, :id_raza) RETURNING id_perro;";
+		$query = "INSERT INTO perro(foto, nombre, edad, sexo, particularidad, tamanio, peso, id_raza, id_adoptante, id_apadrinante) VALUES (:foto, :nombre, :edad, :sexo, :particularidad, :tamanio, :peso, :id_raza, :adoptante, :apadrinante) RETURNING id_perro;";
 		
 		self::getConexion();
 		
@@ -56,6 +58,8 @@ class PerroDAO {
 		$resultado->bindParam(":tamanio", $tamaño);
 		$resultado->bindParam(":peso", $peso);
 		$resultado->bindParam(":id_raza", $raza);
+		$resultado->bindValue(":apadrinante", $apadrinante, PDO::PARAM_NULL);
+		$resultado->bindValue(":adoptante", $adoptante, PDO::PARAM_NULL);
 	
 		if ($resultado->execute()) {
 			if ($idsreferencias != 'null') {

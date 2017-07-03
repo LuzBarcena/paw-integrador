@@ -17,6 +17,8 @@ class PerrosControlador {
 
 		$filepath = "../vista/img_perros/" . $nombreFoto . ".jpg";
 		$perro = new Perro($nombreFoto, $nombre, $edad, $sexo, $particularidad, $tamaño, $peso, $raza);
+		$perro->setApadrinante(NULL);
+		$perro->setAdoptante(NULL);
 
 		$idRaza = self::getRaza($raza);
 		if ($idRaza == false) {
