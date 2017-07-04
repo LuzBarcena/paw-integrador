@@ -11,7 +11,9 @@ $haySesion = SesionControlador::haySesion();
 $tpl->assign('haySesion', $haySesion);
 if ($haySesion) {
 	$usuario = SesionControlador::getSesion();
+	$id = SesionControlador::getId();
 	$tpl->assign('usuario', $usuario);
+	$tpl->assign('id', $id);
 }
 
 $referencias = PerrosControlador::getReferencias();
@@ -29,6 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 		$path = concatenarPath($perro['foto'], 'perros');
 		$path = $path . ".jpg";
 		$tpl->assign('foto', $path);
+
+		$tpl->assign('id_perro', $idPerro);
 
 		$tpl->assign('nombre', $perro['nombre']);
 		

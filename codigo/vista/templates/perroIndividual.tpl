@@ -49,5 +49,12 @@
 	{else}
 		<h2>Error mostrando las referencias</h2>
 	{/if}
+
+	{if $haySesion != false}
+		<div id="opciones">
+            <input type="button" onclick="adoptar({$id},{$id_perro})" class="button" value="Adoptar">
+            <input type="button" onclick="apadrinar({$id},{$id_perro})" class="button" value="Apadrinar">
+        </div>
+	{/if}
 	</section>
 {/block}

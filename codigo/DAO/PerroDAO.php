@@ -301,4 +301,42 @@ class PerroDAO {
 		return false;
 	}
 
+	public static function adoptar($usuario, $perro) {
+		self::getConexion();
+		$apadrinante = NULL;
+
+		//busco el perro con el id y si no tiene adoptante, lo marco como adoptado y le saco el id apadrinante
+		$query = "UPDATE PERRO SET id_adoptante = :usuario, id_apadrinante = :apadrinante WHERE id_perro = :perro AND id_adoptante is null;";
+		$resultado = self::$conexion->prepare($query); 
+		$resultado->bindParam(":perro", $perro);
+		$resultado->bindParam(":usuario", $usuario);
+		$resultado->bindValue(":apadrinante", $apadrinante, PDO::PARAM_NULL);
+		$resultado->execute();
+		
+		if ($resultado->rowCount() > 0) {
+			self::desconectar();
+			return true;
+		}	
+		self::desconectar();
+		return false;
+	}
+
+	public static function apadrinar($usuario, $perro) {
+		self::getConexion();
+
+		//busco el perro con el id y si no tiene adoptante, lo marco como apadrinado 
+		$query = "UPDATE PERRO SET id_apadrinante = :usuario WHERE id_perro = :perro AND id_adoptante is null AND id_apadrinante is null ;";
+		$resultado = self::$conexion->prepare($query); 
+		$resultado->bindParam(":perro", $perro);
+		$resultado->bindParam(":usuario", $usuario);
+		$resultado->execute();
+		
+		if ($resultado->rowCount() > 0) {
+			self::desconectar();
+			return true;
+		}	
+		self::desconectar();
+		return false;
+	}
+
 }
