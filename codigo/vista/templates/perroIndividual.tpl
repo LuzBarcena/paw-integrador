@@ -16,6 +16,9 @@
 				<p>Tamaño: {$tamanio}</p>
 				<p>Peso: {$peso}</p>
 				<p>Raza: {$raza}</p>
+				{if $nombrePadrino != false}
+					<p>Su padrino: {$nombrePadrino}</p>
+				{/if}
 				<p>Info adicional:</p>
 				<ul>
 					{if $referencias_perro != false}
@@ -52,8 +55,12 @@
 
 	{if $haySesion != false}
 		<div id="opciones">
-            <input type="button" onclick="adoptar({$id},{$id_perro})" class="button" value="Adoptar">
-            <input type="button" onclick="apadrinar({$id},{$id_perro})" class="button" value="Apadrinar">
+			{if empty($adoptante)}
+            	<input type="button" onclick="adoptar({$id},{$id_perro})" class="button" value="Adoptar">
+            {/if}
+            {if empty($padrino)}
+            	<input type="button" onclick="apadrinar({$id},{$id_perro})" class="button" value="Apadrinar">
+            {/if}
         </div>
 	{/if}
 	</section>

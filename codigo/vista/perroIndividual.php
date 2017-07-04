@@ -1,6 +1,7 @@
 <?php 
 include_once('../controlador/SesionControlador.php');
 include_once('../controlador/PerrosControlador.php');
+include_once('../controlador/UsuarioControlador.php');
 include_once('../extras/Config.php');
 require_once('TemplateManager.php');
 
@@ -10,9 +11,9 @@ $tpl = new TemplateManager();
 $haySesion = SesionControlador::haySesion();
 $tpl->assign('haySesion', $haySesion);
 if ($haySesion) {
-	$usuario = SesionControlador::getSesion();
+	$idUsuario = SesionControlador::getSesion();
 	$id = SesionControlador::getId();
-	$tpl->assign('usuario', $usuario);
+	$tpl->assign('usuario', $idUsuario);
 	$tpl->assign('id', $id);
 }
 
@@ -38,6 +39,17 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 		
 		$tpl->assign('tamanio', $perro['tamanio']);
 		
+		$tpl->assign('padrino', $perro['id_apadrinante']);
+
+		$tpl->assign('adoptante', $perro['id_adoptante']);
+
+		if(!empty($perro['id_apadrinante'])){
+			$usuario = UsuarioControlador::getUsuario($perro['id_apadrinante']);
+			$tpl->assign('nombrePadrino', $usuario['nombre_usuario']);
+		}else{
+			$tpl->assign('nombrePadrino', false);
+		}
+
 		$raza = PerrosControlador::getNombreRaza($perro['id_raza']);
 		$tpl->assign('raza', $raza);
 
