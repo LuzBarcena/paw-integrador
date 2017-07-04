@@ -16,9 +16,9 @@
 --ALTER TABLE PERDIDO OWNER TO PAOBAR;
 
 CREATE TYPE ESTADO_PERDIDO AS ENUM ('perdido','encontrado');
-CREATE TYPE SEXO_PERRO AS ENUM ('macho','hembra', 'desconocido');
-CREATE TYPE EDAD_PERRO AS ENUM ('cachorro', 'adulto_joven', 'adulto', 'viejito');
-CREATE TYPE TAMANIO_PERRO AS ENUM ('chico','mediano','grande');
+CREATE TYPE SEXO_PERRO AS ENUM ('Macho','Hembra', 'Desconocido');
+CREATE TYPE EDAD_PERRO AS ENUM ('Cachorro', 'Adulto joven', 'Adulto', 'Viejito');
+CREATE TYPE TAMANIO_PERRO AS ENUM ('Chico','Mediano','Grande');
 
 CREATE TABLE usuario (
 	id_usuario serial NOT NULL,

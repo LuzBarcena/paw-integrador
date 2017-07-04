@@ -37,6 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 		$tpl->assign('nombre', $perro['nombre']);
 		
+		$tpl->assign('edad', $perro['edad']);
+
 		$tpl->assign('tamanio', $perro['tamanio']);
 		
 		$tpl->assign('padrino', $perro['id_apadrinante']);
@@ -85,8 +87,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 				$path = concatenarPath($referencia['imagen'], 'referencias');
 				$imgsReferencias[] = $path;
 			}
+			$tpl->assign('referencias_perro', $imgsReferencias);
+		} else {
+			$tpl->assign('referencias_perro', "");
 		}
-		$tpl->assign('referencias_perro', $imgsReferencias);
+		
 	}
 }
 

@@ -10,7 +10,8 @@
 		<div class="card">
 			<img src="{$foto}" alt="Imagen del perro" style="width:100%">
 			<div class="container">
-				<h4><b>{$nombre}</b></h4> 
+				<h4><b>{$nombre}</b></h4>
+				<p>Edad: {$edad}</p> 
 				<p>Sexo: {$sexo}</p>
 				<p>Particularidad: {$particularidad}</p>
 				<p>Tamaño: {$tamanio}</p>
@@ -19,14 +20,14 @@
 				{if $nombrePadrino != false}
 					<p>Su padrino: {$nombrePadrino}</p>
 				{/if}
-				<p>Info adicional:</p>
-				<ul>
-					{if $referencias_perro != false}
+				{if $referencias_perro != false}
+					<p>Info adicional:</p>
+					<ul>
 						{foreach $referencias_perro as $ref}
 						<li><img src="{$ref}"></li>
 						{/foreach}
-					{/if}
-				</ul>
+					</ul>
+				{/if}
 			</div>
 		</div>
 	</section>

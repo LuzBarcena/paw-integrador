@@ -16,26 +16,26 @@
             <fieldset>
                 <legend>Edad</legend>
                 <label for="edad">Cachorro (- 1 año)
-                    <input type="radio" name="edad" id="" value="cachorro"/>
+                    <input type="radio" name="edad" id="" value="Cachorro"/>
                 </label>
                 <label for="edad">Adulto joven (1 a 4 años)
-                    <input type="radio" name="edad" id="" value="adulto_joven"/>
+                    <input type="radio" name="edad" id="" value="Adulto joven"/>
                 </label>
                 <label for="edad">Adulto (5 a 9 años)
-                    <input type="radio" name="edad" id="" value="adulto"/>
+                    <input type="radio" name="edad" id="" value="Adulto"/>
                 </label>
                 <label for="edad">Viejito (+ 10 años)
-                    <input type="radio" name="edad" id="" value="viejito"/>
+                    <input type="radio" name="edad" id="" value="Viejito"/>
                 </label>
             </fieldset>
             <br>
             <fieldset>
                 <legend>Sexo</legend>
                 <label for="sexo">Hembra
-                    <input type="radio" name="sexo" id="" value="hembra"/>
+                    <input type="radio" name="sexo" id="" value="Hembra"/>
                 </label>
                 <label for="sexo">Macho
-                    <input type="radio" name="sexo" id="" value="macho"/>
+                    <input type="radio" name="sexo" id="" value="Macho"/>
                 </label>
             </fieldset>
             <br>
@@ -63,13 +63,13 @@
             <fieldset>
                 <legend>Tamaño (*)</legend>
                 <label for="tamanio">Pequeño
-                    <input type="radio" name="tamanio" id="" value="chico"/>
+                    <input type="radio" name="tamanio" id="" value="Chico"/>
                 </label>
                 <label for="tamanio">Mediano
-                    <input type="radio" name="tamanio" id="" value="mediano"/>
+                    <input type="radio" name="tamanio" id="" value="Mediano"/>
                 </label>
                 <label for="tamanio">Grande
-                    <input type="radio" name="tamanio" id="" value="grande"/>
+                    <input type="radio" name="tamanio" id="" value="Grande"/>
                 </label>
             </fieldset>
             <br>
