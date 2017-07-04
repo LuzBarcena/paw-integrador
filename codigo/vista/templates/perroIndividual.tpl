@@ -58,7 +58,7 @@
 			{if empty($adoptante)}
             	<input type="button" onclick="adoptar({$id},{$id_perro})" class="button" value="Adoptar">
             {/if}
-            {if empty($padrino)}
+            {if empty($padrino) and empty($adoptante)}
             	<input type="button" onclick="apadrinar({$id},{$id_perro})" class="button" value="Apadrinar">
             {/if}
         </div>
