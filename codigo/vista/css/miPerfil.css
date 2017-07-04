@@ -40,10 +40,10 @@ div.panel {
     border-radius: 10%;
     background-color: white;
     text-align: center;
+    margin-top: 1%;
     margin-right: 2%;
     margin-left: 2.5%; 
     margin-bottom: 1%;
-    margin-top: 1%;
     padding-bottom: 1%; 
     display: inline-block;
 }
@@ -52,7 +52,7 @@ div.panel {
     box-shadow: 0 0.8em 1.2em 0 rgba(0,0,0,0.3);
 }
 
-.foto_perros {
+.foto_perro {
     border-radius: 0.6em 0.6em 0 0;
     height: 150px;
     /*min-height: 150px;*/

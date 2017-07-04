@@ -1,9 +1,10 @@
 .card {
     margin-top: 2%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 40%;
+    width: 40%;
     float: left;
-
+    margin-bottom: 2%;
+    margin-left: 1%;
 }
 
 .card:hover {
@@ -28,16 +29,21 @@ li {
 	display: inline-block;
 }
 
+table, th, td {
+   border: 1px solid black;
+}
+
 table{
-    border: solid 1px;
     float: right;
     margin-top: 5%;
     margin-right: 5%;
+    border-collapse: collapse;
 }
 
 tr{
     text-align: center;
 }
+
 
 .button {
     margin-top: 1%;
