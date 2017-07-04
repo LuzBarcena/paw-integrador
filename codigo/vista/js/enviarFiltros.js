@@ -29,6 +29,8 @@ function obtenerDatos() {
 		}else{
 			if(filtroEdad.length > 0){
 				datos = datos + "where";
+			}else{
+				datos = datos + "where id_adoptante is null"
 			}
 		}
 	}
