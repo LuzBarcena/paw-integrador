@@ -5,19 +5,16 @@
 	<header>
 		<img src="img/logo.png" alt="Logo de la página">
 		<h1><a href="index.php">Protectora</a></h1>
-		{include file="sesion.tpl"}
+		
 	</header>
-	<nav>
-		<div class="topnav" id="myTopnav">
-  			<a href="index.php">Inicio</a>
-  			<a href="perros.php">Perros</a>
-  			<a href="perdidos.php">Perdidos</a>
-  			<a class="icon" onclick="menu()">&#9776;</a>
-		</div>	
-	</nav>
-	
+	<nav class="topnav" id="myTopnav">
+		<a href="index.php"><span class="fa fa-home"></span> Inicio</a>
+		<a href="perros.php"><span class="fa fa-paw"></span> Perros</a>
+		<a href="perdidos.php"><span class="fa fa-paw"></span> Perdidos</a>
+			{include file="sesion.tpl"}
+		<a class="icon" onclick="menu()"><span class="fa fa-navicon"></span></a>
+	</nav>	
 	{block name=section}{/block}
-	
 	{include file="modal.tpl"}	
 	
 	<footer>	

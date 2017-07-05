@@ -1,7 +1,10 @@
 {block name=modal}
 <div id="myModal" class="modal">
-	<div class="modal-content">
+	<div class="modal-title">
 		<span class="close">X</span>
+		<h4>Error</h4>
+	</div>
+	<div class="modal-content">
 		<p id="mensaje"></p>
 	</div>
 </div>
