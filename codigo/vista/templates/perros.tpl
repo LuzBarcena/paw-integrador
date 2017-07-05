@@ -18,39 +18,39 @@
             <fieldset>
                 <legend>Tamaño</legend>
                 <label for="tamanio">Chico
-                    <input type="checkbox" name="tamanio" id="" value="chico"/>
+                    <input type="checkbox" name="tamanio" id="" value="Chico"/>
                 </label>
                 <label for="tamaño">Mediano
-                    <input type="checkbox" name="tamanio" id="" value="mediano"/>
+                    <input type="checkbox" name="tamanio" id="" value="Mediano"/>
                 </label>
                 <label for="tamaño">Grande
-                    <input type="checkbox" name="tamanio" id="" value="grande"/>
+                    <input type="checkbox" name="tamanio" id="" value="Grande"/>
                 </label>
             </fieldset>
 
             <fieldset>
                 <legend>Sexo</legend>
                 <label for="sexo">Hembra
-                    <input type="checkbox" name="sexo" id="" value="hembra"/>
+                    <input type="checkbox" name="sexo" id="" value="Hembra"/>
                 </label>
                 <label for="sexo">Macho
-                    <input type="checkbox" name="sexo" id="" value="macho"/>
+                    <input type="checkbox" name="sexo" id="" value="Macho"/>
                 </label>
             </fieldset>
 
             <fieldset>
                 <legend>Edad</legend>
                 <label for="edad">Cachorro (- 1 año)
-                    <input type="checkbox" name="edad" id="" value="cachorro"/>
+                    <input type="checkbox" name="edad" id="" value="Cachorro"/>
                 </label>
                 <label for="edad">Adulto joven (1 a 4 años)
-                    <input type="checkbox" name="edad" id="" value="adulto_joven"/>
+                    <input type="checkbox" name="edad" id="" value="Adulto joven"/>
                 </label>
                 <label for="edad">Adulto (5 a 9 años)
-                    <input type="checkbox" name="edad" id="" value="adulto"/>
+                    <input type="checkbox" name="edad" id="" value="Adulto"/>
                 </label>
                 <label for="edad">Viejito (+ 10 años)
-                    <input type="checkbox" name="edad" id="" value="viejito"/>
+                    <input type="checkbox" name="edad" id="" value="Viejito"/>
                 </label>
             </fieldset>
 
