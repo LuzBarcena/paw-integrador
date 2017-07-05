@@ -24,8 +24,8 @@
                 <p id="latitud" style="display: none">{$latitud}</p>
                 <p id="longitud" style="display: none">{$longitud}</p>
                 <p id="direccion">Dirección completa:</p>
-                <p>{$sexo}</p>
-                <p>{$nombre}</p>
+                <p>Sexo: {$sexo}</p>
+                <p>Nombre: {$nombre}</p>
                 <p class="descripcion_perdidos">{$descripcion}</p>
             </div>
         </div>

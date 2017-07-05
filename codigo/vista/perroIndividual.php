@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 		if ($sexo != "") {
 			$tpl->assign('sexo', $sexo);
 		} else {
-			$sexo = "S/D";
+			$sexo = "Sin especificar";
 			$tpl->assign('sexo', $sexo);
 		}
 
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 		if ($particularidad != "") {
 			$tpl->assign('particularidad', $particularidad);
 		} else {
-			$particularidad = "S/D";
+			$particularidad = "Sin especificar";
 			$tpl->assign('particularidad', $particularidad);
 		}
 
@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 		if ($peso != "") {
 			$tpl->assign('peso', $peso);
 		} else {
-			$peso = "S/D";
+			$peso = "Sin especificar";
 			$tpl->assign('peso', $peso);
 		}
 		$idsReferencias = PerrosControlador::getReferenciasByIdPerro($idPerro);	

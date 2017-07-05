@@ -46,7 +46,7 @@ if ($resultado != false) {
 	if ($sexo != "") {
 		$tpl->assign('sexo', $sexo);
 	} else {
-		$sexo = "S/D";
+		$sexo = "Sin especificar";
 		$tpl->assign('sexo', $sexo);
 	}
 
@@ -54,7 +54,7 @@ if ($resultado != false) {
 	if ($nombre != "") {
 		$tpl->assign('nombre', $nombre);
 	} else {
-		$nombre = "S/D";
+		$nombre = "Sin especificar";
 		$tpl->assign('nombre', $nombre);
 	}
 	
@@ -62,7 +62,7 @@ if ($resultado != false) {
 	if ($sexo != "") {
 		$tpl->assign('fechaDesaparicion', $fechaDesaparicion);
 	} else {
-		$fechaDesaparicion = "S/D";
+		$fechaDesaparicion = "Sin especificar";
 		$tpl->assign('fechaDesaparicion', $fechaDesaparicion);
 	}
 }
