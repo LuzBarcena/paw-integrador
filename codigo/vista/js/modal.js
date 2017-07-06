@@ -16,9 +16,11 @@ function setearModal() {
 	}
 }
 
-function mostrarModal(mensaje) {
+function mostrarModal(titulo, mensaje) {
 	var modal = document.getElementById('myModal');
 	var p = document.getElementById("mensaje");
 	$('#mensaje').text(mensaje);
+	var h4 = document.getElementById("titulo");
+	$('#titulo').text(titulo);
 	modal.style.display = "block";
 }

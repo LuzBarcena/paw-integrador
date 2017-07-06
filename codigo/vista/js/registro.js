@@ -20,21 +20,19 @@ function registrarUsuario(nombreUsuario, email, nombre, apellido, contrasenia, c
 		type: 'POST',
 		success: function (respuesta) {
 			var data = JSON.parse(respuesta);
-			console.log(data);
 			if (data.status === "ok") {
-				mostrarModal(data.descripcion);
+				mostrarModal("¡Correcto!", data.descripcion);
 				setTimeout(function(){
 					location.href ="index.php";
 				}, 2500);
 			} else {
-				mostrarModal(data.descripcion);
+				mostrarModal("Error", data.descripcion);
 			}
 			
 		},
 		error: function(respuesta) {
 			var data = JSON.parse(respuesta);
-			console.log(data);
-        	alert("Ocurrió un error! :(");
+        	mostrarModal("Error", respuesta.descripcion);
         }
     });
 }

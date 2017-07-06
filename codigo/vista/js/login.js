@@ -24,12 +24,12 @@ function loguear(nombreUsuario, contrasenia) {
 		success: function (respuesta) {
 			var data = JSON.parse(respuesta);
 			if (data.status === "ok") {
-				mostrarModal(data.descripcion);
+				mostrarModal("¡Correcto!", data.descripcion);
 				setTimeout(function(){
 					location.href ="index.php";
 				}, 2500);
 			} else {
-				mostrarModal(data.descripcion);
+				mostrarModal("Error", data.descripcion);
 			}
 			
 		},

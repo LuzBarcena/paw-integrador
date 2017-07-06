@@ -12,17 +12,17 @@ function adoptar(id, idPerro){
 		success: function (respuesta) {
 			var data = JSON.parse(respuesta);
 			if (data.status === "ok") {
-				mostrarModal(data.descripcion);
+				mostrarModal("¡Correcto!", data.descripcion);
 				setTimeout(function(){
 					location.href ="perros.php";
 				}, 1500);
 			} else {
-				mostrarModal(data.descripcion);
+				mostrarModal("Error", respuesta.descripcion);
 			}
 		},
 		error: function(respuesta) {
 			var data = JSON.parse(respuesta);
-        	alert("Ocurrió un error! :(");
+        	mostrarModal("Error", respuesta.descripcion);
         }
     });
 }

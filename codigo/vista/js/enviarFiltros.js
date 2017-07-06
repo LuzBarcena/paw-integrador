@@ -115,8 +115,6 @@ function chequearSeleccionado(dato){
 
 
 function enviarFiltros(final,raza) {
-	console.log(final);
-	console.log(raza);
 	var parametros = {
 		"do": "enviar",
 		"final": JSON.stringify(final),
@@ -124,28 +122,21 @@ function enviarFiltros(final,raza) {
 	}
 	$.ajax({
 		data: parametros,
+		dataType: 'html',
 		url: '../interfaces/validarFiltros.php',
 		type: 'POST',
 		success: function (respuesta) {
-			if (respuesta.status === "ok") {
-				var resultado = JSON.stringify(respuesta.registros);
-				var parse = JSON.parse(resultado);
-				var array = [];
-				for (var i = 0; i < parse.length; i++) {
-					console.log(parse[i].id_perro);
-					array.push(parse[i].id_perro);
-				}
-				location.href="perros.php?registros="+JSON.stringify(array);
-			} else {
-				mostrarModal(respuesta.descripcion);
-				setTimeout(function(){
-					location.href ="perros.php";
-				}, 1000);
-			}
-			
+			cargarPerros(respuesta);
 		},
-		error: function(respuesta) {
-			mostrarModal(respuesta.descripcion);
-        }
+		error: function (respuesta) {
+			mostrarModal("Error", respuesta);
+			setTimeout(function() {
+				location.href ="perros.php";
+			}, 1000);
+		},
     });
+}
+
+function cargarPerros(html) {
+	document.getElementById('resultado').innerHTML = html;
 }
