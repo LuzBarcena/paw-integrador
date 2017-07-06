@@ -1,13 +1,19 @@
 $(document).ready(function () {
 	$("input[name='consultar']").click(obtenerDatos);
 });
+var contarMostrados = 0;
+var final;
+var raza;
 
 function obtenerDatos() {
+	contarMostrados = 0;
+	var div = document.getElementById('resultado');
+	div.innerHTML = "";
 	//VOY A VER SI QUE CHECKBOX SE MARCARON
 	var tamanio = $("input[name='tamanio']");
 	var sexo = $("input[name='sexo']");
 	var edad = $("input[name='edad']");
-	var raza = $("select[name='select_raza']").val();
+	raza = $("select[name='select_raza']").val();
 
 	var filtroTamanio = chequearSeleccionado(tamanio);
 	var filtroSexo = chequearSeleccionado(sexo);
@@ -93,14 +99,14 @@ function obtenerDatos() {
 		}
 	}
 
-	var final = datos;
+	final = datos;
 	for(i = 0; i < array.length; i++){
 		final = final + array[i];
 	}
 
 	//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-  	enviarFiltros(final,raza);
+  	enviarFiltros(final, raza, contarMostrados);
 }
 
 function chequearSeleccionado(dato){
@@ -114,11 +120,12 @@ function chequearSeleccionado(dato){
 }
 
 
-function enviarFiltros(final,raza) {
+function enviarFiltros(final, raza, contarMostrados) {
 	var parametros = {
 		"do": "enviar",
 		"final": JSON.stringify(final),
-		"raza": raza
+		"raza": raza,
+		"contador": contarMostrados
 	}
 	$.ajax({
 		data: parametros,
@@ -138,5 +145,13 @@ function enviarFiltros(final,raza) {
 }
 
 function cargarPerros(html) {
-	document.getElementById('resultado').innerHTML = html;
+	console.log(html);
+	document.getElementById('resultado').innerHTML += html;
+}
+
+function mostrarMas() {
+	contarMostrados += 1;
+	var boton = document.getElementById("mostrarMas");
+	boton.parentNode.removeChild(boton);
+	enviarFiltros(final, raza, contarMostrados);
 }

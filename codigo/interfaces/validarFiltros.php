@@ -11,13 +11,10 @@ if ($_POST["do"] == "enviar") {
     $final = json_decode($_POST['final']);
     $raza = $_POST['raza'];
   
-    $valor = PerrosControlador::enviarFiltros($final,$raza);
+    $valor = PerrosControlador::enviarFiltros($final, $raza, $_POST['contador']);
 
-    if ($valor != false) {
-        
-        mostrarResultado($valor);
-    
-    }
+    mostrarResultado($valor);
+
 } else {
     $datos = array("status" => "error", "descripcion"=> "ocurrio un error");
     echo json_encode($respuesta);

@@ -120,8 +120,10 @@ class PerroDAO {
 		return false;
 	}
 	
-	public static function obtenerFiltrados($final,$raza) {
+	public static function obtenerFiltrados($final,$raza,$contarMostrados) {
 		self::getConexion();
+		$resultadosPorPagina = 4;
+		$queryLimite = "limit $resultadosPorPagina offset " . intval($resultadosPorPagina * $contarMostrados);
 
 		//para buscar el id raza;
 		if($raza != "Todas"){
@@ -135,7 +137,7 @@ class PerroDAO {
 				$id_raza = $filas['id_raza'];
 				//SI TENGO EL ID_RAZA HAGO EL SELECT, SI LO DEMAS ES VACIO FILTRO POR RAZA SOLA
 				if($final == ""){
-					$query = "SELECT * FROM PERRO WHERE id_raza = :raza;";
+					$query = "SELECT * FROM PERRO WHERE id_raza = :raza $queryLimite;";
 					$resultado = self::$conexion->prepare($query); 
 					$resultado->bindParam(":raza", $id_raza);
 					$resultado->execute();
@@ -148,7 +150,7 @@ class PerroDAO {
 					self::desconectar();
 					return false;
 				}else{
-					$query = "SELECT * FROM PERRO " . $final . " AND id_raza = " . $id_raza . ";";
+					$query = "SELECT * FROM PERRO " . $final . " AND id_raza = " . $id_raza . " $queryLimite;";
 					$resultado = self::$conexion->prepare($query); 
 
 					$resultado->execute();
@@ -166,7 +168,7 @@ class PerroDAO {
 			return false;	
 		}else{
 			//SI RAZA ES VACIO, HAGO LA QUERY SIN ELLA
-	    	$query = "SELECT * FROM PERRO " . $final . ";";
+	    	$query = "SELECT * FROM PERRO " . $final . " $queryLimite;";
 			$resultado = self::$conexion->prepare($query); 
 
 			$resultado->execute();
