@@ -75,6 +75,8 @@
             <br>
             <label for="peso">Peso</label>
             <input type="number" id="peso" name="peso" step="0.1" min="0" max="80">
+            <br>
+            <br>
             <label for="raza">Raza (*)</label>
             <select id="raza_select" name="select_raza">
                     <option value="vacio">Selecione una raza...</option> 

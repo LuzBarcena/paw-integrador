@@ -30,6 +30,9 @@ input[type=radio],input[type=checkbox]{
 fieldset{
     width: 97%;
     display: block;
+    border-bottom: solid 1px;
+    padding-bottom: 1%;
+    margin-top: 1%;
 }
 
 #boton{
@@ -44,4 +47,6 @@ fieldset{
     border: none;
     cursor: pointer;
     width: 50%;
+    border-radius: 5%;
+    box-shadow: 3px 3px 6px #999;
 }

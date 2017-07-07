@@ -10,7 +10,9 @@
                     <a href="perroIndividual.php?id={$fila['id_perro']}">Leer más</a>
                 </div>
             {/foreach}
-            <button type="button" id="mostrarMas" onclick="mostrarMas();">Mostrar más</button>
+            <div>
+                <button type="button" id="mostrarMas" onclick="mostrarMas();">Mostrar más</button>
+            </div>
         {else}
             <h3>No hay resultados</h3>
         {/if}

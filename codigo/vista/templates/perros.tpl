@@ -9,7 +9,7 @@
 {block name=section}
     {if $admin != false}
     <div class="opcionAlta">
-        <a id="altaPerro" href="altaPerro.php">Dar de alta un perro</a>
+        <a id="altaPerro" href="altaPerro.php">Alta perro</a>
     </div>
     {/if}
 	<form class="formulario_filtrado">
@@ -38,7 +38,7 @@
                 </label>
             </fieldset>
 
-            <fieldset>
+            <fieldset id="edad">
                 <legend>Edad</legend>
                 <label for="edad">Cachorro (- 1 año)
                     <input type="checkbox" name="edad" id="" value="Cachorro"/>
