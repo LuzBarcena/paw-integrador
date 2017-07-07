@@ -11,6 +11,10 @@ input[type=date]  {
     box-sizing: border-box;
 }
 
+h1{
+    text-align: center;
+}
+
 .botones {
     text-align: center;
 }
@@ -23,6 +27,8 @@ input[type=date]  {
     border: none;
     cursor: pointer;
     width: 50%;
+    border-radius: 5%;
+    box-shadow: 3px 3px 6px #999;
 }
 
 .container {

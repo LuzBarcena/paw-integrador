@@ -1,12 +1,22 @@
-#nombreSesion{
-    color: white;
+body {
+    background-color: #ecf0f1;
+    font-family: "Arial";
 }
 
-body {
-    /*background: #212121 url(../img/fondo.jpg);*/
-    background-color: #ecf0f1;
-    margin: 0;
-    font-family: "Arial";
+h1{
+    font-size: 1.5em;
+}
+
+h2{
+    font-size: 1.3em;
+}
+
+h3{
+    font-size: 1.2em;
+}
+
+h4{
+    font-size: 1.1em;
 }
 
 header {
@@ -108,101 +118,6 @@ header img {
     }
 
 }
-
-@media screen and (max-width: 400px) {
-    #nombreSesion {
-        position: absolute;
-        left: 45%;
-        top: 8%;
-    }
-    .form-sesion-registro {
-        position: absolute;
-        left: 35%;
-        top: 8%;
-    }
-}
-
-@media screen and (max-width: 783px) and (min-width: 401px) {
-    #nombreSesion {
-        position: absolute;
-        left: 48%;
-        top: 8%;
-    }
-    .form-sesion-registro {
-        position: absolute;
-        left: 60%;
-        top: 8%;
-    }
-}
-
-
-@media screen and (max-width: 822px) and (min-width: 784px) {
-      #nombreSesion {
-        position: absolute;
-        left: 46%;
-        top: 8%;
-    }
-    .form-sesion-registro {
-        position: absolute;
-        left: 58%;
-        top: 8%;
-    }
-}
-
-@media screen and (max-width: 857px) and (min-width: 823px) {
-    .form-sesion-registro {
-        position: absolute;
-        left: 65%;
-        top: 8%;
-    }
-
-    #nombreSesion {
-        position: absolute;
-        left: 55%;
-        top: 8%;    
-    }
-}  
-
-
-@media screen and (max-width: 913px) and (min-width: 858px) {
-    .form-sesion-registro {
-        position: absolute;
-        left: 62%;
-        top: 8%;
-    }
-
-    #nombreSesion {
-        position: absolute;
-        left: 53%;
-        top: 8%;    
-    }
-}  
-
-@media screen and (max-width: 1400px) and (min-width: 914px) {
-    #nombreSesion {
-        position: absolute;
-        left: 60%;
-        top: 8%;
-    }
-    .form-sesion-registro {
-        position: absolute;
-        left: 68%;
-        top: 8%;
-    }
-}
-
-
-/*----------------------------------------------------------------------FOOTER----------------------------------------------------------------*/
-/*
-footer {
-    background-color: #04052e;
-    color: white;
-    margin-top: 1%;
-    padding-top: 0.5%;
-    padding-bottom: 0.5%; 
-}
-*/
-/*----------------------------------------------------------------------MODAL ERROR----------------------------------------*/
 
 .modal {
     display: none; 

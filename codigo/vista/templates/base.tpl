@@ -11,14 +11,10 @@
 		<a href="index.php"><span class="fa fa-home"></span> Inicio</a>
 		<a href="perros.php"><span class="fa fa-paw"></span> Perros</a>
 		<a href="perdidos.php"><span class="fa fa-paw"></span> Perdidos</a>
-			{include file="sesion.tpl"}
+		{include file="sesion.tpl"}
 		<a class="icon" onclick="menu()"><span class="fa fa-navicon"></span></a>
 	</nav>	
 	{block name=section}{/block}
 	{include file="modal.tpl"}	
-	
-	<footer>	
-		{*<p>Soy footer</p>*}
-	</footer>
 </body>
 </html>

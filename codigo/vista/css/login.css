@@ -30,6 +30,8 @@ input[type=password]  {
     margin: 0.5em 0;
     border: none;
     cursor: pointer;
+    border-radius: 5%;
+    box-shadow: 3px 3px 6px #999;
 }
 
 .botones{
