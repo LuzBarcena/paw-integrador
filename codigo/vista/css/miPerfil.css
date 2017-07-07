@@ -65,4 +65,29 @@ div.panel {
 
 h5{
     text-align: center;
+    padding-bottom: 1%;
+    padding-top: 1%;
 }
+
+#mi_info{
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+
+@media screen and (max-width: 900px) and (min-width: 701px) {
+    .foto_perro{
+        height: 150px;
+    }
+    .card{
+        width: 30%;
+    }
+} 
+
+@media screen and (max-width: 700px) and (min-width: 300px) {
+    .foto_perro{
+        height: 80px;
+    }
+    .card{
+        width: 30%;
+    }
+} 
