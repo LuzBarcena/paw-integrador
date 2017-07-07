@@ -38,7 +38,7 @@
 		</div>
 	</section>
 
-	<section class="descripcion">
+	<section class="descripcion container">
 		<p>
 			<cite>
 				Un perro no busca autos grandes, casas lujosas o ropa de diseñadores. Con agua y comida estará bien. 

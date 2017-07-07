@@ -5,7 +5,7 @@
 	<header>
 		<img src="img/logo.png" alt="Logo de la página">
 		<h1><a href="index.php">Protectora</a></h1>
-		
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 	</header>
 	<nav class="topnav" id="myTopnav">
 		<a href="index.php"><span class="fa fa-home"></span> Inicio</a>
