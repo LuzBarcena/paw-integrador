@@ -219,7 +219,7 @@ class PerroDAO {
 				$id_raza = $filas['id_raza'];
 				//SI TENGO EL ID_RAZA HAGO EL SELECT, SI LO DEMAS ES VACIO FILTRO POR RAZA SOLA
 				if($final == ""){
-					$query = "SELECT * FROM PERRO WHERE id_raza = :raza $queryLimite;";
+					$query = "SELECT * FROM PERRO WHERE id_raza = :raza" . " AND id_adoptante is null" . " $queryLimite;";
 					$resultado = self::$conexion->prepare($query); 
 					$resultado->bindParam(":raza", $id_raza);
 					$resultado->execute();
@@ -232,7 +232,7 @@ class PerroDAO {
 					self::desconectar();
 					return false;
 				}else{
-					$query = "SELECT * FROM PERRO " . $final . " AND id_raza = " . $id_raza . " $queryLimite;";
+					$query = "SELECT * FROM PERRO " . $final . " AND id_raza = " . $id_raza . " AND id_adoptante is null". " $queryLimite;";
 					$resultado = self::$conexion->prepare($query); 
 
 					$resultado->execute();
@@ -250,7 +250,7 @@ class PerroDAO {
 			return false;	
 		}else{
 			//SI RAZA ES VACIO, HAGO LA QUERY SIN ELLA
-	    	$query = "SELECT * FROM PERRO " . $final . " $queryLimite;";
+	    	$query = "SELECT * FROM PERRO " . $final . " AND id_adoptante is null" . " $queryLimite;";
 			$resultado = self::$conexion->prepare($query); 
 
 			$resultado->execute();
