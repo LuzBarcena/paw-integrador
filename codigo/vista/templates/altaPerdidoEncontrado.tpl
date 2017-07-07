@@ -23,6 +23,8 @@
                 </figure>
             {/foreach}
             </div>
+            <br>
+            <br>
             <label for="titulo">Título</label> (*)
             <input id="titulo" type="text" name="titulo" required="">
 

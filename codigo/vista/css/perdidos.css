@@ -15,20 +15,18 @@
     margin-top: 1em;
 }
 
-#verde {
-    background-color: #007E33;
-}
-
 #rojo {
     background-color: #CC0000;
-}
-
-#verde:hover {
-    background-color: #00C851;
+    border-radius: 5%;
+    box-shadow: 3px 3px 6px #999;
 }
 
 #rojo:hover {
     background-color: #ff4444;
+}
+
+h2, h4{
+    margin-top: 2%;
 }
 
 /*----------------------------------- CARD DE CADA PERRO PERDIDO-------------------------------------------*/
@@ -78,43 +76,37 @@
 
 
 @media screen and (max-width: 899px) and (min-width: 700px) {
-    .dosOpciones {
-        margin: 0 auto;
-        width: 80%;
+   .dosOpciones {
+        margin-left: 25%;
     }
     .dosOpciones a {
+        width: 70%;
+    }
+     .card {
         margin: 0 auto;
-        display: block;
-        color: #f2f2f2;
+        box-shadow: 0 0.4em 0.8em 0 rgba(0,0,0,0.3);
+        transition: 0.3s;
+        width: 25%;
+        border-radius: 10%;
+        background-color: white;
         text-align: center;
-        padding: 0.6em 2em;
-        text-decoration: none;
-        font-size: 1.1em;
-        box-sizing: border-box; 
-        margin-top: 1em;
+        padding-bottom: 0.2%; 
+        display: block;
     }
 }  
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 699px) {
     .dosOpciones {
-        margin: 0 auto;
-        width: 90%;
+        margin-left: 25%;
     }
     .dosOpciones a {
-        display: block;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 0.2em 1em;
-        text-decoration: none;
-        font-size: 1em;
-        box-sizing: border-box; 
-        margin-top: 0.2em;
+        width: 70%;
     }
     .card {
         margin: 0 auto;
         box-shadow: 0 0.4em 0.8em 0 rgba(0,0,0,0.3);
         transition: 0.3s;
-        width: 80%;
+        width: 20%;
         border-radius: 10%;
         background-color: white;
         text-align: center;
