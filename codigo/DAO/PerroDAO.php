@@ -120,7 +120,89 @@ class PerroDAO {
 		return false;
 	}
 	
-	public static function obtenerFiltrados($final,$raza,$contarMostrados) {
+	public static function obtenerFiltrados($tamanio, $sexo, $edad, $raza, $contarMostrados) {
+		$data = "";
+		$vtamanio = "";
+		$vsexo = "";
+		$vedad = "";
+
+		//PARA PONER EL WHERE
+		if(sizeof($tamanio) > 0){
+			$data = $data . "where ";
+		}else{
+			if(sizeof($sexo) > 0){
+				$data = $data . "where";
+			}else{
+				if(sizeof($edad) > 0){
+					$data = $data . "where";
+				}else{
+					$data = $data . "where id_adoptante is null";
+				}
+			}
+		}
+
+		//VOY ARMANDO LA QUERY
+		//tamanio
+		for ($i = 0; $i < sizeof($tamanio); $i++) {
+			if($i > 0){
+				$vtamanio = $vtamanio . " OR tamanio = " . "'" . $tamanio[$i] . "'";
+			}else{
+				$vtamanio = "(tamanio = " . "'" . $tamanio[$i] . "'";
+			}
+		}
+		if (sizeof($tamanio) > 0){
+			$vtamanio = $vtamanio . ")";
+		}
+
+		//sexo
+		for ($i = 0; $i < sizeof($sexo); $i++) {
+			if($i > 0){
+				$vsexo = $vsexo . " OR sexo = " . "'" . $sexo[$i] . "'";
+			}else{
+				$vsexo = "(sexo = " . "'" . $sexo[$i] . "'";
+			}
+		}
+		if (sizeof($sexo) > 0){
+			$vsexo = $vsexo . ")";
+		}
+
+		//edad
+		for ($i = 0; $i < sizeof($edad); $i++) {
+			if($i > 0){
+				$vedad = $vedad . " OR edad = " . "'" . $edad[$i] . "'";
+			}else{
+				$vedad = "(edad = " . "'" . $edad[$i] . "'";
+			}
+		}
+		if (sizeof($edad) > 0){
+			$vedad = $vedad . ")";
+		}
+	
+
+		$array = array();
+
+		//PARA PONER EL AND
+		if($vtamanio != ""){
+			array_push($array, $vtamanio);
+		}
+		if($vsexo != ""){
+			array_push($array, $vsexo);
+		}
+		if($vedad != ""){
+			array_push($array, $vedad);
+		}
+
+		for($i = 0; $i < sizeof($array); $i++){
+			if($i < sizeof($array)-1){
+				$array[$i] = $array[$i] . " AND ";
+			}
+		}
+
+		$final = $data;
+		for($i = 0; $i < sizeof($array); $i++){
+			$final = $final . $array[$i];
+		}
+
 		self::getConexion();
 		$resultadosPorPagina = 4;
 		$queryLimite = "limit $resultadosPorPagina offset " . intval($resultadosPorPagina * $contarMostrados);

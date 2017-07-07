@@ -2,8 +2,10 @@ $(document).ready(function () {
 	$("input[name='consultar']").click(obtenerDatos);
 });
 var contarMostrados = 0;
-var final;
 var raza;
+var filtroTamanio;
+var filtroSexo;
+var filtroEdad;
 
 function obtenerDatos() {
 	contarMostrados = 0;
@@ -15,98 +17,11 @@ function obtenerDatos() {
 	var edad = $("input[name='edad']");
 	raza = $("select[name='select_raza']").val();
 
-	var filtroTamanio = chequearSeleccionado(tamanio);
-	var filtroSexo = chequearSeleccionado(sexo);
-	var filtroEdad = chequearSeleccionado(edad);
+	filtroTamanio = chequearSeleccionado(tamanio);
+	filtroSexo = chequearSeleccionado(sexo);
+	filtroEdad = chequearSeleccionado(edad);
 
-	var datos = "";
-	var vtamanio = "";
-	var vsexo = "";
-	var vedad = "";
-
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------------------------
-	//PARA PONER EL WHERE
-	if(filtroTamanio.length > 0){
-		datos = datos + "where ";
-	}else{
-		if(filtroSexo.length > 0){
-			datos = datos + "where";
-		}else{
-			if(filtroEdad.length > 0){
-				datos = datos + "where";
-			}else{
-				datos = datos + "where id_adoptante is null"
-			}
-		}
-	}
-
-	//VOY ARMANDO LA QUERY
-	//tamanio
-	for (var i = 0; i < filtroTamanio.length; i++) {
-		if(i > 0){
-			vtamanio = vtamanio + " OR tamanio = " + "'" + filtroTamanio[i] + "'";
-		}else{
-			vtamanio = "(tamanio = " + "'" + filtroTamanio[i] + "'";
-		}
-	}
-	if (filtroTamanio.length > 0){
-		vtamanio = vtamanio + ")";
-	}
-
-	//sexo
-	for (var i = 0; i < filtroSexo.length; i++) {
-		if(i > 0){
-			vsexo = vsexo + " OR sexo = " + "'" + filtroSexo[i] + "'";
-		}else{
-			vsexo ="(sexo = " + "'" + filtroSexo[i] + "'";
-		}
-	}
-	if (filtroSexo.length > 0){
-		vsexo = vsexo + ")";
-	}
-
-	//edad
-	for (var i = 0; i < filtroEdad.length; i++) {
-		if(i > 0){
-			vedad =  vedad + " OR edad = " + "'" + filtroEdad[i] + "'";
-		}else{
-			vedad = "(edad = " + "'" + filtroEdad[i] + "'";
-		}
-	}
-	if (filtroEdad.length > 0){
-		vedad = vedad + ")";
-	}
-	
-	
-	var array = [];
-
-	//PARA PONER EL AND
-	if(vtamanio != ""){
-		array.push(vtamanio);
-	}
-	if(vsexo != ""){
-		array.push(vsexo);
-	}
-	if(vedad != ""){
-		array.push(vedad);
-	}
-
-
-	for(i = 0; i < array.length; i++){
-		if(i < array.length-1){
-			array[i] = array[i] + " AND ";
-		}
-	}
-
-	final = datos;
-	for(i = 0; i < array.length; i++){
-		final = final + array[i];
-	}
-
-	//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-  	enviarFiltros(final, raza, contarMostrados);
+  	enviarFiltros(filtroTamanio, filtroSexo, filtroEdad, raza, contarMostrados);
 }
 
 function chequearSeleccionado(dato){
@@ -120,12 +35,14 @@ function chequearSeleccionado(dato){
 }
 
 
-function enviarFiltros(final, raza, contarMostrados) {
+function enviarFiltros(filtroTamanio, filtroSexo, filtroEdad, raza, contarMostrados) {
 	var parametros = {
 		"do": "enviar",
-		"final": JSON.stringify(final),
-		"raza": raza,
-		"contador": contarMostrados
+		"tamanio" : filtroTamanio,
+		"sexo" : filtroSexo,
+		"edad" : filtroEdad,
+		"raza" : raza,
+		"contador" : contarMostrados
 	}
 	$.ajax({
 		data: parametros,
@@ -145,7 +62,6 @@ function enviarFiltros(final, raza, contarMostrados) {
 }
 
 function cargarPerros(html) {
-	console.log(html);
 	document.getElementById('resultado').innerHTML += html;
 }
 
@@ -153,5 +69,5 @@ function mostrarMas() {
 	contarMostrados += 1;
 	var boton = document.getElementById("mostrarMas");
 	boton.parentNode.removeChild(boton);
-	enviarFiltros(final, raza, contarMostrados);
+	enviarFiltros(filtroTamanio, filtroSexo, filtroEdad, raza, contarMostrados);
 }

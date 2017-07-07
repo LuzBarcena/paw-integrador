@@ -8,10 +8,25 @@ include_once '../vista/resultadoBuscador.php';
 
 if ($_POST["do"] == "enviar") {   
     
-    $final = json_decode($_POST['final']);
-    $raza = $_POST['raza'];
+	if(empty($_POST['tamanio'])){
+		$tamanio = array();
+	}else{
+		$tamanio = $_POST['tamanio'];
+	}
+	if(empty($_POST['sexo'])){
+		$sexo = array();
+	}else{
+		$sexo = $_POST['sexo'];
+	}
+	if(empty($_POST['edad'])){
+		$edad = array();
+	}else{
+		$edad = $_POST['edad'];
+	}
+
+	$raza = $_POST['raza'];
   
-    $valor = PerrosControlador::enviarFiltros($final, $raza, $_POST['contador']);
+    $valor = PerrosControlador::enviarFiltros($tamanio, $sexo, $edad, $raza, $_POST['contador']);
 
     mostrarResultado($valor);
 
