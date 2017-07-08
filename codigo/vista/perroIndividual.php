@@ -95,7 +95,5 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 	}
 }
 
-
-
 $tpl->assign('pageTitle', 'Perro');
 $tpl->display("perroIndividual.tpl");
