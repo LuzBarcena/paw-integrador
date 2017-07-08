@@ -121,7 +121,7 @@ td {
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 830px) {
     .container {
         width: 95%;
     }
