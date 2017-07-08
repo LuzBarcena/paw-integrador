@@ -19,10 +19,6 @@ strong {
     box-shadow: 0 0.3em 0.5em 0 rgba(0, 0, 0, 0.2);
 }
 
-.container {
-    padding: 1.4em;
-}
-
 input[type=text],
 input[type=file],
 input[type=number], 
@@ -63,10 +59,6 @@ input[type=checkbox] {
     margin-top: 0.5em 1em;
     box-shadow: 0 0.2em 0.2em 0 rgba(0, 0, 0, 0.3);
     background-color: #4CAF50;
-}
-
-.boton {
-    text-align: center;
 }
 
 @media screen and (max-width: 700px) {
