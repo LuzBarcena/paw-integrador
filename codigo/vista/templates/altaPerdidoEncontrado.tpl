@@ -40,9 +40,9 @@
             
             <label for="sexo">Sexo</label>
             <div>
-                <input type="radio" name="sexo" value="macho"> Macho
-                <input type="radio" name="sexo" value="hembra"> Hembra
-                <input type="radio" name="sexo" value="desconocido"> Desconocido
+                <input type="radio" name="sexo" value="Macho"> Macho
+                <input type="radio" name="sexo" value="Hembra"> Hembra
+                <input type="radio" name="sexo" value="Desconocido"> Desconocido
             </div>
             
             <label for="nombre" id="nombre">Nombre</label>
