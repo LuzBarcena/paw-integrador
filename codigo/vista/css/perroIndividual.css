@@ -19,11 +19,16 @@ li {
 
 #info-perro {
     display: inline-block;
+    width: 100%;
 }
 
 #imagen {
     width: 48%;
     display: inline-block;
+}
+
+#imagen img{
+    width: 100%;
 }
 
 #informacion {
