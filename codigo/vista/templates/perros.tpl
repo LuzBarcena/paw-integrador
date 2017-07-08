@@ -9,7 +9,7 @@
 {block name=section}
     {if $admin != false}
     <div class="opcionAlta">
-        <a id="altaPerro" href="altaPerro.php">Alta</a>
+        <a id="altaPerro" href="altaPerro.php">Agregar perro</a>
     </div>
     {/if}
 	<form class="formulario_filtrado">

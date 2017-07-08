@@ -1,8 +1,22 @@
+label {
+    margin: 0.2em 0.5em;
+}
+
+h2 {
+    text-align: center;
+    margin: 1em auto;
+}
+
+strong {
+    font-size: 1em;
+}
+
 #formAltaPerro {
-    background-color: rgba(251,251,251,0.8);
-    margin: 3% auto 0.5em auto;
-    border: 0.1em solid #888;
-    width: 70%;
+    background-color: rgba(251, 251, 251, 0.8);
+    margin: 1em auto 0.5em auto;
+    width: 75%;
+    border: 0.1em solid #ecf0f1;
+    box-shadow: 0 0.3em 0.5em 0 rgba(0, 0, 0, 0.2);
 }
 
 .container {
@@ -10,43 +24,143 @@
 }
 
 input[type=text],
-input[type=file], 
-textarea  {
-    width: 100%;
-    padding: 1em 1.2em;
-    margin: 0.5em 0;
+input[type=file],
+input[type=number], 
+textarea {
+    width: 95%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 0.4em;
+    box-sizing: border-box;
+    margin: 0.5em;
+}
+
+input[type=text]:focus,
+input[type=file]:focus,
+input[type=number]:focus, 
+textarea:focus {
+    border: 0.2em solid #3498db;
+}
+
+input[type=radio],
+input[type=checkbox] {
     display: inline-block;
     border: 0.1em solid #ccc;
     box-sizing: border-box;
 }
 
-input[type=radio],input[type=checkbox]{
-    display: inline-block;
-    border: 0.1em solid #ccc;
-    box-sizing: border-box;
-    margin-right: 2%;
-}
-
-fieldset{
-    width: 97%;
-    display: block;
-    border-bottom: solid 1px;
-    padding-bottom: 1%;
-    margin-top: 1%;
-}
-
-#boton{
+#boton {
     text-align: center;
 }
 
-#alta {
-    background-color: #4CAF50;
+.btn {
     color: white;
-    padding: 1em 1.2em;
-    margin: 0.5em 0;
+    padding: 1em 0.2em;
+    margin: 0.8em 0;
     border: none;
     cursor: pointer;
-    width: 50%;
-    border-radius: 5%;
-    box-shadow: 3px 3px 6px #999;
+    width: 30%;
+    margin-top: 0.5em 1em;
+    box-shadow: 0 0.2em 0.2em 0 rgba(0, 0, 0, 0.3);
+    background-color: #4CAF50;
+}
+
+.boton {
+    text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+    #formAltaPerro {
+        width: 95%;
+    }
+}
+
+.formulario h4 {
+    color: #001F3F;
+    margin: 0.5em;
+    margin-left: 1.5em; 
+}
+
+.formulario > div {
+    padding: 0.5em 0;
+    border-bottom: 0.1em solid #ccc; 
+}
+
+.formulario .radio label,
+.formulario .checkbox label {
+    display: inline-block;
+    cursor: pointer;
+    color: #FF4136;
+    position: relative;
+    padding: 0.4em 0.7em 0.4em 3em;
+    font-size: 1em;
+    border-radius: 0.4em;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; 
+}
+
+.formulario .radio label:hover,
+.formulario .checkbox label:hover {
+    background: rgba(255, 65, 54, 0.1); 
+}
+
+.formulario .radio label:before,
+.formulario .checkbox label:before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    left: 0.9em;
+    border-radius: 50%;
+    background: none;
+    border: 0.2em solid #FF4136; 
+}
+
+.formulario input[type="radio"] {
+    display: none; 
+}
+
+.formulario input[type="radio"]:checked + label:before {
+    display: none; 
+}
+
+.formulario input[type="radio"]:checked + label {
+    padding: 0.3em 1.1em; 
+    background: #FF4136;
+    border-radius: 0.2em;
+    color: #fff; 
+}
+
+.formulario .checkbox label:before {
+    border-radius: 0.2em; 
+}
+
+.formulario .checkbox input[type="checkbox"] {
+    display: none; 
+}
+
+.formulario .checkbox input[type="checkbox"]:checked + label:before {
+    display: none; 
+}
+
+.formulario .checkbox input[type="checkbox"]:checked + label {
+    background: #FF4136;
+    color: #fff;
+    padding: 0.3em 1.1em; 
+}
+
+select {
+    background: transparent;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 0.4em;
+    box-sizing: border-box;
+    margin: 0.5em;
+}
+
+p {
+    font-weight: bold;
+    margin: 0.5em;
 }

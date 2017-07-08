@@ -12,7 +12,7 @@
     <form id="formAltaPerdidoEncontrado" method="post" enctype="multipart/form-data">
         <div class="container">
             <label for="foto">Foto</label> (*)
-            <input type="file" onchange="cargarImagen();" id="foto" name="foto" required=""><br>
+            <input type="file" onchange="cargarImagen();" id="foto" name="foto" required="">
             <label>¿No tenes foto? Elegí una silueta: </label>
             <a id="btn-silueta" estado="oculto" onclick="mostrarOcultarImg();">Elegir silueta</a>
             <img id="img-ok" src="img/tick.png" style="display: none;">
@@ -23,8 +23,6 @@
                 </figure>
             {/foreach}
             </div>
-            <br>
-            <br>
             <label for="titulo">Título</label> (*)
             <input id="titulo" type="text" name="titulo" required="">
 

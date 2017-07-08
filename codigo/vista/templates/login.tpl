@@ -7,8 +7,6 @@
 
 {block name=section}
 	<section class="section-login">
-		{*action="../controlador/validarUsuario.php"
-		onsubmit="return validarIniciarSesion();"*}
 		<form class="formulario_login" method="POST" >
 			<div class="container">
 				<h2>INICIAR SESIÓN</h2>

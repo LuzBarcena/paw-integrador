@@ -27,22 +27,29 @@ function enviarPerro(nombre, edad, sexo, particularidad, tamanio, peso, raza, re
 		while (reader.readyState != 2) {
 		}
 	}
+
 	if (sexo == null) {
 		sexo = 'null';	
 	}
+
 	if (peso == '') {
 		peso = 'null';	
 	}
+
 	if (edad == null) {
 		edad = 'null';
 	}
+
 	if (particularidad == null) {
 		particularidad = 'null';
 	}
+
 	if (referencias.length == 0) {
 		referencias = 'null';
 	}
+	
 	var foto = reader.result;
+	//console.log(nombre, edad, sexo, particularidad, tamanio, peso, raza, referencias);
 	var parametros = {
 		"do": "enviar",
 		"foto": foto,
