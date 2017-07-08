@@ -121,7 +121,14 @@ td {
     }
 }
 
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 850px) {
+    input[type=button],
+    input[type=reset] {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 700px) {
     .container {
         width: 95%;
     }
