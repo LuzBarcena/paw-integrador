@@ -9,27 +9,41 @@
 {/block}
 
 {block name=section}
-	{if {$mismoUsuario} != false}
-        <div id="marcarEncontrado">
-            <input type="button" id="button" onclick="marcar({$id})" value="Marcar como encontrado">
-        </div>
-    {/if}
-    <section id="infoCompletaPerdido">
-       <div class="card">
-            <img class="foto_perdidos" src="{$foto}" alt="Perro perdido" style="width:100%">
-            <div class="container">
-                <h4>{$titulo}</h4>
-                <p>Fecha de desaparición: {$fechaDesaparicion}</p>
-                <p>Fecha de alta de artículo: {$fechaAlta}</p>
+    <div class="container">
+        <section id="infoCompletaPerdido">
+            <div id="imagen">
+                {if {$mismoUsuario} != false}
+                <div id="marcarEncontrado">
+                    <input type="button" id="button" onclick="marcar({$id})" value="Marcar como encontrado">
+                </div>
+                {/if}
+                <img class="foto_perdidos" src="{$foto}" alt="Perro perdido" style="width:100%">
+            </div>
+            <div id="informacion">
                 <p id="latitud" style="display: none">{$latitud}</p>
                 <p id="longitud" style="display: none">{$longitud}</p>
-                <p id="direccion">Dirección completa:</p>
-                <p>Sexo: {$sexo}</p>
-                <p>Nombre: {$nombre}</p>
-                <p class="descripcion_perdidos">{$descripcion}</p>
+                <h3>{$titulo}</h3>
+                <div class="danger atributo">
+                    <p><strong>Fecha de desaparición </strong> {$fechaDesaparicion}</p>
+                </div>
+                <div class="success atributo">
+                    <p><strong>Fecha de alta de artículo </strong> {$fechaAlta}</p>
+                </div>
+                <div class="info atributo">
+                    <p id="direccion"><strong>Dirección completa </strong></p>
+                </div>
+                <div class="warning atributo">
+                    <p><strong>Sexo </strong> {$sexo}</p>
+                </div>
+                <div class="danger atributo">
+                    <p><strong>Nombre </strong> {$nombre}</p>
+                </div>
+                <div class="success atributo">
+                    <p class="descripcion_perdidos"><strong>Descripción </strong> {$descripcion}</p>
+                </div>
+                <div id="map"></div>
             </div>
-        </div>
-        <div id="map"></div>
-    </section> 
+        </section>
+    </div> 
 {/block}
 
