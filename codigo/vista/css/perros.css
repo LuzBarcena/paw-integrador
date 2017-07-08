@@ -140,12 +140,21 @@ h3, h2{
     }
  }
 
- @media (max-width: 550px) and (min-width: 200px) {
+ @media (max-width: 400px) and (min-width: 200px) {
     .foto_perros {
-        height: 60px;
+        height: 100px;
     }
     .card{
-        width: 22%;
+        width: 60%;
+    }
+ }
+
+@media (max-width: 550px) and (min-width: 401px) {
+    .foto_perros {
+        height: 120px;
+    }
+    .card{
+        width: 65%;
     }
  }
 
