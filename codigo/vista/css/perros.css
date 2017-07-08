@@ -114,14 +114,23 @@ h3, h2{
 }
 
 /*----------------------------responsivo-------------------------------------------------*/
-@media (max-width: 1079px) and (min-width: 300px) {
+@media (max-width: 500px) and (min-width: 200px) {
+    #tamanio input[type=checkbox] {
+        display: block;
+        margin-top: 0.5%;
+    }
+}
+
+
+@media (max-width: 1079px) and (min-width: 200px) {
     #edad input[type=checkbox] {
         display: block;
         margin-top: 0.5%;
     }
  }
 
- @media (max-width: 791px) and (min-width: 400px) {
+
+ @media (max-width: 791px) and (min-width: 200px) {
     .opcionAlta a {
         width: 60%;
         padding: 0.6em 0.5em;
@@ -131,9 +140,12 @@ h3, h2{
     }
  }
 
- @media (max-width: 550px) and (min-width: 400px) {
+ @media (max-width: 550px) and (min-width: 200px) {
     .foto_perros {
         height: 60px;
+    }
+    .card{
+        width: 22%;
     }
  }
 

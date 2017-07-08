@@ -9,13 +9,13 @@
 {block name=section}
     {if $admin != false}
     <div class="opcionAlta">
-        <a id="altaPerro" href="altaPerro.php">Alta perro</a>
+        <a id="altaPerro" href="altaPerro.php">Alta</a>
     </div>
     {/if}
 	<form class="formulario_filtrado">
         <div class="container">
             <h3>Filtrar por...</h3>
-            <fieldset>
+            <fieldset id="tamanio">
                 <legend>Tamaño</legend>
                 <label for="tamanio">Chico
                     <input type="checkbox" name="tamanio" id="" value="Chico"/>
