@@ -168,3 +168,34 @@ header img {
     text-decoration: none;
     cursor: pointer;
 }
+
+@media screen and (max-width: 700px) and (min-width: 501px){
+   header img {
+        height: 100px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 1em;
+    }
+
+    header h1 {
+        display: inline-block;
+        margin-left: 2em;
+        font-size: 2em;
+    }
+}
+
+
+@media screen and (max-width: 500px) and (min-width: 300px){
+   header img {
+        height: 65px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 1em;
+    }
+
+    header h1 {
+        display: inline-block;
+        margin-left: 2em;
+        font-size: 0.9em;
+    }
+}

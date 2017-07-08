@@ -107,7 +107,7 @@ h2, h4{
         margin: 0 auto;
         box-shadow: 0 0.4em 0.8em 0 rgba(0,0,0,0.3);
         transition: 0.3s;
-        width: 25%;
+        width: 50%;
         border-radius: 10%;
         background-color: white;
         text-align: center;
@@ -117,7 +117,7 @@ h2, h4{
     }
 }
 
-@media screen and (max-width: 499px) and (min-width: 300px) {
+@media screen and (max-width: 499px) and (min-width: 401px) {
      .dosOpciones {
         margin-left: 25%;
     }
@@ -128,7 +128,30 @@ h2, h4{
         margin: 0 auto;
         box-shadow: 0 0.4em 0.8em 0 rgba(0,0,0,0.3);
         transition: 0.3s;
-        width: 35%;
+        width: 70%;
+        border-radius: 10%;
+        background-color: white;
+        text-align: center;
+        padding-bottom: 0.5%; 
+        margin-top: 1%;
+        display: block;
+    }
+}
+
+
+
+@media screen and (max-width: 400px) and (min-width: 300px) {
+     .dosOpciones {
+        margin-left: 25%;
+    }
+    .dosOpciones a {
+        width: 70%;
+    }
+    .card {
+        margin: 0 auto;
+        box-shadow: 0 0.4em 0.8em 0 rgba(0,0,0,0.3);
+        transition: 0.3s;
+        width: 90%;
         border-radius: 10%;
         background-color: white;
         text-align: center;
