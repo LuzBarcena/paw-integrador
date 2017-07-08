@@ -1,37 +1,53 @@
 .formulario_login {
-	background-color: rgba(251,251,251,0.8);
-    margin: 3% auto 0.5em auto;
-    border: 0.1em solid #888;
+    background-color: rgba(251, 251, 251, 0.8);
+    margin: 1em auto 0.5em auto;
     width: 50%;
+    border: 0.1em solid #ecf0f1;
+    box-shadow: 0 0.3em 0.5em 0 rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    margin: 0.2em 0.5em;
+}
+
+strong {
+    font-size: 1em;
 }
 
 .container {
     padding: 1.4em;
 }
 
-h1{
+h2 {
 	text-align: center;
 }
 
 input[type=text], 
 input[type=password]  {
     width: 100%;
-    padding: 1em 1.2em;
-    margin: 0.5em 0;
-    display: inline-block;
-    border: 0.1em solid #ccc;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 0.4em;
     box-sizing: border-box;
+    margin: 0.5em 0.5em 0.5em 0;
+}
+
+input[type=text]:focus, 
+input[type=password]:focus {
+    border: 0.2em solid #3498db;
 }
 
 #iniciarSesion {
-    background-color: #4CAF50;
     color: white;
-    padding: 1em 1.2em;
-    margin: 0.5em 0;
+    padding: 1em 0.2em;
+    margin: 0.8em 0;
     border: none;
     cursor: pointer;
-    border-radius: 5%;
-    box-shadow: 3px 3px 6px #999;
+    width: 30%;
+    margin-top: 0.5em 1em;
+    box-shadow: 0 0.2em 0.2em 0 rgba(0, 0, 0, 0.3);
+    background-color: #4CAF50;
 }
 
 .botones{
@@ -40,6 +56,6 @@ input[type=password]  {
 
 @media screen and (max-width: 500px) {
     .formulario_login {
-       width: 90%;
+       width: 95%;
     }
 }
