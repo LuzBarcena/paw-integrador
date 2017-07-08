@@ -133,3 +133,21 @@ input[type=button]:hover {
         margin-bottom: 0.5em;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .container {
+        width: 100%;
+    }
+
+    #map {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    input[type=button] {
+        width: 90%;
+    }
+
+}
