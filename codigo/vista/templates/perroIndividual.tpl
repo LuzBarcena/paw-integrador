@@ -39,12 +39,18 @@
 					</div>
 				{/if}
 				{if $referencias_perro != false}
-					<p>Info adicional:</p>
-					<ul>
-					{foreach $referencias_perro as $ref}
-						<li><img src="{$ref}"></li>
-					{/foreach}
-					</ul>
+					<div class="danger atributo">
+						<p><strong>Info adicional </strong></p>
+						<ul>
+						{foreach $referencias_perro as $ref}
+							<li><img src="{$ref}"></li>
+						{/foreach}
+						</ul>
+					</div>
+				{else}
+					<div class="danger atributo">
+						<p><strong>Info adicional (referencias) </strong> Ninguna</p>
+					</div>
 				{/if}
 				{if $haySesion != false}
 					<div id="opciones">

@@ -48,23 +48,23 @@ strong {
 
 .danger {
     background-color: #ffdddd;
-    border-left: 6px solid #f44336;
+    border-left: 0.5em solid #f44336;
 }
 
 .success {
     background-color: #ddffdd;
-    border-left: 6px solid #4CAF50;
+    border-left: 0.5em solid #4CAF50;
 }
 
 .info {
     background-color: #e7f3fe;
-    border-left: 6px solid #2196F3;
+    border-left: 0.5em solid #2196F3;
 }
 
 
 .warning {
     background-color: #ffffcc;
-    border-left: 6px solid #ffeb3b;
+    border-left: 0.5em solid #ffeb3b;
 }
 
 #opciones {
@@ -120,4 +120,51 @@ th {
 td {
     background-color: #ecf0f1;
     padding: 0.5em 0.8em;
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .container {
+        width: 95%;
+    }
+
+    #info-perro {
+        display: block;
+    }
+
+    #imagen {
+        width: 100%;
+        display: block;
+    }
+
+    #informacion {
+        width: 100%;
+        display: block;
+        margin-top: 0.5em;
+    }
+
+    .atributo {
+        padding: 0.5em 1.2em;
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 0.5em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    th, td {
+        padding: 0.2em 0.3em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    th {
+        padding: 0.1em 0.2em;
+    }
 }

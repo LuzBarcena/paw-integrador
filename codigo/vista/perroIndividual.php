@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 			}
 			$tpl->assign('referencias_perro', $imgsReferencias);
 		} else {
-			$tpl->assign('referencias_perro', "");
+			$tpl->assign('referencias_perro', false);
 		}
 		
 	}
