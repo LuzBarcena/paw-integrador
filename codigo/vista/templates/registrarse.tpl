@@ -7,29 +7,26 @@
 
 {block name=section}
 	<section id="contenedor_registro">
-		<!-- action="../controlador/validarRegistro.php" 
-			action="../interfaces/validarRegistro.php"
-			onsubmit="return validar();"
-		" -->
 		<form class="formulario_registro" method="post" >
 	    	<div class="container">
-	    		<h1>REGISTRARSE</h1>
-	    		<label><b>Nombre de usuario</b></label>
+	    		<h2>REGISTRARSE</h2>
+	    		<label><strong>Nombre de usuario</strong></label>
 				<input type="text" min="3" max="30" placeholder="Ingrese nombre de usuario" name="nombre_usuario" required>
-				<label><b>Email</b></label>
+				<label><strong>Email</strong></label>
 				<input type="email" min="11" max="50" placeholder="Ingrese email" name="email" onchange="" required>
-				<label><b>Contraseña</b></label>
+				<label><strong>Contraseña</strong></label>
 				<input type="password" min="6" max="30" placeholder="Ingrese contraseña" name="contrasenia" onchange="" required>
-				<label><b>Repita contraseña</b></label>
+				<label><strong>Repita contraseña</strong></label>
 				<input type="password" min="6" max="30" placeholder="Ingrese contraseña" name="contrasenia2" onchange="" required>
-				<label><b>Nombre</b></label>
+				<label><strong>Nombre</strong></label>
 				<input type="text" min="3" max="50" placeholder="Ingrese su nombre" name="nombre" onchange="" required>
-				<label><b>Apellido</b></label>
+				<label><strong>Apellido</strong></label>
 				<input type="text" min="3" max="50" placeholder="Ingrese su apellido" name="apellido" onchange="" required>
-				<label><b>Fecha de nacimiento</b></label>
+				<label><strong>Fecha de nacimiento</strong></label>
 				<input type="date" min="01-01-1930" placeholder="Fecha" name="fecha_nacimiento" onchange="" required>
 				<div class="botones">
 					<input type="button" class="registro" name="registro" value="Registrarse"></input>
+					<input type="reset">
 				</div>
 			</div>
 		</form>

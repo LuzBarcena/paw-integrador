@@ -4,6 +4,6 @@
 		<a class="sesion" href="../controlador/handler.php?value=cerrarSesion"><span class="fa fa-window-close"> Cerrar sesión</a>
 	{else}
 		<a class="sesion" href="../controlador/handler.php?value=iniciarSesion"><span class="fa fa-user"></span> Iniciar sesión</a>
-		<a class="sesion" href="../controlador/handler.php?value=registrarse"><span class="fa fa-user-plus	"> Registrarse</a>
+		<a class="sesion" href="../controlador/handler.php?value=registrarse"><span class="fa fa-user-plus"></span> Registrarse</a>
 	{/if}
 {/block}

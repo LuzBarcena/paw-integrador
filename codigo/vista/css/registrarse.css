@@ -1,34 +1,58 @@
+label {
+    display: block;
+    margin: 0.2em 0.5em;
+}
 
-input[type=text], 
+input[type=text],
+select,
+input[type=date], 
 input[type=password],
 input[type=email],
-input[type=date]  {
+input[type=date] {
     width: 100%;
-    padding: 1em 1.2em;
-    margin: 0.5em 0;
-    display: inline-block;
-    border: 0.1em solid #ccc;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 0.4em;
     box-sizing: border-box;
+    margin: 0.5em 0.5em 0.5em 0;
 }
 
-h1{
+input[type=text]:focus,
+select:focus,
+input[type=date]:focus, 
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=date]:focus {
+    border: 0.2em solid #3498db;
+}
+
+h2 {
     text-align: center;
 }
 
-.botones {
-    text-align: center;
-}
-
-.registro {
-    background-color: #4CAF50;
+input[type=button],
+input[type=reset] {
     color: white;
-    padding: 1em 1.2em;
-    margin: 0.5em 0;
+    padding: 1em 0.2em;
+    margin: 0.8em 0;
     border: none;
     cursor: pointer;
-    width: 50%;
-    border-radius: 5%;
-    box-shadow: 3px 3px 6px #999;
+    width: 30%;
+    margin-top: 0.5em 1em;
+    box-shadow: 0 0.2em 0.2em 0 rgba(0, 0, 0, 0.3);
+}
+
+input[type=button] {
+    background-color: #4CAF50;
+}
+
+input[type=reset] {
+    background-color: #f44336;
+    float: right;
+}
+
+strong {
+    font-size: 1em;
 }
 
 .container {
@@ -36,10 +60,11 @@ h1{
 }
 
 .formulario_registro {
-    background-color: rgba(251,251,251,0.8);
-    margin: 3% auto 0.5em auto;
-    border: 0.1em solid #888;
+    background-color: rgba(251, 251, 251, 0.8);
+    margin: 1em auto 0.5em auto;
     width: 70%;
+    border: 0.1em solid #ecf0f1;
+    box-shadow: 0 0.3em 0.5em 0 rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 500px) {

@@ -36,11 +36,6 @@
     padding: 0.5em 1.2em;
 }
 
-strong {
-    font-weight: bold;
-    font-size: 1.1em;
-}
-
 .danger {
     background-color: #ffdddd;
     border-left: 0.5em solid #f44336;
