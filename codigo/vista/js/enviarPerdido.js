@@ -61,17 +61,17 @@ function enviarPerdido(titulo, descripcion, latitud, longitud, fechaDesaparicion
 		success: function (respuesta) {
 			var data = JSON.parse(respuesta);
 			if (data.status === "ok") {
-				mostrarModal("¡Correcto!", data.descripcion);
+				mostrarModal("verde", data.descripcion);
 				setTimeout(function(){
 					location.href ="perdidos.php";
 				}, 1500);
 			} else {
-				mostrarModal("Error", respuesta.descripcion);
+				mostrarModal("rojo", respuesta.descripcion);
 			}
 		},
 		error: function(respuesta) {
 			var data = JSON.parse(respuesta);
-        	mostrarModal("Error", respuesta.descripcion);
+        	mostrarModal("rojo", respuesta.descripcion);
         }
     });
 }
@@ -87,7 +87,7 @@ function cargarImagen() {
 		$('#btn-silueta').css("background-color", "#CC0000");
     	foto = true;
 	} else {
-    	mostrarModal("Error, no hay imagen");
+    	mostrarModal("rojo", "Error, no hay imagen");
 	}
 }
 

@@ -3,7 +3,7 @@ $(document).ready(function () {
 	$("input[name='registro']").click(obtenerDatos);
 });
 
-function registrarUsuario(nombreUsuario, email, nombre, apellido, contrasenia, contrasenia2, fecha) {
+function registrarUsuario(nombreUsuario, email, nombre, apellido, contrasenia, contrasenia2) {
 	var parametros = {
 		"do": "guardarUsuario",
 		"nombre_usuario": nombreUsuario,
@@ -11,8 +11,7 @@ function registrarUsuario(nombreUsuario, email, nombre, apellido, contrasenia, c
 		"nombre": nombre,
 		"apellido": apellido,
 		"contrasenia": contrasenia,
-		"contrasenia2": contrasenia2,
-		"fecha_nacimiento": fecha
+		"contrasenia2": contrasenia2
 	}
 	$.ajax({
 		data: parametros,
@@ -21,18 +20,18 @@ function registrarUsuario(nombreUsuario, email, nombre, apellido, contrasenia, c
 		success: function (respuesta) {
 			var data = JSON.parse(respuesta);
 			if (data.status === "ok") {
-				mostrarModal("¡Correcto!", data.descripcion);
+				mostrarModal("verde", data.descripcion);
 				setTimeout(function(){
 					location.href ="index.php";
-				}, 2500);
+				}, 1500);
 			} else {
-				mostrarModal("Error", data.descripcion);
+				mostrarModal("rojo", data.descripcion);
 			}
 			
 		},
 		error: function(respuesta) {
 			var data = JSON.parse(respuesta);
-        	mostrarModal("Error", respuesta.descripcion);
+        	mostrarModal("rojo", respuesta.descripcion);
         }
     });
 }
@@ -46,8 +45,7 @@ function obtenerDatos() {
 		var apellido = $("input[name='apellido']").val();
 		var contrasenia = $("input[name='contrasenia']").val();
 		var contrasenia2 = $("input[name='contrasenia2']").val();
-		var fecha = $("input[name='fecha_nacimiento']").val();
-		registrarUsuario(nombreUsuario, email, nombre, apellido, contrasenia, contrasenia2, fecha);
+		registrarUsuario(nombreUsuario, email, nombre, apellido, contrasenia, contrasenia2);
 	}
 }
 

@@ -49,7 +49,7 @@ function enviarPerro(nombre, edad, sexo, particularidad, tamanio, peso, raza, re
 	}
 	
 	var foto = reader.result;
-	//console.log(nombre, edad, sexo, particularidad, tamanio, peso, raza, referencias);
+
 	var parametros = {
 		"do": "enviar",
 		"foto": foto,
@@ -69,17 +69,14 @@ function enviarPerro(nombre, edad, sexo, particularidad, tamanio, peso, raza, re
 		success: function (respuesta) {
 			var data = JSON.parse(respuesta);
 			if (data.status === "ok") {
-				mostrarModal("¡Correcto!", data.descripcion);
-				setTimeout(function(){
-					location.href ="perros.php";
-				}, 1500);
+				mostrarModal("verde", data.descripcion);
 			} else {
-				mostrarModal("Error", respuesta.descripcion);
+				mostrarModal("rojo", respuesta.descripcion);
 			}
 		},
 		error: function(respuesta) {
 			var data = JSON.parse(respuesta);
-        	mostrarModal("Error", respuesta.descripcion);
+        	mostrarModal("rojo", respuesta.descripcion);
         }
     });
 }
@@ -90,7 +87,7 @@ function cargarImagen() {
 	if (file) {
     	reader.readAsDataURL(file);
 	} else {
-    	mostrarModal("Error, no hay imagen");
+    	mostrarModal("rojo","Error, no hay imagen");
 	}
 }
 

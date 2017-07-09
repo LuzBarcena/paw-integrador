@@ -1,7 +1,6 @@
 {block name=modal}
 <div id="myModal" class="modal">
 	<div class="modal-title">
-		<h4 id="titulo"></h4>
 		<span class="close">X</span>
 	</div>
 	<div class="modal-content">

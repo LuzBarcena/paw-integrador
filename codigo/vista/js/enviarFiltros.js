@@ -53,7 +53,7 @@ function enviarFiltros(filtroTamanio, filtroSexo, filtroEdad, raza, contarMostra
 			cargarPerros(respuesta);
 		},
 		error: function (respuesta) {
-			mostrarModal("Error", respuesta);
+			mostrarModal("rojo", respuesta);
 			setTimeout(function() {
 				location.href ="perros.php";
 			}, 1000);

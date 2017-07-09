@@ -6,9 +6,8 @@ function validar() {
 	var nombreValido = validarNombre();
 	var apellidoValido = validarApellido();
 	var contraseniaValida = validarContrasenia();
-	var fechaValida = validarFecha();
 
-	return nombreUsuarioValido && mailValido && nombreValido && apellidoValido && contraseniaValida && fechaValida;
+	return nombreUsuarioValido && mailValido && nombreValido && apellidoValido && contraseniaValida;
 }
 
 function validarIniciarSesion(){
@@ -38,7 +37,7 @@ function validarPerdido(){
 	if (longitudExcedida(titulo, 50, true)) return false;
 	if ( ! esTextoyNumeros(titulo)) return false;
 	
-	if( ! validarFechaDesaparacion(fecha)) return false;
+	if ( ! esFechaMenorActual(fecha)) return false;
 
 	if (nombre != ""){
 		if (longitudExcedida(nombre, 50, true)) return false;
@@ -75,7 +74,7 @@ function validarRadio(radio){
   	if(p > 0){
   		return true;
   	}else{
-  		mostrarModal("Debe selecionar una opción");
+  		mostrarModal("rojo", "Debe selecionar una opción");
   		return false;
   	}
 
@@ -93,7 +92,7 @@ function validarContraseniaS() {
 function campoVacio(campo) {
 	if (campo === "") {
 		//alert("Hay por lo menos un campo vacío");
-		mostrarModal("Hay por lo menos un campo obligatorio vacío");
+		mostrarModal("rojo",  "Hay por lo menos un campo obligatorio vacío");
 		return true;
 	}
 	else {
@@ -121,11 +120,11 @@ function longitudExcedida(campo, longitud, mostrar) {
 		if ( mostrar ) {
 			var error = "¡La longitud de " + campo + " no puede ser superior a " + longitud + " caracteres!";
 			//alert(error);
-			mostrarModal(error);
+			mostrarModal("Error", error);
 		} else {
 			var error = "¡La longitud de la contraseña no puede ser superior a " + longitud + " caracteres!";
 			//alert(error);
-			mostrarModal(error);
+			mostrarModal("rojo",  error);
 		}
 		return true;
 	}
@@ -143,7 +142,7 @@ function soloTexto(campo) {
 	else {
 		var error = "Solo se puede ingresar texto, y usted ingresó: " + campo;
 		//alert(error);
-		mostrarModal(error);
+		mostrarModal("rojo",  error);
 		return false;
 	}
 }
@@ -155,7 +154,7 @@ function soloNumeros(campo) {
 	else {
 		var error = "Solo se puede ingresar números, y usted ingresó: " + campo;
 		//alert(error);
-		mostrarModal(error);
+		mostrarModal("rojo",  error);
 		return false;
 	}
 }
@@ -168,7 +167,7 @@ function soloDecimales(campo) {
 	else {
 		var error = "Solo se puede ingresar números, y usted ingresó: " + campo;
 		//alert(error);
-		mostrarModal(error);
+		mostrarModal("rojo",  error);
 		return false;
 	}
 }
@@ -182,7 +181,7 @@ function esMail(campo) {
 	else {
 		var error = "El mail " + campo + " no tiene formato de mail.";
 		//alert(error);
-		mostrarModal(error);
+		mostrarModal("rojo",  error);
 		return false;
 	}
 }
@@ -195,11 +194,11 @@ function esTextoyNumeros(campo, mostrar) {
 		if ( mostrar ) {
 			var error = "Solo se puede ingresar texto y números, y usted ingresó: " + campo;
 			//alert(error);
-			mostrarModal(error);
+			mostrarModal("rojo",  error);
 		} else {
 			var error = "Solo se puede ingresar texto y números.";
 			//alert(error);
-			mostrarModal(error);
+			mostrarModal("rojo",  error);
 		}
 		return false;
 	}
@@ -253,41 +252,31 @@ function contraseniasDistintas(contrasena, contrasena2) {
 	if (contrasena !== contrasena2) {
 		var error = "Las contraseñas no coinciden.";
 		//alert(error);
-		mostrarModal(error);
+		mostrarModal("rojo",  error);
 		return true;
 	} else {
 		return false;
 	}
 }
 
-function validarFecha() {
-	var fecha = $("input[name='fecha_nacimiento']").val();
-	if (campoVacio(fecha)) return false;
-	var hoy = new Date();
-	var fechaFormulario = new Date(fecha);
-	hoy.setHours(0,0,0,0);
-	if (hoy <= fechaFormulario) {
-		var error = "La fecha de nacimiento es posterior al día de hoy";
-		//alert(error);
-		mostrarModal(error);
-		return false;
+/**
+ * Si devuelve true significa que la fecha es anterior, y si devuelve false significa 
+ * que la fehca introducida es posterior a la actual.
+ */
+function esFechaMenorActual(date) {
+	var x = new Date();
+	var fecha = date.split("-");
+	if (fecha[0]>1000) {
+		x.setFullYear(fecha[0], fecha[1]-1, fecha[2]);
+	} else {
+		x.setFullYear(fecha[2], fecha[1]-1, fecha[0]);	
 	}
-	return true;
-}
-
-function validarFechaDesaparacion() {
-	var fecha = $("input[name='fecha_desaparicion']").val();
-	if(fecha != ""){
-		var hoy = new Date();
-		var fechaFormulario = new Date(fecha);
-		hoy.setHours(0,0,0,0);
-		if (hoy <= fechaFormulario) {
-			var error = "La fecha de desaparición es posterior al día de hoy";
-			//alert(error);
-			mostrarModal(error);
-			return false;
-		}
+	var today = new Date();
+	if (x >= today) {
+		var error = "La fecha de desaparición es posterior al día de hoy";
+		mostrarModal("rojo",  error);
+		return false;
+	} else {
 		return true;
-	}		
-	return true;
+	}
 }

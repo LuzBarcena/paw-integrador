@@ -16,11 +16,15 @@ function setearModal() {
 	}
 }
 
-function mostrarModal(titulo, mensaje) {
+function mostrarModal(color, mensaje) {
 	var modal = document.getElementById('myModal');
-	var p = document.getElementById("mensaje");
 	$('#mensaje').text(mensaje);
-	var h4 = document.getElementById("titulo");
-	$('#titulo').text(titulo);
+	if (color == "rojo") {
+		$('.modal-title').css("background-color", "#f44336");
+	} else {
+		if (color == "verde") {
+			$('.modal-title').css("background-color", "#4CAF50");
+		}
+	}
 	modal.style.display = "block";
 }

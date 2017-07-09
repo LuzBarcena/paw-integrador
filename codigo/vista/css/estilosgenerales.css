@@ -144,21 +144,18 @@ header img {
     background-color: #fefefe;
     margin: auto;
     padding: 1.3em;
-    border: 0.1em solid #888;
+    border: 0.1em solid #333;
     width: 80%;
 }
 
 .modal-title {
-    padding: 0.5em;
-    text-align: center;
-    background-color: #4CAF50;
-    color: white;
+    padding: 0.8em;
 }
 
 .close {
     color: white;
     float: right;
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: bold;
 }
 

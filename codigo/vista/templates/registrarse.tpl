@@ -22,8 +22,6 @@
 				<input type="text" min="3" max="50" placeholder="Ingrese su nombre" name="nombre" onchange="" required>
 				<label><strong>Apellido</strong></label>
 				<input type="text" min="3" max="50" placeholder="Ingrese su apellido" name="apellido" onchange="" required>
-				<label><strong>Fecha de nacimiento</strong></label>
-				<input type="date" min="01-01-1930" placeholder="Fecha" name="fecha_nacimiento" onchange="" required>
 				<div class="botones">
 					<input type="button" class="registro" name="registro" value="Registrarse"></input>
 					<input type="reset">
