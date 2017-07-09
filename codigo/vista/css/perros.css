@@ -1,24 +1,18 @@
-.opcionAlta {
-    margin-left: 40%;
-}
-
-
-.opcionAlta a {
-    display: inline-block;
+#altaPerro, #mostrarMas {
+    background-color: #e74c3c;
+    display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 0.6em 2em;
-    text-decoration: none;
-    font-size: 1.1em;
-    width: 30%;
-    box-sizing: border-box; 
-    margin-top: 1em;
-    border-radius: 5%;
-    box-shadow: 3px 3px 6px #999;
+    font-size: 1.2em;
+    padding: 0.3em 1em;
+    width: 25%;
+    text-decoration: none; 
+    box-shadow: 0 0.2em 0.2em 0 rgba(0, 0, 0, 0.3);
+    margin: 0.2em auto;
 }
 
-#altaPerro {
-    background-color: #CC0000;
+#altaPerro:hover {
+    background-color: #FF4136;
 }
 
 h2 {
@@ -28,6 +22,10 @@ h2 {
     background-color: #333;
     margin-top: 0;
     color: white;
+}
+
+.opcionAlta > h2 {
+    margin: 0.1em auto;
 }
 
 strong {
@@ -50,12 +48,22 @@ strong {
     background-color: #4CAF50;
 }
 
-.formulario {
+.formulario, 
+.opcionAlta, 
+#resultados_filtros {
     background-color: rgba(251, 251, 251, 0.8);
     margin: 1em auto 0.5em auto;
     width: 75%;
     border: 0.1em solid #ecf0f1;
     box-shadow: 0 0.3em 0.5em 0 rgba(0, 0, 0, 0.2);
+}
+
+#resultados_filtros {
+    padding: 0.5em 0;
+}
+
+.opcionAlta {
+    text-align: center;
 }
 
 .formulario h4 {
@@ -85,7 +93,7 @@ strong {
 
 .formulario .radio label:hover,
 .formulario .checkbox label:hover {
-    background: rgba(255, 65, 54, 0.1); 
+    background-color: rgba(255, 65, 54, 0.1); 
 }
 
 .formulario .radio label:before,
@@ -97,7 +105,7 @@ strong {
     position: absolute;
     left: 0.9em;
     border-radius: 50%;
-    background: none;
+    background-color: none;
     border: 0.2em solid #FF4136; 
 }
 
@@ -111,7 +119,7 @@ strong {
 
 .formulario input[type="radio"]:checked + label {
     padding: 0.3em 1.1em; 
-    background: #FF4136;
+    background-color: #FF4136;
     border-radius: 0.2em;
     color: #fff; 
 }
@@ -129,13 +137,13 @@ strong {
 }
 
 .formulario .checkbox input[type="checkbox"]:checked + label {
-    background: #FF4136;
+    background-color: #FF4136;
     color: #fff;
     padding: 0.3em 1.1em; 
 }
 
 select {
-    background: transparent;
+    background-color: transparent;
     padding: 0.5em;
     border: 1px solid #ccc;
     border-radius: 0.4em;
@@ -187,13 +195,6 @@ p {
 
 .container {
     padding: 0.1em 1.2em;
-}
-
-#mostrarMas{
-    margin-top: 1%;
-    padding: 0.5em 3em;
-    background-color: #95a5a6;
-    color: white;
 }
 
 /*----------------------------responsivo-------------------------------------------------*/

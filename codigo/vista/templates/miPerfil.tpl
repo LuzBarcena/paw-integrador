@@ -8,15 +8,16 @@
 	<section id="mi_perfil">
 		<div id="mi_info">
 			{if {$resultado != false}}
-				<h3>Usuario</h3>
-				<p>Nombre: {$resultado['nombre']}</p>
-				<p>Apellido: {$resultado['apellido']}</p>
+				<h2>{$resultado['nombre']}</h2>
+        <div class="danger">
+          <p><strong>{$resultado['apellido']}</strong></p>
+        </div>
 			{else}
-				<p>No hay usuario</p>
+				<p><strong>No hay usuario</strong></p>
 			{/if}
 		</div>
 
-		<button class="accordion">Adoptados</button>	
+		<button class="accordion"><strong>Adoptados</strong></button>	
 		<div class="panel">
   			<div class="lista_perros">
     			{if $adoptados != false}    
@@ -35,7 +36,7 @@
         	</div>
 		</div>
 
-		<button class="accordion">Apadrinados</button>
+		<button class="accordion"><strong>Apadrinados</strong></button>
 		<div class="panel">
   			<div class="lista_perros">
     			{if $apadrinados != false}    

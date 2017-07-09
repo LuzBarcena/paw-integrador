@@ -1,30 +1,50 @@
-#mi_info, #mis_perros{
+#mi_info, #mis_perros {
 	text-align: center;
 }
 
-#mi_perfil{
-	background-color: rgba(251,251,251,0.8);
-    margin: 3% auto 0.5em auto;
-    border: 0.1em solid #888;
-    width: 95%;
+#mi_info {
+    padding: 0;
+}
+
+#mi_perfil {
+    background-color: rgba(251, 251, 251, 0.8);
+    margin: 1em auto 0.5em auto;
+    width: 75%;
+    border: 0.1em solid #ecf0f1;
+    box-shadow: 0 0.3em 0.5em 0 rgba(0, 0, 0, 0.2);
+}
+
+#mi_info > h2 {
+    margin: 0.1em auto;
+}
+
+h2 {
+    text-align: center;
+    margin: 1em auto;
+    padding: 0.5em;
+    background-color: #333;
+    margin-top: 0;
+    color: white;
+}
+
+strong {
+    font-size: 1em;
 }
 
 button.accordion {
-    background-color: #95a5a6;
+    background-color: #e74c3c;
     cursor: pointer;
-    padding: 18px;
+    padding: 1.2em;
     width: 100%;
-    border: 0.1em solid #888;
-    outline: none;
-    transition: 0.4s;
+    color: white;
 }
 
 button.accordion.active, button.accordion:hover {
-    background-color: #ddd;
+    background-color: #FF4136;
 }
 
 div.panel {
-    padding: 0 18px;
+    padding: 0 1.2em;
     background-color: white;
     display: none;
 }
@@ -69,11 +89,6 @@ h5{
     padding-top: 1%;
 }
 
-#mi_info{
-    padding-bottom: 1%;
-    padding-top: 1%;
-}
-
 @media screen and (max-width: 900px) and (min-width: 701px) {
     .foto_perro{
         height: 150px;
@@ -90,4 +105,12 @@ h5{
     .card{
         width: 30%;
     }
-} 
+}
+
+.danger {
+    background-color: #ffdddd;
+    border-left: 0.5em solid #f44336;
+    border-right: 0.5em solid #f44336;
+    margin: 0.5em auto;
+    padding: 1em 1.5em;
+}

@@ -28,11 +28,6 @@ input[type=date]:focus {
 
 h2 {
     text-align: center;
-    margin: 1em auto;
-    padding: 0.5em;
-    background-color: #333;
-    margin-top: 0;
-    color: white;
 }
 
 input[type=button],

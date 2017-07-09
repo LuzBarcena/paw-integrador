@@ -1,28 +1,18 @@
-/*----------------------------------- BOTONERA VERDE Y ROJA -------------------------------------------*/
-.dosOpciones {
-    margin-left: 33%;
-}
-
-.dosOpciones a {
-    display: inline-block;
+#rojo {
+    background-color: #e74c3c;
+    display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 0.6em 2em;
-    text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1.2em;
+    padding: 0.3em 1em;
     width: 25%;
-    box-sizing: border-box; 
-    margin-top: 1em;
-}
-
-#rojo {
-    background-color: #CC0000;
-    border-radius: 5%;
-    box-shadow: 3px 3px 6px #999;
+    text-decoration: none; 
+    box-shadow: 0 0.2em 0.2em 0 rgba(0, 0, 0, 0.3);
+    margin: 0.2em auto;
 }
 
 #rojo:hover {
-    background-color: #ff4444;
+    background-color: #FF4136;
 }
 
 h2 {
@@ -34,9 +24,22 @@ h2 {
     color: white;
 }
 
+#opciones > h2 {
+    margin: 0.1em auto;
+}
+
 /*----------------------------------- CARD DE CADA PERRO PERDIDO-------------------------------------------*/
 
-#lista_perdidos {
+#lista_perdidos,
+#opciones {
+    background-color: rgba(251, 251, 251, 0.8);
+    margin: 1em auto 0.5em auto;
+    width: 75%;
+    border: 0.1em solid #ecf0f1;
+    box-shadow: 0 0.3em 0.5em 0 rgba(0, 0, 0, 0.2);
+}
+
+#opciones {
     text-align: center;
 }
 
