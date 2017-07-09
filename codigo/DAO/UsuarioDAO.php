@@ -47,7 +47,7 @@ class UsuarioDAO {
 	}
 
 	public static function nuevoUsuario($usuario) {
-		$query = "INSERT INTO usuario(nombre, apellido, fecha_de_nacimiento, nombre_usuario, email, contrasenia, perfil) VALUES (:nombre, :apellido, :fechaNacimiento, :nombreUsuario, :email, :contrasenia, :perfil);";
+		$query = "INSERT INTO usuario(nombre, apellido, nombre_usuario, email, contrasenia, perfil) VALUES (:nombre, :apellido, :nombreUsuario, :email, :contrasenia, :perfil);";
 
 		self::getConexion();
 
@@ -55,7 +55,6 @@ class UsuarioDAO {
 
 		$nombre = $usuario->getNombre();
 		$apellido = $usuario->getApellido();
-		$fechaNacimiento = $usuario->getFechaNacimiento();
 		$nombreUsuario = $usuario->getNombreUsuario();
 		$email = $usuario->getEmail();
 		$contrasenia = $usuario->getContrasenia();
@@ -63,7 +62,6 @@ class UsuarioDAO {
 
 		$resultado->bindParam(":nombre", $nombre);
 		$resultado->bindParam(":apellido", $apellido);
-		$resultado->bindParam(":fechaNacimiento", $fechaNacimiento);
 		$resultado->bindParam(":nombreUsuario", $nombreUsuario);
 		$resultado->bindParam(":email", $email);
 		$resultado->bindParam(":contrasenia", $contrasenia);

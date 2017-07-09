@@ -45,7 +45,7 @@
 
             <div class="checkbox">
                 <h4><strong>Referencias</strong></h4>
-                <input type="checkbox" name="referencias" id="chicos" value="Se lleva con ninios"/>
+                <input type="checkbox" name="referencias" id="chicos" value="Se lleva con chicos"/>
                 <label for="chicos" class="referencias">Se lleva con niños</label>
                     
                 <input type="checkbox" name="referencias" id="perros" value="Se lleva con perros"/>

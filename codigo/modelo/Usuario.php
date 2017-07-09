@@ -9,10 +9,9 @@ class Usuario {
 	protected $contrasenia;
 	protected $perfil;
 
-	public function __construct($nombreUsuario, $email, $contrasenia, $nombre, $apellido, $fechaNacimiento) {
+	public function __construct($nombreUsuario, $email, $contrasenia, $nombre, $apellido) {
 		$this->nombre = $nombre;
 		$this->apellido = $apellido;
-		$this->fecha_nacimiento = $fechaNacimiento;
 		$this->nombre_usuario = $nombreUsuario;
 		$this->email = $email;
 		$this->contrasenia = $contrasenia;
@@ -25,10 +24,6 @@ class Usuario {
 
 	public function setApellido($apellido){
 		$this->apellido = $apellido;
-	}
-
-	public function setFechaNacimiento($fecha_nacimiento){
-		$this->fecha_nacimiento = $fecha_nacimiento;
 	}
 
 	public function setNombreUsuario($nombre_usuario){
@@ -56,10 +51,6 @@ class Usuario {
 
 	public function getApellido(){
 		return $this->apellido;
-	}
-
-	public function getFechaNacimiento(){
-		return $this->fecha_nacimiento;
 	}
 
 	public function getNombreUsuario(){

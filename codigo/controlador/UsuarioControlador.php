@@ -10,8 +10,8 @@ class UsuarioControlador {
         return UsuarioDAO::login($obj_usuario);
     }
 
-    public static function registroUsuario($nombreUsuario, $email, $contrasenia, $nombre, $apellido, $fechaNacimiento) {
-    	$usuario = new Usuario($nombreUsuario, $email, $contrasenia, $nombre, $apellido, $fechaNacimiento);
+    public static function registroUsuario($nombreUsuario, $email, $contrasenia, $nombre, $apellido) {
+    	$usuario = new Usuario($nombreUsuario, $email, $contrasenia, $nombre, $apellido);
     	$usuario->setPerfil("visitante"); // porque todo usuario que se registre por este metodo es un visitante
     	
     	return UsuarioDAO::nuevoUsuario($usuario);

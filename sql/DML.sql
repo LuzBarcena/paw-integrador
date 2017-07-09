@@ -1,5 +1,4 @@
-﻿INSERT INTO usuario(nombre, apellido, nombre_usuario, email, contrasenia, perfil) VALUES ('Nombre', 'Apellido', 'voluntario', 'voluntario@gmail.com', 'voluntario', 'admin');
-
+﻿
 /*TABLA REFERENCIA*/
 INSERT INTO referencia(nombre, imagen) VALUES ('Se lleva con perros', 'ref1.jpg');
 INSERT INTO referencia(nombre, imagen) VALUES ('Se lleva con chicos', 'ref2.jpg');
