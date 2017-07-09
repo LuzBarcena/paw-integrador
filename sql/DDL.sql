@@ -32,7 +32,7 @@ CREATE TABLE usuario (
 	CONSTRAINT pk_id_usuario PRIMARY KEY (id_usuario),
 	CONSTRAINT unique_mail UNIQUE (email),
 	CONSTRAINT unique_nombre_usuario UNIQUE (nombre_usuario)
-)
+);
 
 CREATE TABLE PERDIDO (
 	id_perdido SERIAL NOT NULL,
