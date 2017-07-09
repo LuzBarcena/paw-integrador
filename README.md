@@ -7,5 +7,5 @@
 	<li>phpass</li>
 	<li>PostgreSQL</li>
 	<li>JQuery</li>
-	<li>Se necesita un archivo de configuración llamado Conf.php, con la configuración de Smarty necesaria, el mismo debe estar alojado en /extras</li>
+	<li>Se necesita un archivo de configuración llamado Config.php con la configuración de Smarty necesaria. El mismo debe estar alojado en la ruta /extras y en caso de ser necesario los parametros dentro del mismo pueden ser modificados.</li>
 </ul>
