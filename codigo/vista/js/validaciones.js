@@ -56,6 +56,8 @@ function validarPerro(){
 	var nombre = $("input[name='nombre']").val();
 	var particularidad = $("textarea[name='particularidad']").val();
 	var peso = $("input[name='peso']").val();
+	var tamanio = $("input:radio[name='tamanio']:checked").val();
+	if (campoVacio(tamanio)) return false;
 	if (campoVacio(nombre)) return false;
 	if (longitudExcedida(nombre, 50, true)) return false;
 	if ( ! esTextoyNumeros(nombre)) return false;

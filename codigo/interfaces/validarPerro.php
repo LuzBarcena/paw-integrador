@@ -38,7 +38,7 @@ if ($_POST["do"] == "enviar") {
             $valor = PerrosControlador::setPerro($dataImagen, $nombre, $edad, $sexo, $particularidad, $tamanio, $peso, $_POST["referencias"], $raza);
 
             if ($valor == 1) {
-                echo '{"status": "ok", "descripcion": "Se agregó el perro correctamente. Redirigiendo a perros...", "data":"' . $_POST["nombre"].'"}';
+                echo '{"status": "ok", "descripcion": "Se agregó el perro correctamente.", "data":"' . $_POST["nombre"].'"}';
             }else {
                 echo '{"status": "error", "descripcion":' .'"'. $valor .'"'. ', "data":"' . $_POST["nombre"].'"}';
             }

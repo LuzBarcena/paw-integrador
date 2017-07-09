@@ -70,8 +70,11 @@ function enviarPerro(nombre, edad, sexo, particularidad, tamanio, peso, raza, re
 			var data = JSON.parse(respuesta);
 			if (data.status === "ok") {
 				mostrarModal("verde", data.descripcion);
+				setTimeout(function(){
+					location.href ="altaPerro.php";
+				}, 1500);
 			} else {
-				mostrarModal("rojo", respuesta.descripcion);
+				mostrarModal("rojo", data.descripcion);
 			}
 		},
 		error: function(respuesta) {
