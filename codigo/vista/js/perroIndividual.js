@@ -12,12 +12,12 @@ function adoptar(id, idPerro){
 		success: function (respuesta) {
 			var data = JSON.parse(respuesta);
 			if (data.status === "ok") {
-				mostrarModal("¡Correcto!", data.descripcion);
+				mostrarModal("verde", data.descripcion);
 				setTimeout(function(){
 					location.href ="perros.php";
 				}, 1500);
 			} else {
-				mostrarModal("Error", respuesta.descripcion);
+				mostrarModal("rojo", respuesta.descripcion);
 			}
 		},
 		error: function(respuesta) {
@@ -41,12 +41,12 @@ function apadrinar(id, idPerro){
 		success: function (respuesta) {
 			var data = JSON.parse(respuesta);
 			if (data.status === "ok") {
-				mostrarModal(data.descripcion);
+				mostrarModal("verde",data.descripcion);
 				setTimeout(function(){
 					location.href ="perros.php";
 				}, 1500);
 			} else {
-				mostrarModal(data.descripcion);
+				mostrarModal("rojo",data.descripcion);
 			}
 		},
 		error: function(respuesta) {

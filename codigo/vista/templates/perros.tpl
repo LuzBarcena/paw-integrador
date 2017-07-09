@@ -15,15 +15,15 @@
     {/if}
 	<form class="formulario">
             <h2>Filtrar por...</h2>
-            <div class="radio">
+            <div class="checkbox">
                 <h4><strong>Tamaño (*)</strong></h4>     
-                <input type="radio" name="tamanio" id="chico" value="Chico"/>
+                <input type="checkbox" name="tamanio" id="chico" value="Chico"/>
                 <label for="chico">Pequeño</label>
                     
-                <input type="radio" name="tamanio" id="mediano" value="Mediano"/>
+                <input type="checkbox" name="tamanio" id="mediano" value="Mediano"/>
                 <label for="mediano">Mediano</label>
                     
-                <input type="radio" name="tamanio" id="grande" value="Grande"/>
+                <input type="checkbox" name="tamanio" id="grande" value="Grande"/>
                 <label for="grande">Grande</label>
             </div>
 
@@ -36,18 +36,18 @@
                 <label for="macho">Macho</label>
             </div>
 
-            <div class="radio">
+            <div class="checkbox">
                 <h4><strong>Edad</strong></h4>
-                <input type="radio" name="edad" id="cachorro" value="Cachorro"/>
+                <input type="checkbox" name="edad" id="cachorro" value="Cachorro"/>
                 <label for="cachorro">Cachorro (- 1 año)</label>
                     
-                <input type="radio" name="edad" id="joven" value="Adulto joven"/>
+                <input type="checkbox" name="edad" id="joven" value="Adulto joven"/>
                 <label for="joven">Adulto joven (1 a 4 años)</label>
                     
-                <input type="radio" name="edad" id="adulto" value="Adulto"/>
+                <input type="checkbox" name="edad" id="adulto" value="Adulto"/>
                 <label for="adulto">Adulto (5 a 9 años)</label>
                     
-                <input type="radio" name="edad" id="viejito" value="Viejito"/>
+                <input type="checkbox" name="edad" id="viejito" value="Viejito"/>
                 <label for="viejito">Viejito (+ 10 años)</label>
             </div>
 
