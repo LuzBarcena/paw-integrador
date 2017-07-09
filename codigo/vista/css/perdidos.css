@@ -25,8 +25,13 @@
     background-color: #ff4444;
 }
 
-h2, h4{
-    margin-top: 2%;
+h2 {
+    text-align: center;
+    margin: 1em auto;
+    padding: 0.5em;
+    background-color: #333;
+    margin-top: 0;
+    color: white;
 }
 
 /*----------------------------------- CARD DE CADA PERRO PERDIDO-------------------------------------------*/
