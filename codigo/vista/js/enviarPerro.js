@@ -1,30 +1,36 @@
 var reader  = new FileReader();
+var hayFoto = false;
 
 $(document).ready(function () {
 	$("input[name='alta']").click(obtenerDatos);
 });
 
 function obtenerDatos() {
-	var seguir = validarPerro();
-	if (seguir) {
-		var nombre = $("input[name='nombre']").val();
-		var particularidad = $("textarea[name='particularidad']").val();
-		var peso = $("input[name='peso']").val();
-		var edad = $("input:radio[name='edad']:checked").val();
-		var sexo = $("input:radio[name='sexo']:checked").val();
-		var tamanio = $("input:radio[name='tamanio']:checked").val();
-		var raza = $("#raza_select option:selected").text();
-		var selected = new Array();
-		$("input[name='referencias']:checked").each(function() {
-			selected.push($(this).val());
-		});
-		enviarPerro(nombre, edad, sexo, particularidad, tamanio, peso, raza, selected);
+	if ( ! hayFoto) {
+		mostrarModal("rojo", "No eligió una foto");
+	} else {
+		var seguir = validarPerro();
+		if (seguir) {
+			var nombre = $("input[name='nombre']").val();
+			var particularidad = $("textarea[name='particularidad']").val();
+			var peso = $("input[name='peso']").val();
+			var edad = $("input:radio[name='edad']:checked").val();
+			var sexo = $("input:radio[name='sexo']:checked").val();
+			var tamanio = $("input:radio[name='tamanio']:checked").val();
+			var raza = $("#raza_select option:selected").text();
+			var selected = new Array();
+			$("input[name='referencias']:checked").each(function() {
+				selected.push($(this).val());
+			});
+			enviarPerro(nombre, edad, sexo, particularidad, tamanio, peso, raza, selected);
+		}
 	}
 }
 
 function enviarPerro(nombre, edad, sexo, particularidad, tamanio, peso, raza, referencias) {
 	if (reader.readyState != 2) {
 		while (reader.readyState != 2) {
+
 		}
 	}
 
@@ -89,8 +95,9 @@ function cargarImagen() {
 
 	if (file) {
     	reader.readAsDataURL(file);
+    	hayFoto = true;
 	} else {
-    	mostrarModal("rojo","Error, no hay imagen");
+    	mostrarModal("rojo", "Error, no hay imagen");
 	}
 }
 

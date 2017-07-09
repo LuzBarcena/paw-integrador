@@ -57,17 +57,25 @@ function validarPerro(){
 	var particularidad = $("textarea[name='particularidad']").val();
 	var peso = $("input[name='peso']").val();
 	var tamanio = $("input:radio[name='tamanio']:checked").val();
+	var raza = $("#raza_select option:selected").val();
+	
+	if (campoVacio(raza)) return false;
+	
 	if (campoVacio(tamanio)) return false;
+	
 	if (campoVacio(nombre)) return false;
 	if (longitudExcedida(nombre, 50, true)) return false;
 	if ( ! esTextoyNumeros(nombre)) return false;
+	
 	if (particularidad != null) {
 		if (longitudExcedida(particularidad, 200, true)) return false;
 		if ( ! esTextoyNumeros(particularidad)) return false;
 	}
+	
 	if (peso != '') {
 		if ( ! soloDecimales(peso)) return false;
 	}	
+	
 	return true;
 }
 
@@ -97,13 +105,17 @@ function validarContraseniaS() {
 
 
 function campoVacio(campo) {
-	if (campo === "") {
+	if (campo == "") {
 		//alert("Hay por lo menos un campo vacío");
-		mostrarModal("rojo",  "Hay por lo menos un campo obligatorio vacío");
+		mostrarModal("rojo", "Hay por lo menos un campo obligatorio vacío");
 		return true;
-	}
-	else {
-		return false;
+	} else {
+		if (campo == null) {
+			mostrarModal("rojo", "Hay por lo menos un campo obligatorio vacío");
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
 
@@ -127,7 +139,7 @@ function longitudExcedida(campo, longitud, mostrar) {
 		if ( mostrar ) {
 			var error = "¡La longitud de " + campo + " no puede ser superior a " + longitud + " caracteres!";
 			//alert(error);
-			mostrarModal("Error", error);
+			mostrarModal("rojo", error);
 		} else {
 			var error = "¡La longitud de la contraseña no puede ser superior a " + longitud + " caracteres!";
 			//alert(error);

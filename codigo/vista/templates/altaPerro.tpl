@@ -46,7 +46,7 @@
             <div class="checkbox">
                 <h4><strong>Referencias</strong></h4>
                 <input type="checkbox" name="referencias" id="chicos" value="Se lleva con chicos"/>
-                <label for="chicos" class="referencias">Se lleva con niños</label>
+                <label for="chicos" class="referencias">Se lleva con chicos</label>
                     
                 <input type="checkbox" name="referencias" id="perros" value="Se lleva con perros"/>
                 <label for="perros" class="referencias">Se lleva con perros</label>
@@ -76,8 +76,8 @@
             <input type="number" id="peso" name="peso" step="0.1" min="0" max="80">
 
             <h4><strong>Raza (*)</strong></h4>
-            <select id="raza_select" name="select_raza">
-                <option value="vacio">Selecione una raza...</option> 
+            <select id="raza_select" name="select_raza" required="">
+                <option value="">Selecione una raza...</option> 
                 {foreach $raza as $fila}
                     <option value="{$fila['nombre']}">{$fila['nombre']}</option> 
                 {/foreach}

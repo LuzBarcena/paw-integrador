@@ -196,3 +196,8 @@ header img {
         font-size: 0.9em;
     }
 }
+
+.sesion {
+    position: relative;
+    float: right;
+}
