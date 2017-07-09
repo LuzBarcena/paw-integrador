@@ -5,5 +5,7 @@
 	<li>PHP5</li>
 	<li>Smarty: composer require smarty/smarty:~3.1</li>
 	<li>phpass</li>
-	<li></li>
+	<li>PostgreSQL</li>
+	<li>JQuery</li>
+	<li>Se necesita un archivo de configuración llamado Conf.php, con la configuración de Smarty necesaria, el mismo debe estar alojado en /extras</li>
 </ul>
