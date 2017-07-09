@@ -33,7 +33,7 @@ class PerdidoControlador {
 		return PerdidoDAO::obtenerUnPerdido($id);
 	}
 
-	public static function setPerdido($id, $titulo, $descripcion, $foto, $latitud, $longitud, $fechaAlta, $fechaDesaparicion, $sexo, $nombre, $tipoFoto) {
+	public static function setPerdido($id, $titulo, $descripcion, $foto, $latitud, $longitud, $fechaAlta, $fechaDesaparicion, $sexo, $nombre, $tipoFoto, $tel) {
 		if ($tipoFoto == 'foto') {
 			//genero un numero aleatorio para guardar el archivo
 			$numero = mt_rand();
@@ -42,7 +42,7 @@ class PerdidoControlador {
 			$nombreFoto = $foto;
 		}
 
-		$perdido = new Perdido($id, $titulo, $descripcion, $nombreFoto, $latitud, $longitud);
+		$perdido = new Perdido($id, $titulo, $descripcion, $nombreFoto, $latitud, $longitud, $tel);
 		$perdido->setNombre($nombre);
 		$perdido->setSexo($sexo);
 		$perdido->setFechaAlta($fechaAlta);

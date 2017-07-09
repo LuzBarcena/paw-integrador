@@ -81,6 +81,7 @@ class PerdidoDAO {
 		$foto = $perdido->getFoto();
 		$latitud = $perdido->getLatitud();
 		$longitud = $perdido->getLongitud();
+		$tel = $perdido->getTel();
 		$nombre = ($perdido->getNombre() == 'null' ? NULL : $perdido->getNombre());
 		$sexo = ($perdido->getSexo() == 'null' ? NULL : $perdido->getSexo());
 		$fechaAlta = $perdido->getFechaAlta();
@@ -92,7 +93,7 @@ class PerdidoDAO {
         }		
 		$estado = "perdido";
 
-		$query = "INSERT INTO perdido(id_usuario, fecha_desaparicion, fecha_alta, titulo, descripcion, foto, estado, sexo, nombre, lat, lng) VALUES (:id_usuario, :fecha_desaparicion, :fecha_alta, :titulo, :descripcion, :foto, :estado, :sexo, :nombre, :latitud, :longitud);";
+		$query = "INSERT INTO perdido(id_usuario, fecha_desaparicion, fecha_alta, titulo, descripcion, foto, estado, sexo, nombre, lat, lng, tel) VALUES (:id_usuario, :fecha_desaparicion, :fecha_alta, :titulo, :descripcion, :foto, :estado, :sexo, :nombre, :latitud, :longitud, :tel);";
 		
 		self::getConexion();
 
@@ -109,6 +110,7 @@ class PerdidoDAO {
 		$resultado->bindParam(":sexo", $sexo);
 		$resultado->bindParam(":fecha_alta", $fechaAlta);
 		$resultado->bindParam(":fecha_desaparicion", $fechaDesaparicion);
+		$resultado->bindParam(":tel", $tel);
 
 		/**
 		 * HAY QUE VERIFICAR QUE PASA SI JUSTO CREO UN NUMERO ALEATORIO QUE YA ESTABA.

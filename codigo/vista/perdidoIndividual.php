@@ -32,6 +32,7 @@ if ($resultado != false) {
 	$tpl->assign('latitud', $resultado['lat']);
 	$tpl->assign('longitud', $resultado['lng']);
 	$tpl->assign('fechaAlta', $resultado['fecha_alta']);
+	$tpl->assign('tel', $resultado['tel']);
 	$esSilueta = strpos($resultado['foto'], 'silueta');
 	if ($esSilueta === false) {
 		$path = concatenarPath($resultado['foto'], 'perdidos');

@@ -38,6 +38,9 @@
             <h4><strong>Fecha de desaparición (*)</strong></h4>
             <input type="date" min="01-01-1930" placeholder="Formato: dd-mm-yyyy" name="fecha_desaparicion">
             
+			<h4><strong>Número de contacto (*)</strong></h4>
+            <input type="tel" placeholder="Número de contacto" name="tel">
+			
             <div class="radio">
                 <h4><strong>Sexo (*)</strong></h4>
                 <input type="radio" name="sexo" id="hembra" value="Hembra"/>

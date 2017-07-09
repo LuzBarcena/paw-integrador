@@ -41,6 +41,9 @@
                 <div class="success atributo">
                     <p class="descripcion_perdidos"><strong>Descripción </strong> {$descripcion}</p>
                 </div>
+				<div class="info atributo">
+                    <p><strong>Contacto </strong> {$tel}</p>
+                </div>
                 <div id="map"></div>
             </div>
         </section>

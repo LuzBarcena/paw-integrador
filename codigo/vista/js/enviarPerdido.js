@@ -15,11 +15,12 @@ function obtenerDatos() {
 		var fechaDesaparicion = $("input[name='fecha_desaparicion']").val();
 		var sexo = $("input:radio[name='sexo']:checked").val();
 		var nombre = $("input[name='nombre']").val();
-		enviarPerdido(titulo, descripcion, getLatitud(), getLongitud(), fechaDesaparicion, sexo, nombre);
+		var tel = $("input[name='tel']").val();
+		enviarPerdido(titulo, descripcion, getLatitud(), getLongitud(), fechaDesaparicion, sexo, nombre, tel);
 	}
 }
 
-function enviarPerdido(titulo, descripcion, latitud, longitud, fechaDesaparicion, sexo, nombre) {
+function enviarPerdido(titulo, descripcion, latitud, longitud, fechaDesaparicion, sexo, nombre, tel) {
 	if ( (reader.readyState != 2) && (silueta == false) ) {
 		while (reader.readyState != 2) {
 
@@ -52,7 +53,8 @@ function enviarPerdido(titulo, descripcion, latitud, longitud, fechaDesaparicion
 		"longitud": longitud,
 		"fechaDesaparicion": fechaDesaparicion,
 		"sexo": sexo,
-		"nombre": nombre
+		"nombre": nombre,
+		"tel": tel
 	}
 	$.ajax({
 		data: parametros,

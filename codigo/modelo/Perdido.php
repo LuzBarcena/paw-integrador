@@ -12,17 +12,23 @@ class Perdido {
 	private $sexo;
 	private $nombre;
 	private $estado;
+	private $tel;
 
-	public function __construct($id_usuario, $titulo, $descripcion, $foto, $latitud, $longitud) {
+	public function __construct($id_usuario, $titulo, $descripcion, $foto, $latitud, $longitud, $tel) {
 		$this->id_usuario = $id_usuario;
 		$this->titulo = $titulo;
 		$this->descripcion = $descripcion;
 		$this->foto = $foto;
 		$this->latitud = $latitud;
 		$this->longitud = $longitud;
+		$this->tel = $tel;
 	}
 
 	//SETERs
+	public function setTel($tel) {
+		$this->tel = $tel;
+	}
+
 	public function setIdUsuario($id_usuario) {
 		$this->id_usuario = $id_usuario;
 	}
@@ -68,6 +74,9 @@ class Perdido {
 	}
 
 	//GETTERs
+	public function getTel() {
+		return $this->tel;
+	}
 
 	public function getIdUsuario() {
 		return $this->id_usuario;

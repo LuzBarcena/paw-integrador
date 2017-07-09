@@ -22,11 +22,16 @@ function validarPerdido(){
 	var titulo = $("input[name='titulo']").val();
 	var descripcion = $("textarea[name='descripcion']").val();
 	var direccion = $("input[name='direccion']").val();
+	var tel = $("input[name='tel']").val();
 	//no obligatorios
 	var nombre = $("input[name='nombre']").val();
 	var fecha = $("input[name='fecha_desaparicion']").val();
 	var sexo = $("input[name='sexo']:checked").val();
 
+	if (campoVacio(tel)) return false;
+	if (longitudExcedida(tel, 50, true)) return false;
+	if ( ! soloNumeros(tel)) return false;
+	
 	if (campoVacio(descripcion)) return false;
 	if (longitudExcedida(descripcion, 250, true)) return false;
 	if ( ! esTextoyNumeros(descripcion)) return false;
