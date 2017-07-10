@@ -11,12 +11,11 @@ class PerdidoControlador {
 		if($resultado != false){
 			foreach ($resultado as $key => $fila) {
 				$esSilueta = strpos($fila['foto'], 'silueta');
+				
 				if ($esSilueta === false) {
 					$path = concatenarPath($fila['foto'], 'perdidos');
-					$path = $path . ".jpg";
 				} else {
 					$path = concatenarPath($fila['foto'], 'siluetas');
-					$path = $path . ".png";
 				}
 				
 				$resultado[$key]['foto'] = $path;
@@ -33,13 +32,13 @@ class PerdidoControlador {
 		return PerdidoDAO::obtenerUnPerdido($id);
 	}
 
-	public static function setPerdido($id, $titulo, $descripcion, $foto, $latitud, $longitud, $fechaAlta, $fechaDesaparicion, $sexo, $nombre, $tipoFoto, $tel) {
+	public static function setPerdido($id, $titulo, $descripcion, $foto, $latitud, $longitud, $fechaAlta, $fechaDesaparicion, $sexo, $nombre, $tipoFoto, $tel, $tipoImagen) {
 		if ($tipoFoto == 'foto') {
 			//genero un numero aleatorio para guardar el archivo
 			$numero = mt_rand();
-			$nombreFoto = "perdido" . $numero;
+			$nombreFoto = "perdido" . $numero . "." . $tipoImagen;
 		} else {
-			$nombreFoto = $foto;
+			$nombreFoto = $foto . "." . $tipoImagen;
 		}
 
 		$perdido = new Perdido($id, $titulo, $descripcion, $nombreFoto, $latitud, $longitud, $tel);
@@ -49,7 +48,7 @@ class PerdidoControlador {
 		$perdido->setFechaDesaparicion($fechaDesaparicion);
 
 		if ($tipoFoto == 'foto') {
-			$filepath = "../vista/img_perdidos/" . $nombreFoto . ".jpg";
+			$filepath = "../vista/img_perdidos/" . $nombreFoto;
 			//guardo en el servidor
 			if (file_put_contents($filepath, $foto)){
 				return PerdidoDAO::guardarPerdido($perdido);

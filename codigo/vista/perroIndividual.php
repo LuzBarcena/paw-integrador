@@ -30,7 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 	$perro = PerrosControlador::getPerro($idPerro);
 	if ($perro != false) {
 		$path = concatenarPath($perro['foto'], 'perros');
-		$path = $path . ".jpg";
 		$tpl->assign('foto', $path);
 
 		$tpl->assign('id_perro', $idPerro);

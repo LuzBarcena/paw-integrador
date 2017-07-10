@@ -1,3 +1,7 @@
+body {
+    font-family: 'Ubuntu', 'Arial', sans-serif;
+}
+
 #rojo {
     background-color: #e74c3c;
     display: block;
@@ -9,6 +13,7 @@
     text-decoration: none; 
     box-shadow: 0 0.2em 0.2em 0 rgba(0, 0, 0, 0.3);
     margin: 0.2em auto;
+    cursor: pointer;
 }
 
 #rojo:hover {
@@ -21,6 +26,21 @@
     margin-bottom: 2%;
 }
 
+.link {
+    padding: 0.5em;
+    cursor: pointer;
+    color: #FF4136;
+}
+
+.link:hover {
+    color: white;
+    background-color: #FF4136;
+}
+
+.leerMas:hover {
+    padding: 0.2em;
+}
+
 h2 {
     text-align: center;
     margin: 1em auto;
@@ -30,7 +50,7 @@ h2 {
     color: white;
 }
 
-h3{
+h3 {
     text-align: center;
 }
 
@@ -80,7 +100,8 @@ h3{
 }
 
 .container {
-    padding: 0.1em 1.2em;
+    padding: 0.5em 1.2em;
+    margin-bottom: 0.2em;
 }
 
 @media screen and (max-width: 1600px) and (min-width: 900px) {

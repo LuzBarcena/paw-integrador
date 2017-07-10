@@ -36,10 +36,8 @@ if ($resultado != false) {
 	$esSilueta = strpos($resultado['foto'], 'silueta');
 	if ($esSilueta === false) {
 		$path = concatenarPath($resultado['foto'], 'perdidos');
-		$path = $path . ".jpg";
 	} else {
 		$path = concatenarPath($resultado['foto'], 'siluetas');
-		$path = $path . ".png";
 	}
 	$tpl->assign('foto', $path);
 	/*estos son no obligatorios*/

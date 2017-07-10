@@ -23,16 +23,16 @@
     			    <h4><b>{$fila['titulo']}</b></h4> 
     			    <p>{$fila['descripcion']}</p> 
   			    </div>
-  			    <a href="perdidoIndividual.php?id={$fila['id_perdido']}">Leer más</a>
+  			    <a class="link leerMas" href="perdidoIndividual.php?id={$fila['id_perdido']}">Leer más</a>
 		    </div>
         {/foreach}
         <div id="links">
             {if $pag <= $cantidad and $pag != 1}
-                <a class="links" href="perdidos.php?pag={{$pag-1}}">Anterior</a>
+                <a class="link" href="perdidos.php?pag={{$pag-1}}">Anterior</a>
             {/if}
 
             {if $cantidad > $pag}
-                <a class="links" href="perdidos.php?pag={{$pag+1}}">Siguiente</a>
+                <a class="link" href="perdidos.php?pag={{$pag+1}}">Siguiente</a>
             {/if}
         </div>
     {else}

@@ -10,12 +10,12 @@ class PerrosControlador {
 		return $resultado;
 	}
 
-	public static function setPerro($foto, $nombre, $edad, $sexo, $particularidad, $tamaño, $peso, $referencias, $raza){
+	public static function setPerro($foto, $nombre, $edad, $sexo, $particularidad, $tamaño, $peso, $referencias, $raza, $tipoImagen) {
 		//genero un numero aleatorio para guardar el archivo
 		$numero = mt_rand();
-		$nombreFoto = "perro" . $numero;
+		$nombreFoto = "perro" . $numero . "." . $tipoImagen;
 
-		$filepath = "../vista/img_perros/" . $nombreFoto . ".jpg";
+		$filepath = "../vista/img_perros/" . $nombreFoto;
 		$perro = new Perro($nombreFoto, $nombre, $edad, $sexo, $particularidad, $tamaño, $peso, $raza);
 		$perro->setApadrinante(NULL);
 		$perro->setAdoptante(NULL);
@@ -26,12 +26,14 @@ class PerrosControlador {
 		} else {
 			$perro->setIdRaza($idRaza);
 		}
+
 		if ($referencias != 'null') {
 			$arrayreferencia = self::getIdReferencias($referencias);		
 			$perro->setIdReferencia($arrayreferencia);
 		} else {
 			$perro->setIdReferencia('null');
 		}
+		
 		//guardo en el servidor LA FOTO ME LA GUARDA
 		if (file_put_contents($filepath, $foto)) {
 			return PerroDAO::guardarPerro($perro);

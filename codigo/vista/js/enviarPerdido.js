@@ -11,7 +11,6 @@ function obtenerDatos() {
 	if ((!foto) && (!silueta)) {
 		mostrarModal("rojo", "No eligió una foto ni silueta");
 	} else {
-
 		var seguir = validarPerdido();
 		if (seguir) {
 			var titulo = $("input[name='titulo']").val();
@@ -26,21 +25,26 @@ function obtenerDatos() {
 }
 
 function enviarPerdido(titulo, descripcion, latitud, longitud, fechaDesaparicion, sexo, nombre, tel) {
+	
 	if ( (reader.readyState != 2) && (silueta == false) ) {
 		while (reader.readyState != 2) {
 
 		}
 		silueta = false;
 	}
+
 	if (sexo == null) {
 		sexo = "null";	
 	}
+	
 	if (fechaDesaparicion == "") {
 		fechaDesaparicion = 'null';	
 	}
+	
 	if (nombre == "") {
 		nombre = 'null';
 	}
+	
 	if (silueta) {
 		var foto = siluetaElegida;
 		var tipoFoto = 'silueta';
@@ -48,6 +52,7 @@ function enviarPerdido(titulo, descripcion, latitud, longitud, fechaDesaparicion
 		var foto = reader.result;
 		var tipoFoto = 'foto';
 	}
+	
 	var parametros = {
 		"do": "enviar",
 		"titulo": titulo,
@@ -73,7 +78,7 @@ function enviarPerdido(titulo, descripcion, latitud, longitud, fechaDesaparicion
 					location.href ="perdidos.php";
 				}, 1500);
 			} else {
-				mostrarModal("rojo", respuesta.descripcion);
+				mostrarModal("rojo", data.descripcion);
 			}
 		},
 		error: function(respuesta) {

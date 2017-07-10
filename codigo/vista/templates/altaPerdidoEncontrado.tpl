@@ -38,7 +38,7 @@
             <h4><strong>Fecha de desaparición</strong></h4>
             <input type="date" min="01-01-1930" placeholder="Formato: dd-mm-yyyy" name="fecha_desaparicion">
             
-			<h4><strong>Número de contacto (*)</strong></h4>
+			<h4><strong>Teléfono de contacto (*)</strong></h4>
             <input type="tel" placeholder="Número de contacto" name="tel">
 			
             <div class="radio">

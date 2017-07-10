@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 */
 if ($_POST["do"] == "enviar") {
     if ( ($_POST["titulo"] != '') && ($_POST["descripcion"] != '') && ($_POST["latitud"] != '') && ($_POST["longitud"] != '') && ($_POST["tel"] != '')) {
+        $tiposValidos = array('jpg', 'jpeg', 'png');
     	//valido las entradas
     	$titulo = Validador::limpiarCampo($_POST["titulo"]);
     	$descripcion = Validador::limpiarCampo($_POST["descripcion"]);
@@ -31,26 +32,36 @@ if ($_POST["do"] == "enviar") {
         
 
         if ($todoOk) {
+
             if ($_POST["tipoFoto"] == 'foto') {
-                //le saco el encabezado que le agrega JS
+                //separo el encabezado que le agrega JS
                 $imagen = explode(',', $_POST['foto']);
+                $tipo = explode('/', $imagen[0]);
+                $tipoImagen = explode(';', $tipo[1]);
                 $dataImagen = base64_decode($imagen[1]);
+                $imagenTipo = $tipoImagen[0];
             } else {
                 if ($_POST["tipoFoto"] == 'silueta') {
                     $dataImagen = $_POST["foto"];
+                    $imagenTipo = "png";
                 }
             }
-            
-            
             $fechaAlta = date("Y-m-d");
 
-            //mando los datos obligatorios para el constructor, y nos no obligatorios para el set
-            $valor = PerdidoControlador::setPerdido(SesionControlador::getId(), $_POST["titulo"], $_POST["descripcion"], $dataImagen, $_POST["latitud"], $_POST["longitud"], $fechaAlta, $fechaDesaparicion, $sexo, $nombre, $_POST["tipoFoto"], $_POST["tel"]);
+            if ( !(in_array($imagenTipo, $tiposValidos) )) {
 
-            if ($valor) {
-                echo '{"status": "ok", "descripcion": "Se agregó el perdido correctamente. Redirigiendo a perdidos...", "data":"' . $_POST["latitud"].'"}';
-            }else {
-                echo '{"status": "error", "descripcion":' .'"'. $valor .'"'. ', "data":"' . $_POST["latitud"].'"}';
+                echo '{"status": "error", "descripcion":' .'"Formato de imagen no válido. Los formatos válidos son JPG, JPEG, PNG"'. ', "data":"' . $imagenTipo .'"}';
+
+            } else {
+
+                //mando los datos obligatorios para el constructor, y nos no obligatorios para el set
+                $valor = PerdidoControlador::setPerdido(SesionControlador::getId(), $_POST["titulo"], $_POST["descripcion"], $dataImagen, $_POST["latitud"], $_POST["longitud"], $fechaAlta, $fechaDesaparicion, $sexo, $nombre, $_POST["tipoFoto"], $_POST["tel"], $imagenTipo);
+
+                if ($valor) {
+                    echo '{"status": "ok", "descripcion": "Se agregó el perdido correctamente. Redirigiendo a perdidos...", "data":"' . $_POST["latitud"].'"}';
+                } else {
+                    echo '{"status": "error", "descripcion":' .'"'. $valor .'"'. ', "data":"' . $_POST["latitud"].'"}';
+                }
             }
     	} else {
             //error en alguna validacion
