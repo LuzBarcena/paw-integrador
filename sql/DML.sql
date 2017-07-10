@@ -1,4 +1,8 @@
-﻿
+﻿/*TABLA USUARIO*/
+/*la contraseña es: voluntario*/
+INSERT INTO usuario(nombre, apellido, nombre_usuario, email, contrasenia, perfil) 
+VALUES ('NombreVoluntario', 'ApellidoVoluntario', 'admin', 'voluntario@hotmail.com', '$2a$08$AFoNrs075N5a/Aofiv1IaOGSjK56LjU.b/wGh4cs0f6cvODppUJVu', 'admin');
+
 /*TABLA REFERENCIA*/
 INSERT INTO referencia(nombre, imagen) VALUES ('Se lleva con perros', 'ref1.jpg');
 INSERT INTO referencia(nombre, imagen) VALUES ('Se lleva con chicos', 'ref2.jpg');

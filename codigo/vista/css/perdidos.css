@@ -100,7 +100,10 @@ h3{
     .dosOpciones a {
         width: 70%;
     }
-     .card {
+    #lista_perdidos {
+        width: 90%;
+    }
+    .card {
         margin: 0 auto;
         box-shadow: 0 0.4em 0.8em 0 rgba(0,0,0,0.3);
         transition: 0.3s;
@@ -120,6 +123,9 @@ h3{
     }
     .dosOpciones a {
         width: 70%;
+    }
+    #lista_perdidos {
+        width: 95%;
     }
     .card {
         margin: 0 auto;
@@ -141,6 +147,9 @@ h3{
     }
     .dosOpciones a {
         width: 70%;
+    }
+    #lista_perdidos {
+        width: 100%;
     }
     .card {
         margin: 0 auto;
@@ -164,6 +173,9 @@ h3{
     }
     .dosOpciones a {
         width: 70%;
+    }
+    #lista_perdidos {
+        width: 100%;
     }
     .card {
         margin: 0 auto;

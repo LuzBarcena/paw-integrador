@@ -157,7 +157,10 @@ p {
 }
 
 @media screen and (max-width: 700px) {
-    .formulario {
+    .formulario,
+    #resultados_filtros,
+    #resultado,
+    .opcionAlta {
         width: 95%;
     }
 }
@@ -214,7 +217,7 @@ p {
  }
 
 
- @media (max-width: 791px) and (min-width: 200px) {
+@media (max-width: 791px) and (min-width: 200px) {
     .opcionAlta a {
         width: 60%;
         padding: 0.6em 0.5em;
@@ -222,16 +225,16 @@ p {
     .opcionAlta{
         margin-left: 25%;
     }
- }
+}
 
- @media (max-width: 400px) and (min-width: 200px) {
+@media (max-width: 400px) and (min-width: 200px) {
     .foto_perros {
         height: 100px;
     }
     .card{
         width: 60%;
     }
- }
+}
 
 @media (max-width: 550px) and (min-width: 401px) {
     .foto_perros {
@@ -240,20 +243,19 @@ p {
     .card{
         width: 65%;
     }
- }
+}
 
-
- @media (max-width: 650px) and (min-width: 551px) {
+@media (max-width: 650px) and (min-width: 551px) {
     .foto_perros {
         height: 90px;
     }
- }
+}
 
-  @media (max-width: 800px) and (min-width: 651px) {
+@media (max-width: 800px) and (min-width: 651px) {
     .foto_perros {
         height: 120px;
     }
- }
+}
 
 
 
