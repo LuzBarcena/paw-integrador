@@ -26,21 +26,18 @@
   			    <a href="perdidoIndividual.php?id={$fila['id_perdido']}">Leer más</a>
 		    </div>
         {/foreach}
+        <div id="links">
+            {if $pag <= $cantidad and $pag != 1}
+                <a class="links" href="perdidos.php?pag={{$pag-1}}">Anterior</a>
+            {/if}
+
+            {if $cantidad > $pag}
+                <a class="links" href="perdidos.php?pag={{$pag+1}}">Siguiente</a>
+            {/if}
+        </div>
     {else}
         <h2>No hay perdidos cargados</h2>
     {/if}
-        <div id="links">
-            {if $pag == 1}
-                <a class="links" href="perdidos.php?pag={{$pag+1}}">Siguiente</a>
-            {else}
-                {if $pag == $cantidad}
-                    <a class="links" href="perdidos.php?pag={{$pag-1}}">Anterior</a>
-                {else}
-                    <a class="links" href="perdidos.php?pag={{$pag-1}}">Anterior</a>
-                    <a class="links" href="perdidos.php?pag={{$pag+1}}">Siguiente</a>
-                {/if}
-            {/if}
-        </div>
     </section>
 {/block}
 
