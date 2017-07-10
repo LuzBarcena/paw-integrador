@@ -163,6 +163,9 @@ p {
     .opcionAlta {
         width: 95%;
     }
+    #altaPerro {
+        width: 35%;
+    }
 }
 
 /*------------------------------------card filtros--------------*/

@@ -115,6 +115,9 @@ h3{
         margin-top: 1%;
         display: block;
     }
+    #altaPerro {
+        width: 35%;
+    }
 }  
 
 @media screen and (max-width: 699px) and (min-width: 500px) {
@@ -139,6 +142,9 @@ h3{
         margin-top: 1%;
         display: block;
     }
+    #rojo {
+        width: 35%;
+    }
 }
 
 @media screen and (max-width: 499px) and (min-width: 401px) {
@@ -162,6 +168,9 @@ h3{
         padding-bottom: 0.5%; 
         margin-top: 1%;
         display: block;
+    }
+    #rojo {
+        width: 35%;
     }
 }
 
@@ -188,5 +197,8 @@ h3{
         padding-bottom: 0.5%; 
         margin-top: 1%;
         display: block;
+    }
+    #rojo {
+        width: 35%;
     }
 }
