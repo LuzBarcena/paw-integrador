@@ -35,7 +35,7 @@ if ($pag == 1) {
 $cantidadPerdidos = PerdidoControlador::getCantidadPerdidos();
 $resultado = PerdidoControlador::getPerdidos($desde, $elementosPorPagina);
 
-$cantidad = $cantidadPerdidos / 8;
+$cantidad = $cantidadPerdidos / $elementosPorPagina;
 
 $tpl->assign('cantidad', ceil($cantidad));
 $tpl->assign("url", 'perdidos.php?'.'pag=');
