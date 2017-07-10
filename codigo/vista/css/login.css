@@ -17,6 +17,7 @@ strong {
 
 .container {
     padding: 1.4em;
+    padding-top: 0;
 }
 
 h2 {

@@ -8,8 +8,8 @@
 {block name=section}
 	<section id="contenedor_registro">
 		<form class="formulario_registro" method="post" >
+			<h2>REGISTRARSE</h2>
 	    	<div class="container">
-	    		<h2>REGISTRARSE</h2>
 	    		<label><strong>Nombre de usuario</strong></label>
 				<input type="text" min="3" max="30" placeholder="Ingrese nombre de usuario" name="nombre_usuario" required>
 				<label><strong>Email</strong></label>

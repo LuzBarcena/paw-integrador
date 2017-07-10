@@ -8,8 +8,8 @@
 {block name=section}
 	<section class="section-login">
 		<form class="formulario_login" method="POST" >
+			<h2>INICIAR SESIÓN</h2>
 			<div class="container">
-				<h2>INICIAR SESIÓN</h2>
 				<label for="usuario"><strong>Usuario</strong></label>
 				<input type="text" id="usuario" name="nombre_usuario" placeholder="Ingrese usuario" required>
 				<label for="contrasenia"><strong>Contraseña</strong></label>
