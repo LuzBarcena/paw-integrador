@@ -20,7 +20,7 @@
     			{if $adoptados != false}    
         			{foreach $adoptados as $fila}
             			<div class="card">
-  			   				<img class="foto_perro" src="img_perros/{$fila['foto']}.jpg" alt="Perro adoptado" style="width:100%">
+  			   				<img class="foto_perro" src="img_perros/{$fila['foto']}" alt="Perro adoptado" style="width:100%">
  			   		 		<div class="container">
     			    			<h4><b>{$fila['nombre']}</b></h4> 
   			    			</div>
@@ -39,7 +39,7 @@
     			{if $apadrinados != false}    
         			{foreach $apadrinados as $fila}
             			<div class="card">
-  			   				<img class="foto_perro" src="img_perros/{$fila['foto']}.jpg" alt="Perro apadrinado" style="width:100%">
+  			   				<img class="foto_perro" src="img_perros/{$fila['foto']}" alt="Perro apadrinado" style="width:100%">
  			   		 		<div class="container">
     			    			<h4><b>{$fila['nombre']}</b></h4> 
   			    			</div>
