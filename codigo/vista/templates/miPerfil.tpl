@@ -8,10 +8,7 @@
 	<section id="mi_perfil">
 		<div id="mi_info">
 			{if {$resultado != false}}
-				<h2>{$resultado['nombre']}</h2>
-        <div class="danger">
-          <p><strong>{$resultado['apellido']}</strong></p>
-        </div>
+				<h2>{$resultado['nombre']} {$resultado['apellido']}</h2>
 			{else}
 				<p><strong>No hay usuario</strong></p>
 			{/if}

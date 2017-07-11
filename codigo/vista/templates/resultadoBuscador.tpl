@@ -11,7 +11,7 @@
                 </div>
             {/foreach}
             <div>
-                <button type="button" class="link" onclick="mostrarMas();">Mostrar más</button>
+                <button type="button" id="mostrarMas" class="link" onclick="mostrarMas();">Mostrar más</button>
             </div>
         {else}
             <h3>No hay resultados</h3>
