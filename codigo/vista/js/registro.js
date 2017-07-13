@@ -18,6 +18,7 @@ function registrarUsuario(nombreUsuario, email, nombre, apellido, contrasenia, c
 		url: '../interfaces/validarRegistro.php',
 		type: 'POST',
 		success: function (respuesta) {
+			console.log(respuesta);
 			var data = JSON.parse(respuesta);
 			if (data.status === "ok") {
 				mostrarModal("verde", data.descripcion);
